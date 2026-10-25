@@ -1,0 +1,7 @@
+node_modules/
+dist/
+output/
+*.tsbuildinfo
+*.log
+__pycache__/
+.playwright-cli/

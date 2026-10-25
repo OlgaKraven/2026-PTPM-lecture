@@ -1,0 +1,7 @@
+export const section=(title,body)=>({kind:'section',title,body})
+export const text=(title,body,notebook,script)=>({kind:'theory',title,body,notebook,script})
+export const table=(title,columns,rows,body,script)=>({kind:'comparison',title,body,columns,rows,script})
+export const code=(title,code,explanation,script)=>({kind:'example',title,visual:{type:'codeParts',parts:[{label:'Python',code,explanation}],caption:'Учебный пример'},script})
+export const flow=(title,items,caption,script)=>({kind:'process',title,visual:{type:'process',items:items.map(([title,text])=>({title,text})),caption},script})
+export const practice=(title,body,answer,script)=>({kind:'example',title,body,kicker:'Самостоятельный разбор',answer,script:script||`${body}\n\nДайте время на самостоятельную запись и обоснование. Решение выполняется на бумаге или в указанной среде; автоматической оценки свободного ответа здесь нет. После обсуждения нажмите «Разбор после попытки». Сопоставьте основания своего решения с разбором, затем закройте его кнопкой или Escape.`})
+export const quiz=(prompt,options,correct,explanation)=>({kind:'test',title:'Самопроверка',task:{type:'single',prompt,options:options.map((text,i)=>({id:`o${i+1}`,text}))},answer:explanation,key:{type:'single',correct:[`o${correct+1}`],explanation},script:'Предложите выбрать ответ самостоятельно и назвать основание выбора. Не показывайте ключ до обсуждения. После попытки откройте ответ; попросите объяснить, какие сведения из условия исключают остальные варианты.'})

@@ -1,0 +1,1943 @@
+{
+  "schemaVersion": 1,
+  "courseId": "ptpm",
+  "contentVersion": "1.0.0",
+  "sourceKind": "local",
+  "sourceSha256": "7a11aac7fd3227138321a8f31f6f8f42f06143eef12c68804ea6105712385071",
+  "lectureIds": [
+    "s04-01-testing-purpose",
+    "s04-02-test-cases",
+    "s04-03-equivalence",
+    "s04-04-boundaries-and-defects",
+    "s05-01-unit-tests",
+    "s05-02-dependencies",
+    "s05-03-suite-quality",
+    "s05-04-maintenance"
+  ],
+  "documents": {
+    "teacher": "course.teacher.md",
+    "presenter": "course.presenter.md"
+  },
+  "slides": [
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s001",
+      "displayNumber": 1,
+      "title": "Зачем тестируют программный модуль",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s001",
+        "presenter": "s04-01-testing-purpose-s001"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s002",
+      "displayNumber": 2,
+      "title": "Вопросы лекции",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s002",
+        "presenter": "s04-01-testing-purpose-s002"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s003",
+      "displayNumber": 3,
+      "title": "Что проверяют у модуля",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s003",
+        "presenter": "s04-01-testing-purpose-s003"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s004",
+      "displayNumber": 4,
+      "title": "Модуль имеет границу проверки",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s004",
+        "presenter": "s04-01-testing-purpose-s004"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s005",
+      "displayNumber": 5,
+      "title": "Учебный модуль: стоимость доставки",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s005",
+        "presenter": "s04-01-testing-purpose-s005"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s006",
+      "displayNumber": 6,
+      "title": "Из требования получается проверка",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s006",
+        "presenter": "s04-01-testing-purpose-s006"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s007",
+      "displayNumber": 7,
+      "title": "Проверка другого тарифа",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s007",
+        "presenter": "s04-01-testing-purpose-s007"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s008",
+      "displayNumber": 8,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s008",
+        "presenter": "s04-01-testing-purpose-s008"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s009",
+      "displayNumber": 9,
+      "title": "Ошибка, дефект и отказ",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s009",
+        "presenter": "s04-01-testing-purpose-s009"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s010",
+      "displayNumber": 10,
+      "title": "Три термина описывают разные объекты",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s010",
+        "presenter": "s04-01-testing-purpose-s010"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s011",
+      "displayNumber": 11,
+      "title": "Одна ситуация — три уровня",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s011",
+        "presenter": "s04-01-testing-purpose-s011"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s012",
+      "displayNumber": 12,
+      "title": "Наблюдение отделяют от причины",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s012",
+        "presenter": "s04-01-testing-purpose-s012"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s013",
+      "displayNumber": 13,
+      "title": "Классифицируйте свидетельства",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s013",
+        "presenter": "s04-01-testing-purpose-s013"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s014",
+      "displayNumber": 14,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s014",
+        "presenter": "s04-01-testing-purpose-s014"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s015",
+      "displayNumber": 15,
+      "title": "Какие выводы позволяет сделать тестирование",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s015",
+        "presenter": "s04-01-testing-purpose-s015"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s016",
+      "displayNumber": 16,
+      "title": "Ожидаемый результат требует основания",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s016",
+        "presenter": "s04-01-testing-purpose-s016"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s017",
+      "displayNumber": 17,
+      "title": "Статус и допустимый вывод",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s017",
+        "presenter": "s04-01-testing-purpose-s017"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s018",
+      "displayNumber": 18,
+      "title": "Ценность теста видна на нарушенном правиле",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s018",
+        "presenter": "s04-01-testing-purpose-s018"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s019",
+      "displayNumber": 19,
+      "title": "Сформулируйте заключение",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s019",
+        "presenter": "s04-01-testing-purpose-s019"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s020",
+      "displayNumber": 20,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s020",
+        "presenter": "s04-01-testing-purpose-s020"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s021",
+      "displayNumber": 21,
+      "title": "Проверьте, что вы можете объяснить",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s021",
+        "presenter": "s04-01-testing-purpose-s021"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s022",
+      "displayNumber": 22,
+      "title": "Основная литература",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s022",
+        "presenter": "s04-01-testing-purpose-s022"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s023",
+      "displayNumber": 23,
+      "title": "Дополнительные материалы",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s023",
+        "presenter": "s04-01-testing-purpose-s023"
+      }
+    },
+    {
+      "lectureId": "s04-01-testing-purpose",
+      "slideId": "s04-01-testing-purpose-s024",
+      "displayNumber": 24,
+      "title": "Материалы к занятиям",
+      "anchors": {
+        "teacher": "s04-01-testing-purpose-s024",
+        "presenter": "s04-01-testing-purpose-s024"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s001",
+      "displayNumber": 1,
+      "title": "Тест-кейс и ожидаемый результат",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s001",
+        "presenter": "s04-02-test-cases-s001"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s002",
+      "displayNumber": 2,
+      "title": "Вопросы лекции",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s002",
+        "presenter": "s04-02-test-cases-s002"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s003",
+      "displayNumber": 3,
+      "title": "От требования к ожидаемому результату",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s003",
+        "presenter": "s04-02-test-cases-s003"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s004",
+      "displayNumber": 4,
+      "title": "Тест-кейс задаёт конкретную проверку",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s004",
+        "presenter": "s04-02-test-cases-s004"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s005",
+      "displayNumber": 5,
+      "title": "Ожидание можно проверить",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s005",
+        "presenter": "s04-02-test-cases-s005"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s006",
+      "displayNumber": 6,
+      "title": "Ожидание рассчитывают до запуска",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s006",
+        "presenter": "s04-02-test-cases-s006"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s007",
+      "displayNumber": 7,
+      "title": "Уточните ожидаемый результат",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s007",
+        "presenter": "s04-02-test-cases-s007"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s008",
+      "displayNumber": 8,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s008",
+        "presenter": "s04-02-test-cases-s008"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s009",
+      "displayNumber": 9,
+      "title": "Как описать воспроизводимые шаги",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s009",
+        "presenter": "s04-02-test-cases-s009"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s010",
+      "displayNumber": 10,
+      "title": "Тест-кейс включения порога",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s010",
+        "presenter": "s04-02-test-cases-s010"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s011",
+      "displayNumber": 11,
+      "title": "Состояние восстанавливают перед независимым случаем",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s011",
+        "presenter": "s04-02-test-cases-s011"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s012",
+      "displayNumber": 12,
+      "title": "Из расплывчатого шага в точный",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s012",
+        "presenter": "s04-02-test-cases-s012"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s013",
+      "displayNumber": 13,
+      "title": "Восстановите начало каждого случая",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s013",
+        "presenter": "s04-02-test-cases-s013"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s014",
+      "displayNumber": 14,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s014",
+        "presenter": "s04-02-test-cases-s014"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s015",
+      "displayNumber": 15,
+      "title": "Как фиксировать выполнение теста",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s015",
+        "presenter": "s04-02-test-cases-s015"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s016",
+      "displayNumber": 16,
+      "title": "Фактический результат записывают без подмены",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s016",
+        "presenter": "s04-02-test-cases-s016"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s017",
+      "displayNumber": 17,
+      "title": "Учебный протокол прогона",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s017",
+        "presenter": "s04-02-test-cases-s017"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s018",
+      "displayNumber": 18,
+      "title": "Повторный прогон — новое свидетельство",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s018",
+        "presenter": "s04-02-test-cases-s018"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s019",
+      "displayNumber": 19,
+      "title": "Оформите повторный прогон",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s019",
+        "presenter": "s04-02-test-cases-s019"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s020",
+      "displayNumber": 20,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s020",
+        "presenter": "s04-02-test-cases-s020"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s021",
+      "displayNumber": 21,
+      "title": "Проверьте, что вы можете объяснить",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s021",
+        "presenter": "s04-02-test-cases-s021"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s022",
+      "displayNumber": 22,
+      "title": "Основная литература",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s022",
+        "presenter": "s04-02-test-cases-s022"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s023",
+      "displayNumber": 23,
+      "title": "Дополнительные материалы",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s023",
+        "presenter": "s04-02-test-cases-s023"
+      }
+    },
+    {
+      "lectureId": "s04-02-test-cases",
+      "slideId": "s04-02-test-cases-s024",
+      "displayNumber": 24,
+      "title": "Материалы к занятиям",
+      "anchors": {
+        "teacher": "s04-02-test-cases-s024",
+        "presenter": "s04-02-test-cases-s024"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s001",
+      "displayNumber": 1,
+      "title": "Классы эквивалентности",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s001",
+        "presenter": "s04-03-equivalence-s001"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s002",
+      "displayNumber": 2,
+      "title": "Вопросы лекции",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s002",
+        "presenter": "s04-03-equivalence-s002"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s003",
+      "displayNumber": 3,
+      "title": "Как разбить область входов",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s003",
+        "presenter": "s04-03-equivalence-s003"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s004",
+      "displayNumber": 4,
+      "title": "Разбиение опирается на правило обработки",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s004",
+        "presenter": "s04-03-equivalence-s004"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s005",
+      "displayNumber": 5,
+      "title": "Классы учебного тарифа",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s005",
+        "presenter": "s04-03-equivalence-s005"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s006",
+      "displayNumber": 6,
+      "title": "Проверьте полноту и отсутствие пересечений",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s006",
+        "presenter": "s04-03-equivalence-s006"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s007",
+      "displayNumber": 7,
+      "title": "Постройте другое разбиение",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s007",
+        "presenter": "s04-03-equivalence-s007"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s008",
+      "displayNumber": 8,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s008",
+        "presenter": "s04-03-equivalence-s008"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s009",
+      "displayNumber": 9,
+      "title": "Как выбрать представителей классов",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s009",
+        "presenter": "s04-03-equivalence-s009"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s010",
+      "displayNumber": 10,
+      "title": "Минимальный набор представителей",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s010",
+        "presenter": "s04-03-equivalence-s010"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s011",
+      "displayNumber": 11,
+      "title": "Лишние похожие значения могут не расширять охват",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s011",
+        "presenter": "s04-03-equivalence-s011"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s012",
+      "displayNumber": 12,
+      "title": "Вход и ожидаемое исключение",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s012",
+        "presenter": "s04-03-equivalence-s012"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s013",
+      "displayNumber": 13,
+      "title": "Уберите пробелы в наборе",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s013",
+        "presenter": "s04-03-equivalence-s013"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s014",
+      "displayNumber": 14,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s014",
+        "presenter": "s04-03-equivalence-s014"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s015",
+      "displayNumber": 15,
+      "title": "Как сочетать несколько входных параметров",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s015",
+        "presenter": "s04-03-equivalence-s015"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s016",
+      "displayNumber": 16,
+      "title": "Одна недопустимость за один случай",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s016",
+        "presenter": "s04-03-equivalence-s016"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s017",
+      "displayNumber": 17,
+      "title": "Изолированные проверки total(count, price)",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s017",
+        "presenter": "s04-03-equivalence-s017"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s018",
+      "displayNumber": 18,
+      "title": "Отдельные классы не охватывают взаимодействия",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s018",
+        "presenter": "s04-03-equivalence-s018"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s019",
+      "displayNumber": 19,
+      "title": "Постройте таблицу сочетаний",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s019",
+        "presenter": "s04-03-equivalence-s019"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s020",
+      "displayNumber": 20,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s020",
+        "presenter": "s04-03-equivalence-s020"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s021",
+      "displayNumber": 21,
+      "title": "Проверьте, что вы можете объяснить",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s021",
+        "presenter": "s04-03-equivalence-s021"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s022",
+      "displayNumber": 22,
+      "title": "Основная литература",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s022",
+        "presenter": "s04-03-equivalence-s022"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s023",
+      "displayNumber": 23,
+      "title": "Дополнительные материалы",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s023",
+        "presenter": "s04-03-equivalence-s023"
+      }
+    },
+    {
+      "lectureId": "s04-03-equivalence",
+      "slideId": "s04-03-equivalence-s024",
+      "displayNumber": 24,
+      "title": "Материалы к занятиям",
+      "anchors": {
+        "teacher": "s04-03-equivalence-s024",
+        "presenter": "s04-03-equivalence-s024"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s001",
+      "displayNumber": 1,
+      "title": "Граничные значения, недопустимые данные и отчёт о дефекте",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s001",
+        "presenter": "s04-04-boundaries-and-defects-s001"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s002",
+      "displayNumber": 2,
+      "title": "Вопросы лекции",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s002",
+        "presenter": "s04-04-boundaries-and-defects-s002"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s003",
+      "displayNumber": 3,
+      "title": "Как исследовать границы диапазона",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s003",
+        "presenter": "s04-04-boundaries-and-defects-s003"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s004",
+      "displayNumber": 4,
+      "title": "Граница относится к шкале данных",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s004",
+        "presenter": "s04-04-boundaries-and-defects-s004"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s005",
+      "displayNumber": 5,
+      "title": "Порог бесплатной доставки",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s005",
+        "presenter": "s04-04-boundaries-and-defects-s005"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s006",
+      "displayNumber": 6,
+      "title": "Ограниченный диапазон 1…10",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s006",
+        "presenter": "s04-04-boundaries-and-defects-s006"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s007",
+      "displayNumber": 7,
+      "title": "Выберите границы нового модуля",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s007",
+        "presenter": "s04-04-boundaries-and-defects-s007"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s008",
+      "displayNumber": 8,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s008",
+        "presenter": "s04-04-boundaries-and-defects-s008"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s009",
+      "displayNumber": 9,
+      "title": "Как проверять недопустимые данные",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s009",
+        "presenter": "s04-04-boundaries-and-defects-s009"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s010",
+      "displayNumber": 10,
+      "title": "Недопустимость бывает разной",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s010",
+        "presenter": "s04-04-boundaries-and-defects-s010"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s011",
+      "displayNumber": 11,
+      "title": "Различаем входы доставки",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s011",
+        "presenter": "s04-04-boundaries-and-defects-s011"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s012",
+      "displayNumber": 12,
+      "title": "Состояние после отказа тоже наблюдают",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s012",
+        "presenter": "s04-04-boundaries-and-defects-s012"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s013",
+      "displayNumber": 13,
+      "title": "Составьте негативный случай",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s013",
+        "presenter": "s04-04-boundaries-and-defects-s013"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s014",
+      "displayNumber": 14,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s014",
+        "presenter": "s04-04-boundaries-and-defects-s014"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s015",
+      "displayNumber": 15,
+      "title": "Как оформить воспроизводимый дефект",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s015",
+        "presenter": "s04-04-boundaries-and-defects-s015"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s016",
+      "displayNumber": 16,
+      "title": "Карточка DEF-01",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s016",
+        "presenter": "s04-04-boundaries-and-defects-s016"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s017",
+      "displayNumber": 17,
+      "title": "Важность и приоритет отвечают на разные вопросы",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s017",
+        "presenter": "s04-04-boundaries-and-defects-s017"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s018",
+      "displayNumber": 18,
+      "title": "Жизнь найденного расхождения",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s018",
+        "presenter": "s04-04-boundaries-and-defects-s018"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s019",
+      "displayNumber": 19,
+      "title": "Напишите отчёт по новым наблюдениям",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s019",
+        "presenter": "s04-04-boundaries-and-defects-s019"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s020",
+      "displayNumber": 20,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s020",
+        "presenter": "s04-04-boundaries-and-defects-s020"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s021",
+      "displayNumber": 21,
+      "title": "Проверьте, что вы можете объяснить",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s021",
+        "presenter": "s04-04-boundaries-and-defects-s021"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s022",
+      "displayNumber": 22,
+      "title": "Основная литература",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s022",
+        "presenter": "s04-04-boundaries-and-defects-s022"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s023",
+      "displayNumber": 23,
+      "title": "Дополнительные материалы",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s023",
+        "presenter": "s04-04-boundaries-and-defects-s023"
+      }
+    },
+    {
+      "lectureId": "s04-04-boundaries-and-defects",
+      "slideId": "s04-04-boundaries-and-defects-s024",
+      "displayNumber": 24,
+      "title": "Материалы к занятиям",
+      "anchors": {
+        "teacher": "s04-04-boundaries-and-defects-s024",
+        "presenter": "s04-04-boundaries-and-defects-s024"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s001",
+      "displayNumber": 1,
+      "title": "Первый модульный тест: функция, исключение и состояние",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s001",
+        "presenter": "s05-01-unit-tests-s001"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s002",
+      "displayNumber": 2,
+      "title": "Вопросы лекции",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s002",
+        "presenter": "s05-01-unit-tests-s002"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s003",
+      "displayNumber": 3,
+      "title": "Как устроен модульный тест",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s003",
+        "presenter": "s05-01-unit-tests-s003"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s004",
+      "displayNumber": 4,
+      "title": "Модульный тест автоматизирует сравнение",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s004",
+        "presenter": "s05-01-unit-tests-s004"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s005",
+      "displayNumber": 5,
+      "title": "Подготовка → действие → проверка",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s005",
+        "presenter": "s05-01-unit-tests-s005"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s006",
+      "displayNumber": 6,
+      "title": "Ручной случай и исполняемый тест",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s006",
+        "presenter": "s05-01-unit-tests-s006"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s007",
+      "displayNumber": 7,
+      "title": "Напишите тест другого тарифа",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s007",
+        "presenter": "s05-01-unit-tests-s007"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s008",
+      "displayNumber": 8,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s008",
+        "presenter": "s05-01-unit-tests-s008"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s009",
+      "displayNumber": 9,
+      "title": "Как проверить границы и исключения",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s009",
+        "presenter": "s05-01-unit-tests-s009"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s010",
+      "displayNumber": 10,
+      "title": "Связанный набор граничных случаев",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s010",
+        "presenter": "s05-01-unit-tests-s010"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s011",
+      "displayNumber": 11,
+      "title": "Исключение — ожидаемый результат",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s011",
+        "presenter": "s05-01-unit-tests-s011"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s012",
+      "displayNumber": 12,
+      "title": "Один тест — одна проверяемая ситуация",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s012",
+        "presenter": "s05-01-unit-tests-s012"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s013",
+      "displayNumber": 13,
+      "title": "Найдите дефект проверки исключения",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s013",
+        "presenter": "s05-01-unit-tests-s013"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s014",
+      "displayNumber": 14,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s014",
+        "presenter": "s05-01-unit-tests-s014"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s015",
+      "displayNumber": 15,
+      "title": "Как проверить состояние объекта",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s015",
+        "presenter": "s05-01-unit-tests-s015"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s016",
+      "displayNumber": 16,
+      "title": "Объект начинает каждый тест с известных данных",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s016",
+        "presenter": "s05-01-unit-tests-s016"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s017",
+      "displayNumber": 17,
+      "title": "Успешное резервирование",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s017",
+        "presenter": "s05-01-unit-tests-s017"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s018",
+      "displayNumber": 18,
+      "title": "Отклонённый запрос не меняет остаток",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s018",
+        "presenter": "s05-01-unit-tests-s018"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s019",
+      "displayNumber": 19,
+      "title": "Добавьте собственную проверку состояния",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s019",
+        "presenter": "s05-01-unit-tests-s019"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s020",
+      "displayNumber": 20,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s020",
+        "presenter": "s05-01-unit-tests-s020"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s021",
+      "displayNumber": 21,
+      "title": "Проверьте, что вы можете объяснить",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s021",
+        "presenter": "s05-01-unit-tests-s021"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s022",
+      "displayNumber": 22,
+      "title": "Основная литература",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s022",
+        "presenter": "s05-01-unit-tests-s022"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s023",
+      "displayNumber": 23,
+      "title": "Дополнительные материалы",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s023",
+        "presenter": "s05-01-unit-tests-s023"
+      }
+    },
+    {
+      "lectureId": "s05-01-unit-tests",
+      "slideId": "s05-01-unit-tests-s024",
+      "displayNumber": 24,
+      "title": "Материалы к занятиям",
+      "anchors": {
+        "teacher": "s05-01-unit-tests-s024",
+        "presenter": "s05-01-unit-tests-s024"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s001",
+      "displayNumber": 1,
+      "title": "Зависимости модуля и проверка в изоляции",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s001",
+        "presenter": "s05-02-dependencies-s001"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s002",
+      "displayNumber": 2,
+      "title": "Вопросы лекции",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s002",
+        "presenter": "s05-02-dependencies-s002"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s003",
+      "displayNumber": 3,
+      "title": "Где проходит граница модульной проверки",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s003",
+        "presenter": "s05-02-dependencies-s003"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s004",
+      "displayNumber": 4,
+      "title": "Зависимость влияет на повторяемость",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s004",
+        "presenter": "s05-02-dependencies-s004"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s005",
+      "displayNumber": 5,
+      "title": "Какие условия контролируются",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s005",
+        "presenter": "s05-02-dependencies-s005"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s006",
+      "displayNumber": 6,
+      "title": "Разделение ответственности",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s006",
+        "presenter": "s05-02-dependencies-s006"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s007",
+      "displayNumber": 7,
+      "title": "Выберите границу проверки",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s007",
+        "presenter": "s05-02-dependencies-s007"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s008",
+      "displayNumber": 8,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s008",
+        "presenter": "s05-02-dependencies-s008"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s009",
+      "displayNumber": 9,
+      "title": "Как сделать зависимость управляемой",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s009",
+        "presenter": "s05-02-dependencies-s009"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s010",
+      "displayNumber": 10,
+      "title": "Внешний источник передаётся параметром",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s010",
+        "presenter": "s05-02-dependencies-s010"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s011",
+      "displayNumber": 11,
+      "title": "Заглушка возвращает известный ответ",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s011",
+        "presenter": "s05-02-dependencies-s011"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s012",
+      "displayNumber": 12,
+      "title": "Заглушка подменяет ответ, а не проверяемый расчёт",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s012",
+        "presenter": "s05-02-dependencies-s012"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s013",
+      "displayNumber": 13,
+      "title": "Создайте заглушку нового источника",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s013",
+        "presenter": "s05-02-dependencies-s013"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s014",
+      "displayNumber": 14,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s014",
+        "presenter": "s05-02-dependencies-s014"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s015",
+      "displayNumber": 15,
+      "title": "Что подтверждает тест с заглушкой",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s015",
+        "presenter": "s05-02-dependencies-s015"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s016",
+      "displayNumber": 16,
+      "title": "Проверка результата на настоящем модуле",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s016",
+        "presenter": "s05-02-dependencies-s016"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s017",
+      "displayNumber": 17,
+      "title": "Воспроизводимый отказ зависимости",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s017",
+        "presenter": "s05-02-dependencies-s017"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s018",
+      "displayNumber": 18,
+      "title": "Сила и границы свидетельств",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s018",
+        "presenter": "s05-02-dependencies-s018"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s019",
+      "displayNumber": 19,
+      "title": "Оцените слабый заменитель",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s019",
+        "presenter": "s05-02-dependencies-s019"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s020",
+      "displayNumber": 20,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s020",
+        "presenter": "s05-02-dependencies-s020"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s021",
+      "displayNumber": 21,
+      "title": "Проверьте, что вы можете объяснить",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s021",
+        "presenter": "s05-02-dependencies-s021"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s022",
+      "displayNumber": 22,
+      "title": "Основная литература",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s022",
+        "presenter": "s05-02-dependencies-s022"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s023",
+      "displayNumber": 23,
+      "title": "Дополнительные материалы",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s023",
+        "presenter": "s05-02-dependencies-s023"
+      }
+    },
+    {
+      "lectureId": "s05-02-dependencies",
+      "slideId": "s05-02-dependencies-s024",
+      "displayNumber": 24,
+      "title": "Материалы к занятиям",
+      "anchors": {
+        "teacher": "s05-02-dependencies-s024",
+        "presenter": "s05-02-dependencies-s024"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s001",
+      "displayNumber": 1,
+      "title": "Набор тестов, отчёт о прогоне и качество проверок",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s001",
+        "presenter": "s05-03-suite-quality-s001"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s002",
+      "displayNumber": 2,
+      "title": "Вопросы лекции",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s002",
+        "presenter": "s05-03-suite-quality-s002"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s003",
+      "displayNumber": 3,
+      "title": "Как запустить нужный набор целиком",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s003",
+        "presenter": "s05-03-suite-quality-s003"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s004",
+      "displayNumber": 4,
+      "title": "Набор собирают из независимых проверок",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s004",
+        "presenter": "s05-03-suite-quality-s004"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s005",
+      "displayNumber": 5,
+      "title": "Запуск из папки examples",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s005",
+        "presenter": "s05-03-suite-quality-s005"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s006",
+      "displayNumber": 6,
+      "title": "Почему «OK» может быть недостаточно",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s006",
+        "presenter": "s05-03-suite-quality-s006"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s007",
+      "displayNumber": 7,
+      "title": "Разберите пропажу теста",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s007",
+        "presenter": "s05-03-suite-quality-s007"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s008",
+      "displayNumber": 8,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s008",
+        "presenter": "s05-03-suite-quality-s008"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s009",
+      "displayNumber": 9,
+      "title": "Как читать результат прогона",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s009",
+        "presenter": "s05-03-suite-quality-s009"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s010",
+      "displayNumber": 10,
+      "title": "Основные исходы unittest",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s010",
+        "presenter": "s05-03-suite-quality-s010"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s011",
+      "displayNumber": 11,
+      "title": "Пример отчёта о расхождении",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s011",
+        "presenter": "s05-03-suite-quality-s011"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s012",
+      "displayNumber": 12,
+      "title": "Отчёт связывают с условиями запуска",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s012",
+        "presenter": "s05-03-suite-quality-s012"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s013",
+      "displayNumber": 13,
+      "title": "Сделайте вывод по прогону",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s013",
+        "presenter": "s05-03-suite-quality-s013"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s014",
+      "displayNumber": 14,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s014",
+        "presenter": "s05-03-suite-quality-s014"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s015",
+      "displayNumber": 15,
+      "title": "Как обнаружить слабый тест",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s015",
+        "presenter": "s05-03-suite-quality-s015"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s016",
+      "displayNumber": 16,
+      "title": "Тест, проходящий при неверной доставке",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s016",
+        "presenter": "s05-03-suite-quality-s016"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s017",
+      "displayNumber": 17,
+      "title": "Контролируемое нарушение проверяет чувствительность",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s017",
+        "presenter": "s05-03-suite-quality-s017"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s018",
+      "displayNumber": 18,
+      "title": "Какой вход различит реализации",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s018",
+        "presenter": "s05-03-suite-quality-s018"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s019",
+      "displayNumber": 19,
+      "title": "Усильте тест расчёта",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s019",
+        "presenter": "s05-03-suite-quality-s019"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s020",
+      "displayNumber": 20,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s020",
+        "presenter": "s05-03-suite-quality-s020"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s021",
+      "displayNumber": 21,
+      "title": "Проверьте, что вы можете объяснить",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s021",
+        "presenter": "s05-03-suite-quality-s021"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s022",
+      "displayNumber": 22,
+      "title": "Основная литература",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s022",
+        "presenter": "s05-03-suite-quality-s022"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s023",
+      "displayNumber": 23,
+      "title": "Дополнительные материалы",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s023",
+        "presenter": "s05-03-suite-quality-s023"
+      }
+    },
+    {
+      "lectureId": "s05-03-suite-quality",
+      "slideId": "s05-03-suite-quality-s024",
+      "displayNumber": 24,
+      "title": "Материалы к занятиям",
+      "anchors": {
+        "teacher": "s05-03-suite-quality-s024",
+        "presenter": "s05-03-suite-quality-s024"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s001",
+      "displayNumber": 1,
+      "title": "Поддержка модуля и проверка исправлений",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s001",
+        "presenter": "s05-04-maintenance-s001"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s002",
+      "displayNumber": 2,
+      "title": "Вопросы лекции",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s002",
+        "presenter": "s05-04-maintenance-s002"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s003",
+      "displayNumber": 3,
+      "title": "Как воспроизвести обращение пользователя",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s003",
+        "presenter": "s05-04-maintenance-s003"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s004",
+      "displayNumber": 4,
+      "title": "Обращение уточняют до проверяемой истории",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s004",
+        "presenter": "s05-04-maintenance-s004"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s005",
+      "displayNumber": 5,
+      "title": "Из сообщения в данные воспроизведения",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s005",
+        "presenter": "s05-04-maintenance-s005"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s006",
+      "displayNumber": 6,
+      "title": "Сужение воспроизведения",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s006",
+        "presenter": "s05-04-maintenance-s006"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s007",
+      "displayNumber": 7,
+      "title": "Уточните другое обращение",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s007",
+        "presenter": "s05-04-maintenance-s007"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s008",
+      "displayNumber": 8,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s008",
+        "presenter": "s05-04-maintenance-s008"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s009",
+      "displayNumber": 9,
+      "title": "Как закрепить исправление тестом",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s009",
+        "presenter": "s05-04-maintenance-s009"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s010",
+      "displayNumber": 10,
+      "title": "Регрессионный тест для порога",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s010",
+        "presenter": "s05-04-maintenance-s010"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s011",
+      "displayNumber": 11,
+      "title": "Две цели после изменения",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s011",
+        "presenter": "s05-04-maintenance-s011"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s012",
+      "displayNumber": 12,
+      "title": "Новый дефект не скрывают ради зелёного отчёта",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s012",
+        "presenter": "s05-04-maintenance-s012"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s013",
+      "displayNumber": 13,
+      "title": "Оцените неполное исправление",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s013",
+        "presenter": "s05-04-maintenance-s013"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s014",
+      "displayNumber": 14,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s014",
+        "presenter": "s05-04-maintenance-s014"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s015",
+      "displayNumber": 15,
+      "title": "Как передать проверенный результат",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s015",
+        "presenter": "s05-04-maintenance-s015"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s016",
+      "displayNumber": 16,
+      "title": "Комплект результатов",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s016",
+        "presenter": "s05-04-maintenance-s016"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s017",
+      "displayNumber": 17,
+      "title": "Заключение имеет границы",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s017",
+        "presenter": "s05-04-maintenance-s017"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s018",
+      "displayNumber": 18,
+      "title": "Маршрут сдачи исправления",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s018",
+        "presenter": "s05-04-maintenance-s018"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s019",
+      "displayNumber": 19,
+      "title": "Примите или верните комплект",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s019",
+        "presenter": "s05-04-maintenance-s019"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s020",
+      "displayNumber": 20,
+      "title": "Самопроверка",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s020",
+        "presenter": "s05-04-maintenance-s020"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s021",
+      "displayNumber": 21,
+      "title": "Проверьте, что вы можете объяснить",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s021",
+        "presenter": "s05-04-maintenance-s021"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s022",
+      "displayNumber": 22,
+      "title": "Основная литература",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s022",
+        "presenter": "s05-04-maintenance-s022"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s023",
+      "displayNumber": 23,
+      "title": "Дополнительные материалы",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s023",
+        "presenter": "s05-04-maintenance-s023"
+      }
+    },
+    {
+      "lectureId": "s05-04-maintenance",
+      "slideId": "s05-04-maintenance-s024",
+      "displayNumber": 24,
+      "title": "Материалы к занятиям",
+      "anchors": {
+        "teacher": "s05-04-maintenance-s024",
+        "presenter": "s05-04-maintenance-s024"
+      }
+    }
+  ]
+}

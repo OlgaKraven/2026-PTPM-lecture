@@ -1,0 +1,29 @@
+{
+  "name": "2026-ptpm-lecture",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/build-course.mjs && tsc --noEmit && vite build",
+    "validate": "node scripts/validate.mjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@olgakraven/lecture-engine": "file:vendor/olgakraven-lecture-engine-0.1.1-okfks.11-presentation.11.tgz",
+    "lucide-react": "^1.38.0",
+    "motion": "^13.1.1",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2"
+  }
+}

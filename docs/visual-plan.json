@@ -1,0 +1,338 @@
+[
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-s005",
+    "title": "Учебный модуль: стоимость доставки",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-s006",
+    "title": "Из требования получается проверка",
+    "purpose": "Проследить связь условия, действия и наблюдаемого результата",
+    "catalog": "свободная схема",
+    "representation": "process"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-s011",
+    "title": "Одна ситуация — три уровня",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-s017",
+    "title": "Статус и допустимый вывод",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-s005",
+    "title": "Ожидание можно проверить",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-s010",
+    "title": "Тест-кейс включения порога",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-s012",
+    "title": "Из расплывчатого шага в точный",
+    "purpose": "Проследить связь условия, действия и наблюдаемого результата",
+    "catalog": "свободная схема",
+    "representation": "process"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-s017",
+    "title": "Учебный протокол прогона",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-s005",
+    "title": "Классы учебного тарифа",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-s010",
+    "title": "Минимальный набор представителей",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-s012",
+    "title": "Вход и ожидаемое исключение",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-s017",
+    "title": "Изолированные проверки total(count, price)",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-s005",
+    "title": "Порог бесплатной доставки",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-s006",
+    "title": "Ограниченный диапазон 1…10",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-s011",
+    "title": "Различаем входы доставки",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-s016",
+    "title": "Карточка DEF-01",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-s018",
+    "title": "Жизнь найденного расхождения",
+    "purpose": "Проследить связь условия, действия и наблюдаемого результата",
+    "catalog": "свободная схема",
+    "representation": "process"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-s005",
+    "title": "Подготовка → действие → проверка",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-s006",
+    "title": "Ручной случай и исполняемый тест",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-s010",
+    "title": "Связанный набор граничных случаев",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-s011",
+    "title": "Исключение — ожидаемый результат",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-s017",
+    "title": "Успешное резервирование",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-s018",
+    "title": "Отклонённый запрос не меняет остаток",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-s005",
+    "title": "Какие условия контролируются",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-s006",
+    "title": "Разделение ответственности",
+    "purpose": "Проследить связь условия, действия и наблюдаемого результата",
+    "catalog": "свободная схема",
+    "representation": "process"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-s010",
+    "title": "Внешний источник передаётся параметром",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-s011",
+    "title": "Заглушка возвращает известный ответ",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-s016",
+    "title": "Проверка результата на настоящем модуле",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-s017",
+    "title": "Воспроизводимый отказ зависимости",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-s018",
+    "title": "Сила и границы свидетельств",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-s005",
+    "title": "Запуск из папки examples",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-s006",
+    "title": "Почему «OK» может быть недостаточно",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-s010",
+    "title": "Основные исходы unittest",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-s011",
+    "title": "Пример отчёта о расхождении",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-s016",
+    "title": "Тест, проходящий при неверной доставке",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-s018",
+    "title": "Какой вход различит реализации",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-s005",
+    "title": "Из сообщения в данные воспроизведения",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-s006",
+    "title": "Сужение воспроизведения",
+    "purpose": "Проследить связь условия, действия и наблюдаемого результата",
+    "catalog": "свободная схема",
+    "representation": "process"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-s010",
+    "title": "Регрессионный тест для порога",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-s011",
+    "title": "Две цели после изменения",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-s016",
+    "title": "Комплект результатов",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-s018",
+    "title": "Маршрут сдачи исправления",
+    "purpose": "Проследить связь условия, действия и наблюдаемого результата",
+    "catalog": "свободная схема",
+    "representation": "process"
+  }
+]
