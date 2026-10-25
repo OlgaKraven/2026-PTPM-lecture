@@ -41,7 +41,7 @@ export function structure(seed,li){
   activities.push({id:passport.id,revision:'okfks-structure-v2',lectureId:id,number:q,title:seed.questions[qi],task,check:d.conclusion[1],referenceSlideIds:[logic.id,example.id],exerciseSpec:{slideId:`${passport.id}-case`,catalogId:'TAB-01',kind:'source',title:'Данные самостоятельной задачи',overview:visual.caption,scope:'Сопоставление данных по заданному контракту.',visual,defaultScenario:'case',scenarios:[{id:'case',label:'Самостоятельный случай',condition:task,frames:[{caption:visual.caption,focus:[]},...facts.map((text,i)=>({caption:text,focus:[`row${i}`]}))]}]},decision:d.choice[0],options:choiceOrder.map(i=>sourceOptions[i]),correct:choiceOrder.indexOf(0),solution:activity.answer,hint:`Вернитесь к условию: ${facts[0]} Сопоставьте требуемый результат с фактическими данными. Не подменяйте наблюдение предположением.`})
   const correctId=single.key.correct[0]
   const builtActivity=activities.at(-1)
-  builtActivity.revision=independent?'subject-cases-v4':'subject-cases-v3'
+  builtActivity.revision=passport.id==='s04-02-test-cases-s007'?'subject-cases-v5':independent?'subject-cases-v4':'subject-cases-v3'
   builtActivity.solutionCode=solutionCode[passport.id]
   builtActivity.exerciseSpec.scenarios[0].frames=[{caption:visual.caption,focus:[]},...caseData.steps.map((caption,i)=>({caption,focus:[`row${i}`]}))]
   builtActivity.hint=caseData.steps.at(-1)+' Сверьте конкретные вход, правило и наблюдение в таблице; одного внешнего сходства результата недостаточно.'
