@@ -1,0 +1,530 @@
+[
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "questionId": "s04-01-testing-purpose-q1",
+    "title": "Что проверяют у модуля",
+    "outcome": "Зафиксируйте объект, допустимый вход, исходное состояние и наблюдаемый результат. Для тарифа это цена в рублях; для резерва — сигнал и остаток. В выводе перечисляйте подтверждённые свойства, не расширяя их на весь модуль.",
+    "explanationIds": [
+      "s04-01-testing-purpose-s003",
+      "s04-01-testing-purpose-s004",
+      "s04-01-testing-purpose-s005",
+      "s04-01-testing-purpose-s006",
+      "s04-01-testing-purpose-q1-changed",
+      "s04-01-testing-purpose-q1-error",
+      "s04-01-testing-purpose-q1-conclusion"
+    ],
+    "activityId": "s04-01-testing-purpose-s007",
+    "taskIds": [
+      "s04-01-testing-purpose-s008-task",
+      "s04-01-testing-purpose-q1-multiple-task",
+      "s04-01-testing-purpose-q1-short-task",
+      "s04-01-testing-purpose-q1-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "questionId": "s04-01-testing-purpose-q2",
+    "title": "Ошибка, дефект и отказ",
+    "outcome": "В документе и коде ищут недостаток, при выполнении наблюдают отказ, а действие человека называют ошибкой при наличии сведений о нём. Наблюдение результата и гипотеза причины остаются отдельными записями.",
+    "explanationIds": [
+      "s04-01-testing-purpose-s009",
+      "s04-01-testing-purpose-s010",
+      "s04-01-testing-purpose-s011",
+      "s04-01-testing-purpose-s012",
+      "s04-01-testing-purpose-q2-changed",
+      "s04-01-testing-purpose-q2-error",
+      "s04-01-testing-purpose-q2-conclusion"
+    ],
+    "activityId": "s04-01-testing-purpose-s013",
+    "taskIds": [
+      "s04-01-testing-purpose-s014-task",
+      "s04-01-testing-purpose-q2-multiple-task",
+      "s04-01-testing-purpose-q2-short-task",
+      "s04-01-testing-purpose-q2-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "questionId": "s04-01-testing-purpose-q3",
+    "title": "Какие выводы позволяет сделать тестирование",
+    "outcome": "Сообщите проверенные входы, соответствие ожиданиям и непроверенные условия. Число успешных запусков не заменяет охват разных правил. Дефект, найденный одним входом, опровергает правильность этого поведения; успешный набор не доказывает отсутствие всех дефектов.",
+    "explanationIds": [
+      "s04-01-testing-purpose-s015",
+      "s04-01-testing-purpose-s016",
+      "s04-01-testing-purpose-s017",
+      "s04-01-testing-purpose-s018",
+      "s04-01-testing-purpose-q3-changed",
+      "s04-01-testing-purpose-q3-error",
+      "s04-01-testing-purpose-q3-conclusion"
+    ],
+    "activityId": "s04-01-testing-purpose-s019",
+    "taskIds": [
+      "s04-01-testing-purpose-s020-task",
+      "s04-01-testing-purpose-q3-multiple-task",
+      "s04-01-testing-purpose-q3-short-task",
+      "s04-01-testing-purpose-q3-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "questionId": "s04-02-test-cases-q1",
+    "title": "От требования к ожидаемому результату",
+    "outcome": "Ожидание задаёт наблюдаемый объект, нужное значение или свойство и основание. Оно должно позволять двум исполнителям вынести одинаковый вердикт. Неясный участок требования оформляется вопросом, а не произвольным ожидаемым результатом.",
+    "explanationIds": [
+      "s04-02-test-cases-s003",
+      "s04-02-test-cases-s004",
+      "s04-02-test-cases-s005",
+      "s04-02-test-cases-s006",
+      "s04-02-test-cases-q1-changed",
+      "s04-02-test-cases-q1-error",
+      "s04-02-test-cases-q1-conclusion"
+    ],
+    "activityId": "s04-02-test-cases-s007",
+    "taskIds": [
+      "s04-02-test-cases-s008-task",
+      "s04-02-test-cases-q1-multiple-task",
+      "s04-02-test-cases-q1-short-task",
+      "s04-02-test-cases-q1-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "questionId": "s04-02-test-cases-q2",
+    "title": "Как описать воспроизводимые шаги",
+    "outcome": "Предусловия обеспечивают нужное состояние, шаги описывают конкретные действия, ожидания — наблюдения после них. Независимый случай заново устанавливает исходные данные. Последовательность сохраняют только тогда, когда она является предметом проверки.",
+    "explanationIds": [
+      "s04-02-test-cases-s009",
+      "s04-02-test-cases-s010",
+      "s04-02-test-cases-s011",
+      "s04-02-test-cases-s012",
+      "s04-02-test-cases-q2-changed",
+      "s04-02-test-cases-q2-error",
+      "s04-02-test-cases-q2-conclusion"
+    ],
+    "activityId": "s04-02-test-cases-s013",
+    "taskIds": [
+      "s04-02-test-cases-s014-task",
+      "s04-02-test-cases-q2-multiple-task",
+      "s04-02-test-cases-q2-short-task",
+      "s04-02-test-cases-q2-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "questionId": "s04-02-test-cases-q3",
+    "title": "Как фиксировать выполнение теста",
+    "outcome": "Сохраняйте реализацию, входы, состав набора, ожидания, факты и статусы каждого запуска. Перепроверка исправления и регрессия решают разные задачи. Не затирайте прежний отказ успешной строкой: связь двух свидетельств объясняет результат исправления.",
+    "explanationIds": [
+      "s04-02-test-cases-s015",
+      "s04-02-test-cases-s016",
+      "s04-02-test-cases-s017",
+      "s04-02-test-cases-s018",
+      "s04-02-test-cases-q3-changed",
+      "s04-02-test-cases-q3-error",
+      "s04-02-test-cases-q3-conclusion"
+    ],
+    "activityId": "s04-02-test-cases-s019",
+    "taskIds": [
+      "s04-02-test-cases-s020-task",
+      "s04-02-test-cases-q3-multiple-task",
+      "s04-02-test-cases-q3-short-task",
+      "s04-02-test-cases-q3-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "questionId": "s04-03-equivalence-q1",
+    "title": "Как разбить область входов",
+    "outcome": "Укажите область рассмотрения, критерий объединения и ожидаемое поведение. Проверьте границы, пропуски и пересечения. Допустимость типа, допустимость диапазона и тарифное правило могут потребовать разных уровней разбиения.",
+    "explanationIds": [
+      "s04-03-equivalence-s003",
+      "s04-03-equivalence-s004",
+      "s04-03-equivalence-s005",
+      "s04-03-equivalence-s006",
+      "s04-03-equivalence-q1-changed",
+      "s04-03-equivalence-q1-error",
+      "s04-03-equivalence-q1-conclusion"
+    ],
+    "activityId": "s04-03-equivalence-s007",
+    "taskIds": [
+      "s04-03-equivalence-s008-task",
+      "s04-03-equivalence-q1-multiple-task",
+      "s04-03-equivalence-q1-short-task",
+      "s04-03-equivalence-q1-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "questionId": "s04-03-equivalence-q2",
+    "title": "Как выбрать представителей классов",
+    "outcome": "Для каждого входа запишите класс и ожидание. Несколько близких значений одного класса не заменяют представителя другого. Специальные случаи добавляйте по риску, а границы исследуйте отдельной техникой.",
+    "explanationIds": [
+      "s04-03-equivalence-s009",
+      "s04-03-equivalence-s010",
+      "s04-03-equivalence-s011",
+      "s04-03-equivalence-s012",
+      "s04-03-equivalence-q2-changed",
+      "s04-03-equivalence-q2-error",
+      "s04-03-equivalence-q2-conclusion"
+    ],
+    "activityId": "s04-03-equivalence-s013",
+    "taskIds": [
+      "s04-03-equivalence-s014-task",
+      "s04-03-equivalence-q2-multiple-task",
+      "s04-03-equivalence-q2-short-task",
+      "s04-03-equivalence-q2-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "questionId": "s04-03-equivalence-q3",
+    "title": "Как сочетать несколько входных параметров",
+    "outcome": "Отдельный неверный класс проверяют при допустимых остальных параметрах. Совместные правила исследуют таблицей сочетаний. В плане различайте охват классов каждого входа и проверку их совместного влияния.",
+    "explanationIds": [
+      "s04-03-equivalence-s015",
+      "s04-03-equivalence-s016",
+      "s04-03-equivalence-s017",
+      "s04-03-equivalence-s018",
+      "s04-03-equivalence-q3-changed",
+      "s04-03-equivalence-q3-error",
+      "s04-03-equivalence-q3-conclusion"
+    ],
+    "activityId": "s04-03-equivalence-s019",
+    "taskIds": [
+      "s04-03-equivalence-s020-task",
+      "s04-03-equivalence-q3-multiple-task",
+      "s04-03-equivalence-q3-short-task",
+      "s04-03-equivalence-q3-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "questionId": "s04-04-boundaries-and-defects-q1",
+    "title": "Как исследовать границы диапазона",
+    "outcome": "Укажите тип, единицу и шаг данных. Для целой границы проверьте её саму и соседей по обе стороны. Ожидаемое поведение каждой точки следует из включения границы; проверки типов выполняются отдельно.",
+    "explanationIds": [
+      "s04-04-boundaries-and-defects-s003",
+      "s04-04-boundaries-and-defects-s004",
+      "s04-04-boundaries-and-defects-s005",
+      "s04-04-boundaries-and-defects-s006",
+      "s04-04-boundaries-and-defects-q1-changed",
+      "s04-04-boundaries-and-defects-q1-error",
+      "s04-04-boundaries-and-defects-q1-conclusion"
+    ],
+    "activityId": "s04-04-boundaries-and-defects-s007",
+    "taskIds": [
+      "s04-04-boundaries-and-defects-s008-task",
+      "s04-04-boundaries-and-defects-q1-multiple-task",
+      "s04-04-boundaries-and-defects-q1-short-task",
+      "s04-04-boundaries-and-defects-q1-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "questionId": "s04-04-boundaries-and-defects-q2",
+    "title": "Как проверять недопустимые данные",
+    "outcome": "Для недопустимого входа заранее задают сигнал отказа и допустимые последствия для состояния. Ошибка должна возникнуть по предусмотренному правилу; нежелательное изменение объекта остаётся расхождением даже при правильном сигнале.",
+    "explanationIds": [
+      "s04-04-boundaries-and-defects-s009",
+      "s04-04-boundaries-and-defects-s010",
+      "s04-04-boundaries-and-defects-s011",
+      "s04-04-boundaries-and-defects-s012",
+      "s04-04-boundaries-and-defects-q2-changed",
+      "s04-04-boundaries-and-defects-q2-error",
+      "s04-04-boundaries-and-defects-q2-conclusion"
+    ],
+    "activityId": "s04-04-boundaries-and-defects-s013",
+    "taskIds": [
+      "s04-04-boundaries-and-defects-s014-task",
+      "s04-04-boundaries-and-defects-q2-multiple-task",
+      "s04-04-boundaries-and-defects-q2-short-task",
+      "s04-04-boundaries-and-defects-q2-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "questionId": "s04-04-boundaries-and-defects-q3",
+    "title": "Как оформить воспроизводимый дефект",
+    "outcome": "Краткий заголовок называет условие и нарушение; далее идут среда, подготовка, шаги, ожидание, факт и свидетельство. Важность объясняется влиянием, приоритет — контекстом устранения. Закрытие требует проверки исправления.",
+    "explanationIds": [
+      "s04-04-boundaries-and-defects-s015",
+      "s04-04-boundaries-and-defects-s016",
+      "s04-04-boundaries-and-defects-s017",
+      "s04-04-boundaries-and-defects-s018",
+      "s04-04-boundaries-and-defects-q3-changed",
+      "s04-04-boundaries-and-defects-q3-error",
+      "s04-04-boundaries-and-defects-q3-conclusion"
+    ],
+    "activityId": "s04-04-boundaries-and-defects-s019",
+    "taskIds": [
+      "s04-04-boundaries-and-defects-s020-task",
+      "s04-04-boundaries-and-defects-q3-multiple-task",
+      "s04-04-boundaries-and-defects-q3-short-task",
+      "s04-04-boundaries-and-defects-q3-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "questionId": "s05-01-unit-tests-q1",
+    "title": "Как устроен модульный тест",
+    "outcome": "Подготовьте вход, выполните настоящий вызов и сравните наблюдение с независимым ожиданием. Имя теста называет правило и условие; найденный загрузчиком случай должен действительно выполнить утверждение. Само наличие файла ещё не является свидетельством поведения.",
+    "explanationIds": [
+      "s05-01-unit-tests-s003",
+      "s05-01-unit-tests-s004",
+      "s05-01-unit-tests-s005",
+      "s05-01-unit-tests-s006",
+      "s05-01-unit-tests-q1-changed",
+      "s05-01-unit-tests-q1-error",
+      "s05-01-unit-tests-q1-conclusion"
+    ],
+    "activityId": "s05-01-unit-tests-s007",
+    "taskIds": [
+      "s05-01-unit-tests-s008-task",
+      "s05-01-unit-tests-q1-multiple-task",
+      "s05-01-unit-tests-q1-short-task",
+      "s05-01-unit-tests-q1-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "questionId": "s05-01-unit-tests-q2",
+    "title": "Как проверить границы и исключения",
+    "outcome": "Границы проверяются точными значениями, ошибки типа и диапазона — соответствующим исключением. Проверяемый вызов располагается внутри assertRaises. Несколько утверждений допустимы для одного поведения и не подменяют отдельные независимые случаи.",
+    "explanationIds": [
+      "s05-01-unit-tests-s009",
+      "s05-01-unit-tests-s010",
+      "s05-01-unit-tests-s011",
+      "s05-01-unit-tests-s012",
+      "s05-01-unit-tests-q2-changed",
+      "s05-01-unit-tests-q2-error",
+      "s05-01-unit-tests-q2-conclusion"
+    ],
+    "activityId": "s05-01-unit-tests-s013",
+    "taskIds": [
+      "s05-01-unit-tests-s014-task",
+      "s05-01-unit-tests-q2-multiple-task",
+      "s05-01-unit-tests-q2-short-task",
+      "s05-01-unit-tests-q2-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "questionId": "s05-01-unit-tests-q3",
+    "title": "Как проверить состояние объекта",
+    "outcome": "Начните с известного объекта, выполните одно заданное действие и наблюдайте все существенные последствия контракта. Независимые тесты не наследуют изменённый объект друг друга. Последовательность нескольких операций задают явно, если проверяется история состояния.",
+    "explanationIds": [
+      "s05-01-unit-tests-s015",
+      "s05-01-unit-tests-s016",
+      "s05-01-unit-tests-s017",
+      "s05-01-unit-tests-s018",
+      "s05-01-unit-tests-q3-changed",
+      "s05-01-unit-tests-q3-error",
+      "s05-01-unit-tests-q3-conclusion"
+    ],
+    "activityId": "s05-01-unit-tests-s019",
+    "taskIds": [
+      "s05-01-unit-tests-s020-task",
+      "s05-01-unit-tests-q3-multiple-task",
+      "s05-01-unit-tests-q3-short-task",
+      "s05-01-unit-tests-q3-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "questionId": "s05-02-dependencies-q1",
+    "title": "Где проходит граница модульной проверки",
+    "outcome": "Для вычисления передают известные данные; для интеграции используют реальный адаптер и его контракт. В выводе называют контролируемые условия и непроверенные связи. Изолированный успех не доказывает работоспособность всего внешнего маршрута.",
+    "explanationIds": [
+      "s05-02-dependencies-s003",
+      "s05-02-dependencies-s004",
+      "s05-02-dependencies-s005",
+      "s05-02-dependencies-s006",
+      "s05-02-dependencies-q1-changed",
+      "s05-02-dependencies-q1-error",
+      "s05-02-dependencies-q1-conclusion"
+    ],
+    "activityId": "s05-02-dependencies-s007",
+    "taskIds": [
+      "s05-02-dependencies-s008-task",
+      "s05-02-dependencies-q1-multiple-task",
+      "s05-02-dependencies-q1-short-task",
+      "s05-02-dependencies-q1-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "questionId": "s05-02-dependencies-q2",
+    "title": "Как сделать зависимость управляемой",
+    "outcome": "Явно переданный источник возвращает управляемый ответ на определённый запрос. Он не заменяет проверяемое поведение. Аргументы, единицы результата и виды отказа источника составляют контракт, который используют и модуль, и тестовый заменитель.",
+    "explanationIds": [
+      "s05-02-dependencies-s009",
+      "s05-02-dependencies-s010",
+      "s05-02-dependencies-s011",
+      "s05-02-dependencies-s012",
+      "s05-02-dependencies-q2-changed",
+      "s05-02-dependencies-q2-error",
+      "s05-02-dependencies-q2-conclusion"
+    ],
+    "activityId": "s05-02-dependencies-s013",
+    "taskIds": [
+      "s05-02-dependencies-s014-task",
+      "s05-02-dependencies-q2-multiple-task",
+      "s05-02-dependencies-q2-short-task",
+      "s05-02-dependencies-q2-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "questionId": "s05-02-dependencies-q3",
+    "title": "Что подтверждает тест с заглушкой",
+    "outcome": "В тесте с заглушкой проверьте известный ответ, важный аргумент и предусмотренный отказ. Затем отдельно оцените настоящую связь с источником. В заключении разделяйте проверенные свойства расчёта и предположения о внешнем сервисе.",
+    "explanationIds": [
+      "s05-02-dependencies-s015",
+      "s05-02-dependencies-s016",
+      "s05-02-dependencies-s017",
+      "s05-02-dependencies-s018",
+      "s05-02-dependencies-q3-changed",
+      "s05-02-dependencies-q3-error",
+      "s05-02-dependencies-q3-conclusion"
+    ],
+    "activityId": "s05-02-dependencies-s019",
+    "taskIds": [
+      "s05-02-dependencies-s020-task",
+      "s05-02-dependencies-q3-multiple-task",
+      "s05-02-dependencies-q3-short-task",
+      "s05-02-dependencies-q3-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "questionId": "s05-03-suite-quality-q1",
+    "title": "Как запустить нужный набор целиком",
+    "outcome": "Проверяйте рабочую папку, шаблон имён, список случаев и итог. Для отдельной диагностики используйте модуль или метод, для сдачи — весь выбранный набор. Нулевой запуск не даёт свидетельства о поведении программы.",
+    "explanationIds": [
+      "s05-03-suite-quality-s003",
+      "s05-03-suite-quality-s004",
+      "s05-03-suite-quality-s005",
+      "s05-03-suite-quality-s006",
+      "s05-03-suite-quality-q1-changed",
+      "s05-03-suite-quality-q1-error",
+      "s05-03-suite-quality-q1-conclusion"
+    ],
+    "activityId": "s05-03-suite-quality-s007",
+    "taskIds": [
+      "s05-03-suite-quality-s008-task",
+      "s05-03-suite-quality-q1-multiple-task",
+      "s05-03-suite-quality-q1-short-task",
+      "s05-03-suite-quality-q1-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "questionId": "s05-03-suite-quality-q2",
+    "title": "Как читать результат прогона",
+    "outcome": "Свяжите имя теста, ожидание, фактический результат или traceback и условия запуска. FAIL, ERROR и skipped имеют разный смысл. Невыполненные части остаются неизвестными; сравнение прогонов требует одинакового или явно сопоставленного состава.",
+    "explanationIds": [
+      "s05-03-suite-quality-s009",
+      "s05-03-suite-quality-s010",
+      "s05-03-suite-quality-s011",
+      "s05-03-suite-quality-s012",
+      "s05-03-suite-quality-q2-changed",
+      "s05-03-suite-quality-q2-error",
+      "s05-03-suite-quality-q2-conclusion"
+    ],
+    "activityId": "s05-03-suite-quality-s013",
+    "taskIds": [
+      "s05-03-suite-quality-s014-task",
+      "s05-03-suite-quality-q2-multiple-task",
+      "s05-03-suite-quality-q2-short-task",
+      "s05-03-suite-quality-q2-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "questionId": "s05-03-suite-quality-q3",
+    "title": "Как обнаружить слабый тест",
+    "outcome": "Выберите правдоподобный дефект, найдите различающий вход и независимое ожидание. Подтвердите неуспех на дефектном варианте, восстановите правильный код и повторите набор. Не ослабляйте критерий ради зелёного результата.",
+    "explanationIds": [
+      "s05-03-suite-quality-s015",
+      "s05-03-suite-quality-s016",
+      "s05-03-suite-quality-s017",
+      "s05-03-suite-quality-s018",
+      "s05-03-suite-quality-q3-changed",
+      "s05-03-suite-quality-q3-error",
+      "s05-03-suite-quality-q3-conclusion"
+    ],
+    "activityId": "s05-03-suite-quality-s019",
+    "taskIds": [
+      "s05-03-suite-quality-s020-task",
+      "s05-03-suite-quality-q3-multiple-task",
+      "s05-03-suite-quality-q3-short-task",
+      "s05-03-suite-quality-q3-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "questionId": "s05-04-maintenance-q1",
+    "title": "Как воспроизвести обращение пользователя",
+    "outcome": "Зафиксируйте входы, состояние, порядок и реализацию. Отделите требуемое поведение от пожелания, наблюдение от предполагаемой причины. Сокращайте сценарий только пока сохраняется исходное проявление; неизвестные условия остаются вопросами.",
+    "explanationIds": [
+      "s05-04-maintenance-s003",
+      "s05-04-maintenance-s004",
+      "s05-04-maintenance-s005",
+      "s05-04-maintenance-s006",
+      "s05-04-maintenance-q1-changed",
+      "s05-04-maintenance-q1-error",
+      "s05-04-maintenance-q1-conclusion"
+    ],
+    "activityId": "s05-04-maintenance-s007",
+    "taskIds": [
+      "s05-04-maintenance-s008-task",
+      "s05-04-maintenance-q1-multiple-task",
+      "s05-04-maintenance-q1-short-task",
+      "s05-04-maintenance-q1-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "questionId": "s05-04-maintenance-q2",
+    "title": "Как закрепить исправление тестом",
+    "outcome": "Тест сначала обнаруживает исходное нарушение, затем становится успешным после правки причины. Дополнительно запускают связанные случаи и исходный пользовательский маршрут. История до и после показывает, что исправлен дефект, а не ослаблено ожидание.",
+    "explanationIds": [
+      "s05-04-maintenance-s009",
+      "s05-04-maintenance-s010",
+      "s05-04-maintenance-s011",
+      "s05-04-maintenance-s012",
+      "s05-04-maintenance-q2-changed",
+      "s05-04-maintenance-q2-error",
+      "s05-04-maintenance-q2-conclusion"
+    ],
+    "activityId": "s05-04-maintenance-s013",
+    "taskIds": [
+      "s05-04-maintenance-s014-task",
+      "s05-04-maintenance-q2-multiple-task",
+      "s05-04-maintenance-q2-short-task",
+      "s05-04-maintenance-q2-matching-task"
+    ]
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "questionId": "s05-04-maintenance-q3",
+    "title": "Как передать проверенный результат",
+    "outcome": "Передаются согласованные код, тесты, отчёт и журнал. В заключении называют исправленное поведение, выполненные проверки, пропуски и известные ограничения. Готовность подтверждают свидетельства на окончательной реализации, а не количество созданных файлов.",
+    "explanationIds": [
+      "s05-04-maintenance-s015",
+      "s05-04-maintenance-s016",
+      "s05-04-maintenance-s017",
+      "s05-04-maintenance-s018",
+      "s05-04-maintenance-q3-changed",
+      "s05-04-maintenance-q3-error",
+      "s05-04-maintenance-q3-conclusion"
+    ],
+    "activityId": "s05-04-maintenance-s019",
+    "taskIds": [
+      "s05-04-maintenance-s020-task",
+      "s05-04-maintenance-q3-multiple-task",
+      "s05-04-maintenance-q3-short-task",
+      "s05-04-maintenance-q3-matching-task"
+    ]
+  }
+]

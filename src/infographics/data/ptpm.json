@@ -1,0 +1,805 @@
+[
+  {
+    "slideId": "s04-01-testing-purpose-s006",
+    "catalogId": "PROC-01",
+    "kind": "flow",
+    "title": "Как дефект порога проявляется на входе",
+    "overview": "Показан дефектный вариант amount>3000: 2999 → 300 (верно), 3000 → 300 (ожидалось 0), 3500 → 0 (верно).",
+    "scope": "Учебная трассировка заданного алгоритма. Это модель выполнения, а не запуск Python в браузере.",
+    "nodes": [
+      {
+        "id": "start",
+        "title": "Получить amount, руб.",
+        "kind": "start",
+        "column": 1,
+        "row": 0
+      },
+      {
+        "id": "condition",
+        "title": "amount > 3000?",
+        "kind": "decision",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "yes",
+        "title": "Вернуть 0 рублей",
+        "kind": "action",
+        "column": 0,
+        "row": 2
+      },
+      {
+        "id": "no",
+        "title": "Вернуть 300 рублей",
+        "kind": "action",
+        "column": 2,
+        "row": 2
+      },
+      {
+        "id": "end",
+        "title": "Сопоставить с контрактом",
+        "kind": "end",
+        "column": 1,
+        "row": 3
+      }
+    ],
+    "edges": [
+      {
+        "id": "input",
+        "from": "start",
+        "to": "condition"
+      },
+      {
+        "id": "true",
+        "from": "condition",
+        "to": "yes",
+        "label": "Да"
+      },
+      {
+        "id": "false",
+        "from": "condition",
+        "to": "no",
+        "label": "Нет"
+      },
+      {
+        "id": "yes-end",
+        "from": "yes",
+        "to": "end"
+      },
+      {
+        "id": "no-end",
+        "from": "no",
+        "to": "end"
+      }
+    ],
+    "defaultScenario": "case-1",
+    "scenarios": [
+      {
+        "id": "case-1",
+        "label": "Ниже порога",
+        "condition": "Ниже порога. amount=2999",
+        "frames": [
+          {
+            "caption": "Показан дефектный вариант amount>3000: 2999 → 300 (верно), 3000 → 300 (ожидалось 0), 3500 → 0 (верно).",
+            "focus": []
+          },
+          {
+            "caption": "amount=2999",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "amount > 3000? → Нет.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Нет»: Вернуть 300 рублей.",
+            "focus": [
+              "no"
+            ],
+            "edges": [
+              "false"
+            ]
+          },
+          {
+            "caption": "Факт 300 совпал с ожидаемыми 300.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "no-end"
+            ],
+            "result": "Факт 300 совпал с ожидаемыми 300."
+          }
+        ]
+      },
+      {
+        "id": "case-2",
+        "label": "Ровно порог",
+        "condition": "Ровно порог. amount=3000",
+        "frames": [
+          {
+            "caption": "Показан дефектный вариант amount>3000: 2999 → 300 (верно), 3000 → 300 (ожидалось 0), 3500 → 0 (верно).",
+            "focus": []
+          },
+          {
+            "caption": "amount=3000",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "amount > 3000? → Нет.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Нет»: Вернуть 300 рублей.",
+            "focus": [
+              "no"
+            ],
+            "edges": [
+              "false"
+            ]
+          },
+          {
+            "caption": "Факт 300 расходится с ожидаемым 0.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "no-end"
+            ],
+            "result": "Факт 300 расходится с ожидаемым 0."
+          }
+        ]
+      },
+      {
+        "id": "case-3",
+        "label": "Выше порога",
+        "condition": "Выше порога. amount=3500",
+        "frames": [
+          {
+            "caption": "Показан дефектный вариант amount>3000: 2999 → 300 (верно), 3000 → 300 (ожидалось 0), 3500 → 0 (верно).",
+            "focus": []
+          },
+          {
+            "caption": "amount=3500",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "amount > 3000? → Да.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Да»: Вернуть 0 рублей.",
+            "focus": [
+              "yes"
+            ],
+            "edges": [
+              "true"
+            ]
+          },
+          {
+            "caption": "Факт 0 совпал с ожидаемым 0.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "yes-end"
+            ],
+            "result": "Факт 0 совпал с ожидаемым 0."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slideId": "s04-04-boundaries-and-defects-s006",
+    "catalogId": "PROC-01",
+    "kind": "flow",
+    "title": "Допуск в целочисленный диапазон",
+    "overview": "Учебный диапазон 1…10 включительно: 0 и 11 отклоняются; 1 и 10 допускаются. На бумаге обе ветви видны сразу.",
+    "scope": "Учебная трассировка заданного алгоритма. Это модель выполнения, а не запуск Python в браузере.",
+    "nodes": [
+      {
+        "id": "start",
+        "title": "Получить целое n",
+        "kind": "start",
+        "column": 1,
+        "row": 0
+      },
+      {
+        "id": "condition",
+        "title": "1 ≤ n ≤ 10?",
+        "kind": "decision",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "yes",
+        "title": "Допустить значение",
+        "kind": "action",
+        "column": 0,
+        "row": 2
+      },
+      {
+        "id": "no",
+        "title": "Отклонить: ValueError",
+        "kind": "action",
+        "column": 2,
+        "row": 2
+      },
+      {
+        "id": "end",
+        "title": "Сопоставить с контрактом",
+        "kind": "end",
+        "column": 1,
+        "row": 3
+      }
+    ],
+    "edges": [
+      {
+        "id": "input",
+        "from": "start",
+        "to": "condition"
+      },
+      {
+        "id": "true",
+        "from": "condition",
+        "to": "yes",
+        "label": "Да"
+      },
+      {
+        "id": "false",
+        "from": "condition",
+        "to": "no",
+        "label": "Нет"
+      },
+      {
+        "id": "yes-end",
+        "from": "yes",
+        "to": "end"
+      },
+      {
+        "id": "no-end",
+        "from": "no",
+        "to": "end"
+      }
+    ],
+    "defaultScenario": "case-1",
+    "scenarios": [
+      {
+        "id": "case-1",
+        "label": "Ниже",
+        "condition": "Ниже. n=0",
+        "frames": [
+          {
+            "caption": "Учебный диапазон 1…10 включительно: 0 и 11 отклоняются; 1 и 10 допускаются. На бумаге обе ветви видны сразу.",
+            "focus": []
+          },
+          {
+            "caption": "n=0",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "1 ≤ n ≤ 10? → Нет.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Нет»: Отклонить: ValueError.",
+            "focus": [
+              "no"
+            ],
+            "edges": [
+              "false"
+            ]
+          },
+          {
+            "caption": "0 не принадлежит диапазону: ValueError.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "no-end"
+            ],
+            "result": "0 не принадлежит диапазону: ValueError."
+          }
+        ]
+      },
+      {
+        "id": "case-2",
+        "label": "Нижний конец",
+        "condition": "Нижний конец. n=1",
+        "frames": [
+          {
+            "caption": "Учебный диапазон 1…10 включительно: 0 и 11 отклоняются; 1 и 10 допускаются. На бумаге обе ветви видны сразу.",
+            "focus": []
+          },
+          {
+            "caption": "n=1",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "1 ≤ n ≤ 10? → Да.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Да»: Допустить значение.",
+            "focus": [
+              "yes"
+            ],
+            "edges": [
+              "true"
+            ]
+          },
+          {
+            "caption": "1 принадлежит диапазону: допуск.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "yes-end"
+            ],
+            "result": "1 принадлежит диапазону: допуск."
+          }
+        ]
+      },
+      {
+        "id": "case-3",
+        "label": "Верхний конец",
+        "condition": "Верхний конец. n=10",
+        "frames": [
+          {
+            "caption": "Учебный диапазон 1…10 включительно: 0 и 11 отклоняются; 1 и 10 допускаются. На бумаге обе ветви видны сразу.",
+            "focus": []
+          },
+          {
+            "caption": "n=10",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "1 ≤ n ≤ 10? → Да.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Да»: Допустить значение.",
+            "focus": [
+              "yes"
+            ],
+            "edges": [
+              "true"
+            ]
+          },
+          {
+            "caption": "10 принадлежит диапазону: допуск.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "yes-end"
+            ],
+            "result": "10 принадлежит диапазону: допуск."
+          }
+        ]
+      },
+      {
+        "id": "case-4",
+        "label": "Выше",
+        "condition": "Выше. n=11",
+        "frames": [
+          {
+            "caption": "Учебный диапазон 1…10 включительно: 0 и 11 отклоняются; 1 и 10 допускаются. На бумаге обе ветви видны сразу.",
+            "focus": []
+          },
+          {
+            "caption": "n=11",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "1 ≤ n ≤ 10? → Нет.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Нет»: Отклонить: ValueError.",
+            "focus": [
+              "no"
+            ],
+            "edges": [
+              "false"
+            ]
+          },
+          {
+            "caption": "11 не принадлежит диапазону: ValueError.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "no-end"
+            ],
+            "result": "11 не принадлежит диапазону: ValueError."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slideId": "s05-01-unit-tests-q1-changed",
+    "catalogId": "PROC-01",
+    "kind": "flow",
+    "title": "Как утверждение отличает два результата",
+    "overview": "Для amount=3000 ожидается 0. На факте 0 утверждение успешно; на факте 300 оно даёт FAIL. Печать числа не выполняет это сравнение.",
+    "scope": "Учебная трассировка заданного алгоритма. Это модель выполнения, а не запуск Python в браузере.",
+    "nodes": [
+      {
+        "id": "start",
+        "title": "Вызов delivery_fee(3000)",
+        "kind": "start",
+        "column": 1,
+        "row": 0
+      },
+      {
+        "id": "condition",
+        "title": "actual == 0?",
+        "kind": "decision",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "yes",
+        "title": "Утверждение выполнено",
+        "kind": "action",
+        "column": 0,
+        "row": 2
+      },
+      {
+        "id": "no",
+        "title": "Зарегистрировать FAIL",
+        "kind": "action",
+        "column": 2,
+        "row": 2
+      },
+      {
+        "id": "end",
+        "title": "Сопоставить с контрактом",
+        "kind": "end",
+        "column": 1,
+        "row": 3
+      }
+    ],
+    "edges": [
+      {
+        "id": "input",
+        "from": "start",
+        "to": "condition"
+      },
+      {
+        "id": "true",
+        "from": "condition",
+        "to": "yes",
+        "label": "Да"
+      },
+      {
+        "id": "false",
+        "from": "condition",
+        "to": "no",
+        "label": "Нет"
+      },
+      {
+        "id": "yes-end",
+        "from": "yes",
+        "to": "end"
+      },
+      {
+        "id": "no-end",
+        "from": "no",
+        "to": "end"
+      }
+    ],
+    "defaultScenario": "case-1",
+    "scenarios": [
+      {
+        "id": "case-1",
+        "label": "Правильный результат",
+        "condition": "Правильный результат. actual=0; expected=0",
+        "frames": [
+          {
+            "caption": "Для amount=3000 ожидается 0. На факте 0 утверждение успешно; на факте 300 оно даёт FAIL. Печать числа не выполняет это сравнение.",
+            "focus": []
+          },
+          {
+            "caption": "actual=0; expected=0",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "actual == 0? → Да.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Да»: Утверждение выполнено.",
+            "focus": [
+              "yes"
+            ],
+            "edges": [
+              "true"
+            ]
+          },
+          {
+            "caption": "Тест успешен: 0 == 0.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "yes-end"
+            ],
+            "result": "Тест успешен: 0 == 0."
+          }
+        ]
+      },
+      {
+        "id": "case-2",
+        "label": "Неверный результат",
+        "condition": "Неверный результат. actual=300; expected=0",
+        "frames": [
+          {
+            "caption": "Для amount=3000 ожидается 0. На факте 0 утверждение успешно; на факте 300 оно даёт FAIL. Печать числа не выполняет это сравнение.",
+            "focus": []
+          },
+          {
+            "caption": "actual=300; expected=0",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "actual == 0? → Нет.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Нет»: Зарегистрировать FAIL.",
+            "focus": [
+              "no"
+            ],
+            "edges": [
+              "false"
+            ]
+          },
+          {
+            "caption": "Тест неуспешен: 300 != 0.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "no-end"
+            ],
+            "result": "Тест неуспешен: 300 != 0."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slideId": "s05-02-dependencies-q2-changed",
+    "catalogId": "PROC-01",
+    "kind": "flow",
+    "title": "Передать функцию или число",
+    "overview": "order_total ожидает вызываемый источник. fixed_rate допускает вызов с EUR; результат fixed_rate(\"EUR\") равен 100 и сам по себе не является вызываемым источником.",
+    "scope": "Учебная трассировка заданного алгоритма. Это модель выполнения, а не запуск Python в браузере.",
+    "nodes": [
+      {
+        "id": "start",
+        "title": "Принять rate_source",
+        "kind": "start",
+        "column": 1,
+        "row": 0
+      },
+      {
+        "id": "condition",
+        "title": "Источник вызываемый?",
+        "kind": "decision",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "yes",
+        "title": "Запросить EUR и курс 100",
+        "kind": "action",
+        "column": 0,
+        "row": 2
+      },
+      {
+        "id": "no",
+        "title": "Ошибка вызова источника",
+        "kind": "action",
+        "column": 2,
+        "row": 2
+      },
+      {
+        "id": "end",
+        "title": "Сопоставить с контрактом",
+        "kind": "end",
+        "column": 1,
+        "row": 3
+      }
+    ],
+    "edges": [
+      {
+        "id": "input",
+        "from": "start",
+        "to": "condition"
+      },
+      {
+        "id": "true",
+        "from": "condition",
+        "to": "yes",
+        "label": "Да"
+      },
+      {
+        "id": "false",
+        "from": "condition",
+        "to": "no",
+        "label": "Нет"
+      },
+      {
+        "id": "yes-end",
+        "from": "yes",
+        "to": "end"
+      },
+      {
+        "id": "no-end",
+        "from": "no",
+        "to": "end"
+      }
+    ],
+    "defaultScenario": "case-1",
+    "scenarios": [
+      {
+        "id": "case-1",
+        "label": "Передана функция",
+        "condition": "Передана функция. rate_source=fixed_rate",
+        "frames": [
+          {
+            "caption": "order_total ожидает вызываемый источник. fixed_rate допускает вызов с EUR; результат fixed_rate(\"EUR\") равен 100 и сам по себе не является вызываемым источником.",
+            "focus": []
+          },
+          {
+            "caption": "rate_source=fixed_rate",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "Источник вызываемый? → Да.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Да»: Запросить EUR и курс 100.",
+            "focus": [
+              "yes"
+            ],
+            "edges": [
+              "true"
+            ]
+          },
+          {
+            "caption": "Источник вызван с EUR; 20 × 100 = 2000 рублей.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "yes-end"
+            ],
+            "result": "Источник вызван с EUR; 20 × 100 = 2000 рублей."
+          }
+        ]
+      },
+      {
+        "id": "case-2",
+        "label": "Передан результат",
+        "condition": "Передан результат. rate_source=100",
+        "frames": [
+          {
+            "caption": "order_total ожидает вызываемый источник. fixed_rate допускает вызов с EUR; результат fixed_rate(\"EUR\") равен 100 и сам по себе не является вызываемым источником.",
+            "focus": []
+          },
+          {
+            "caption": "rate_source=100",
+            "focus": [
+              "start"
+            ]
+          },
+          {
+            "caption": "Источник вызываемый? → Нет.",
+            "focus": [
+              "condition"
+            ],
+            "edges": [
+              "input"
+            ]
+          },
+          {
+            "caption": "Выбрана ветвь «Нет»: Ошибка вызова источника.",
+            "focus": [
+              "no"
+            ],
+            "edges": [
+              "false"
+            ]
+          },
+          {
+            "caption": "Число нельзя вызвать как функцию: ожидается TypeError.",
+            "focus": [
+              "end"
+            ],
+            "edges": [
+              "no-end"
+            ],
+            "result": "Число нельзя вызвать как функцию: ожидается TypeError."
+          }
+        ]
+      }
+    ]
+  }
+]
