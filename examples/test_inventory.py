@@ -6,13 +6,13 @@ class CartTests(unittest.TestCase):
     def test_reserve_changes_stock(self):
         cart = Cart(stock=6)
         accepted = cart.reserve(2)
-        self.assertTrue(accepted)
+        self.assertIs(accepted, True)
         self.assertEqual(cart.stock, 4)
 
     def test_insufficient_stock_is_unchanged(self):
         cart = Cart(stock=4)
         accepted = cart.reserve(5)
-        self.assertFalse(accepted)
+        self.assertIs(accepted, False)
         self.assertEqual(cart.stock, 4)
 
     def test_zero_is_rejected_without_changes(self):
@@ -29,7 +29,7 @@ class CartTests(unittest.TestCase):
 
     def test_exact_stock_is_allowed(self):
         cart = Cart(stock=4)
-        self.assertTrue(cart.reserve(4))
+        self.assertIs(cart.reserve(4), True)
         self.assertEqual(cart.stock, 0)
 
     def test_instances_are_independent(self):

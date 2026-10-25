@@ -9,7 +9,7 @@ export function TaskReview({course,base,href,onClose}:{course:Course;base:string
  const ref=useRef<HTMLDialogElement>(null),audience=presentationRole().mode==='audience'
  const params=new URL(href,location.href).searchParams
  const [scroll,setScroll]=usePresentationSync(`${course.id}:${params.get('lecture')}:${params.get('question')}:review-scroll`,()=>0,(value):value is number=>typeof value==='number'&&Number.isFinite(value)&&value>=0&&value<=1)
- useEffect(()=>{const dialog=ref.current;dialog?.showModal();dialog?.focus({preventScroll:true});if(dialog)dialog.scrollTop=0;return()=>dialog?.close()},[])
+ useEffect(()=>{const trigger=document.activeElement instanceof HTMLElement?document.activeElement:null,dialog=ref.current;dialog?.showModal();dialog?.focus({preventScroll:true});if(dialog)dialog.scrollTop=0;return()=>{dialog?.close();queueMicrotask(()=>{if(trigger?.isConnected)trigger.focus({preventScroll:true})})}},[])
  useEffect(()=>{
   if(!audience||!ref.current)return
   const dialog=ref.current,update=()=>{dialog.scrollTop=scroll*Math.max(0,dialog.scrollHeight-dialog.clientHeight)}

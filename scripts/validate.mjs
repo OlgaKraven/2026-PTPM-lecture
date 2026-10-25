@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import assert from 'node:assert/strict'
 import {validateCourse} from '@olgakraven/lecture-engine'
+import {authoredDiagrams} from '../authoring/diagrams.mjs'
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'))
 const c=read('public/course.json'),p=read('public/teaching/notes.json'),a=read('public/assessment.json'),supplements=read('public/question-supplements.json')
 validateCourse(c)
@@ -26,6 +27,8 @@ for(const l of c.lectures){
   assert(!ids.has(s.id));ids.add(s.id)
   assert(p.notes[s.id],s.id)
   assert(p.notes[s.id].script.trim(),s.id)
+  assert(!p.notes[s.id].script.includes('Предложите сопоставить это правило'),`Шаблон вместо речи: ${s.id}`)
+  if(s.kind==='materials'){assert(s.supplement?.href);assert(fs.existsSync(`public/${s.supplement.href}`),`Недоступен учебный архив: ${s.id}`)}
   assert.equal(p.notes[s.id].notebook,s.notebook||'')
   if(s.task){
    const key=a.keys[s.task.id];assert(key)
@@ -37,6 +40,7 @@ for(const l of c.lectures){
     if(s.task.type==='multiple')assert.equal(s.task.choose,key.correct.length)
    }
    if(s.task.type==='short')assert(key.numeric||key.accepted?.length)
+   assert(!key.explanation?.includes('числовой допуск'),'Служебная формулировка вместо предметного разбора')
    if(s.task.type==='matching'){
     assert.equal(s.task.items.length,4);assert.equal(options.length,4)
     assert(s.task.items.every(item=>options.some(o=>o.id===key.pairs[item.id])))
@@ -50,6 +54,15 @@ for(const l of c.lectures){
 assert.equal(ids.size,Object.keys(p.notes).length)
 assert.equal(c.id,p.courseId);assert.equal(c.contentVersion,p.contentVersion)
 assert.equal(supplements.activities.length,24)
-for(const activity of supplements.activities){assert(activity.options[activity.correct]);assert(activity.solution.trim());assert(activity.exerciseSpec.scenarios[0].frames.length>1)}
+for(const activity of supplements.activities){
+ assert(activity.options[activity.correct]);assert(activity.solution.trim())
+ const model=activity.exerciseSpec
+ assert.equal(model.scenarios[0].frames.length,model.visual.rows.length+1)
+ assert(!model.visual.columns.includes('Наблюдение или условие'),'Разбиение предложений вместо предметных данных')
+ assert(model.visual.rows.every(row=>row.length===model.visual.columns.length))
+}
+const range=authoredDiagrams.find(s=>s.slideId==='s04-04-boundaries-and-defects-s006')
+for(const n of [0,1,2,9,10,11])assert(range.scenarios.some(s=>s.condition.endsWith(`n=${n}`)),`Нет точки трёхточечного набора: ${n}`)
+assert(fs.readFileSync('public/downloads/ptpm-examples.zip').subarray(0,2).toString()==='PK')
 for(const path of [c.logo,c.mascot,c.font,c.topicArrow])assert(fs.existsSync(`public/${path}`),path)
 console.log(`Validated ${ids.size} slides and notes, ${Object.keys(a.keys).length} assessment keys`)

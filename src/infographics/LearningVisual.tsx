@@ -20,7 +20,7 @@ function validState(spec:Spec,value:unknown):value is Snapshot{
 function Dialog({children,onClose,controlled,syncId}:{children:ReactNode;onClose:()=>void;controlled:boolean;syncId:string}){
   const ref=useRef<HTMLDialogElement>(null)
   const [scroll,setScroll]=usePresentationSync(`${syncId}:diagram-scroll`,()=>0,(value):value is number=>typeof value==='number'&&Number.isFinite(value)&&value>=0&&value<=1)
-  useEffect(()=>{ref.current?.showModal();return()=>{ref.current?.close()}},[])
+  useEffect(()=>{const trigger=document.activeElement instanceof HTMLElement?document.activeElement:null;ref.current?.showModal();return()=>{ref.current?.close();queueMicrotask(()=>{if(trigger?.isConnected)trigger.focus({preventScroll:true})})}},[])
   useEffect(()=>{
     if(!controlled||!ref.current)return
     const dialog=ref.current,update=()=>{dialog.scrollTop=scroll*Math.max(0,dialog.scrollHeight-dialog.clientHeight)}

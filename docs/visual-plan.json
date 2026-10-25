@@ -195,9 +195,9 @@
     "lectureId": "s05-02-dependencies",
     "slideId": "s05-02-dependencies-s006",
     "title": "Разделение ответственности",
-    "purpose": "Проследить связь условия, действия и наблюдаемого результата",
-    "catalog": "свободная схема",
-    "representation": "process"
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
   },
   {
     "lectureId": "s05-02-dependencies",

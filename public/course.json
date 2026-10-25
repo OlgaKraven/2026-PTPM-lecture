@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2.0.0",
+  "contentVersion": "2.1.0",
   "id": "ptpm",
   "code": "МДК.01.02",
   "discipline": "Поддержка и тестирование программных модулей",
@@ -78,7 +78,11 @@
           "id": "s04-01-testing-purpose-s024",
           "kind": "materials",
           "title": "Материалы к занятиям",
-          "kicker": "Материалы"
+          "kicker": "Материалы",
+          "supplement": {
+            "label": "Учебные примеры Python",
+            "href": "downloads/ptpm-examples.zip"
+          }
         },
         {
           "id": "s04-01-testing-purpose-s002",
@@ -790,7 +794,11 @@
           "id": "s04-02-test-cases-s024",
           "kind": "materials",
           "title": "Материалы к занятиям",
-          "kicker": "Материалы"
+          "kicker": "Материалы",
+          "supplement": {
+            "label": "Учебные примеры Python",
+            "href": "downloads/ptpm-examples.zip"
+          }
         },
         {
           "id": "s04-02-test-cases-s002",
@@ -899,7 +907,7 @@
           "kicker": "Разбор задачи · вопрос 1",
           "id": "s04-02-test-cases-s007",
           "activityPassport": {
-            "task": "Учебное требование: reserve(available, requested) при достаточном остатке уменьшает available на requested и возвращает True. Начальное available=8, requested=3. Замените ожидание «резерв выполнен» проверяемым описанием. Отдельно назовите данные, которые должны быть заданы до вызова.",
+            "task": "Контракт reserve(available, requested): при достаточном остатке уменьшить available на requested и вернуть True. Начальное available=11, requested=4. Замените ожидание «резерв выполнен» проверяемым описанием. Отдельно назовите данные до вызова.",
             "check": "Ожидание задаёт наблюдаемый объект, нужное значение или свойство и основание. Оно должно позволять двум исполнителям вынести одинаковый вердикт. Неясный участок требования оформляется вопросом, а не произвольным ожидаемым результатом.",
             "href": "?mode=question-lab&lecture=s04-02-test-cases&question=1"
           }
@@ -1129,7 +1137,7 @@
           "kicker": "Разбор задачи · вопрос 2",
           "id": "s04-02-test-cases-s013",
           "activityPassport": {
-            "task": "Класс корзины создаётся как Cart(stock=6). Метод reserve(2) при успехе уменьшает stock на 2 и возвращает True. Составьте два независимых случая: успешный резерв 2 и отказ при запросе 7. Для каждого укажите подготовку, вызов, результат и конечный stock.",
+            "task": "Cart создаётся с stock=9. reserve(qty) при успехе уменьшает stock на qty и возвращает True; при нехватке возвращает False и сохраняет stock. Составьте два независимых случая: успешный запрос 4 и отказ запроса 10. Для каждого укажите подготовку, вызов, сигнал и конечный stock.",
             "check": "Предусловия обеспечивают нужное состояние, шаги описывают конкретные действия, ожидания — наблюдения после них. Независимый случай заново устанавливает исходные данные. Последовательность сохраняют только тогда, когда она является предметом проверки.",
             "href": "?mode=question-lab&lecture=s04-02-test-cases&question=2"
           }
@@ -1510,7 +1518,11 @@
           "id": "s04-03-equivalence-s024",
           "kind": "materials",
           "title": "Материалы к занятиям",
-          "kicker": "Материалы"
+          "kicker": "Материалы",
+          "supplement": {
+            "label": "Учебные примеры Python",
+            "href": "downloads/ptpm-examples.zip"
+          }
         },
         {
           "id": "s04-03-equivalence-s002",
@@ -1624,7 +1636,7 @@
           "kicker": "Разбор задачи · вопрос 1",
           "id": "s04-03-equivalence-s007",
           "activityPassport": {
-            "task": "Учебная функция discount(age) принимает только целый возраст 0…120. Для 0…17 возвращает 10%, 18…64 — 0%, 65…120 — 15%. Вне диапазона — ValueError, другой тип — TypeError. Составьте классы без пересечений и укажите ожидание для каждого.",
+            "task": "Учебная функция discount(age) принимает возраст типа int от 0 до 120 (bool запрещён). Для 0…17 возвращает 10%, 18…64 — 0%, 65…120 — 15%. Вне диапазона — ValueError, другой тип — TypeError. Составьте классы без пересечений и укажите ожидание для каждого.",
             "check": "Укажите область рассмотрения, критерий объединения и ожидаемое поведение. Проверьте границы, пропуски и пересечения. Допустимость типа, допустимость диапазона и тарифное правило могут потребовать разных уровней разбиения.",
             "href": "?mode=question-lab&lecture=s04-03-equivalence&question=1"
           }
@@ -2072,7 +2084,7 @@
           "kicker": "Разбор задачи · вопрос 3",
           "id": "s04-03-equivalence-s019",
           "activityPassport": {
-            "task": "Учебное правило: скидка 5% даётся только участнику клуба при сумме заказа ≥5000 рублей; иначе 0%. Укажите ожидаемый процент для четырёх сочетаний: участник/не участник и сумма 4000/6000. Объясните, какие строки обнаружат замену И на ИЛИ.",
+            "task": "Учебное правило: кешбэк 2% начисляется только при подтверждённом статусе покупателя И сумме заказа ≥2000 рублей; иначе 0%. Определите процент для четырёх сочетаний статуса да/нет и суммы 1500/2500. Укажите строки, различающие И и ошибочное ИЛИ.",
             "check": "Отдельный неверный класс проверяют при допустимых остальных параметрах. Совместные правила исследуют таблицей сочетаний. В плане различайте охват классов каждого входа и проверку их совместного влияния.",
             "href": "?mode=question-lab&lecture=s04-03-equivalence&question=3"
           }
@@ -2243,7 +2255,11 @@
           "id": "s04-04-boundaries-and-defects-s024",
           "kind": "materials",
           "title": "Материалы к занятиям",
-          "kicker": "Материалы"
+          "kicker": "Материалы",
+          "supplement": {
+            "label": "Учебные примеры Python",
+            "href": "downloads/ptpm-examples.zip"
+          }
         },
         {
           "id": "s04-04-boundaries-and-defects-s002",
@@ -2584,7 +2600,7 @@
           "kicker": "Разбор задачи · вопрос 2",
           "id": "s04-04-boundaries-and-defects-s013",
           "activityPassport": {
-            "task": "В новом Cart начальный stock=4. reserve(qty) принимает только int>0; для qty≤0 выбрасывает ValueError, для другого типа — TypeError; при ошибке stock сохраняется. Опишите два независимых случая: qty=0 и qty=\"2\". Укажите подготовку, вызов и все наблюдения.",
+            "task": "В новом Cart начальный stock=8. reserve(qty) принимает только int>0; для qty≤0 выбрасывает ValueError, для другого типа — TypeError; при ошибке stock сохраняется. Опишите два независимых случая: qty=−2 и qty=\"3\". Укажите подготовку, вызов и все наблюдения.",
             "check": "Для недопустимого входа заранее задают сигнал отказа и допустимые последствия для состояния. Ошибка должна возникнуть по предусмотренному правилу; нежелательное изменение объекта остаётся расхождением даже при правильном сигнале.",
             "href": "?mode=question-lab&lecture=s04-04-boundaries-and-defects&question=2"
           }
@@ -2989,7 +3005,11 @@
           "id": "s05-01-unit-tests-s024",
           "kind": "materials",
           "title": "Материалы к занятиям",
-          "kicker": "Материалы"
+          "kicker": "Материалы",
+          "supplement": {
+            "label": "Учебные примеры Python",
+            "href": "downloads/ptpm-examples.zip"
+          }
         },
         {
           "id": "s05-01-unit-tests-s002",
@@ -3042,7 +3062,8 @@
               {
                 "label": "Python",
                 "code": "import unittest\nfrom delivery import delivery_fee\n\nclass DeliveryTests(unittest.TestCase):\n    def test_threshold_is_free(self):\n        amount = 3000\n        actual = delivery_fee(amount)\n        self.assertEqual(actual, 0)",
-                "explanation": "Python 3; delivery.py и test_delivery.py расположены в одной папке."
+                "explanation": "Python 3; delivery.py и test_delivery.py расположены в одной папке.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -3249,7 +3270,8 @@
               {
                 "label": "Python",
                 "code": "def test_threshold_neighbours(self):\n    for amount, expected in [(2999, 300),\n                             (3000, 0),\n                             (3001, 0)]:\n        with self.subTest(amount=amount):\n            self.assertEqual(\n                delivery_fee(amount), expected)",
-                "explanation": "Метод находится внутри DeliveryTests; subTest сохраняет имя входа при расхождении."
+                "explanation": "Метод находится внутри DeliveryTests; subTest сохраняет имя входа при расхождении.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -3266,7 +3288,8 @@
               {
                 "label": "Python",
                 "code": "def test_negative_is_rejected(self):\n    with self.assertRaises(ValueError):\n        delivery_fee(-1)\n\ndef test_string_is_rejected(self):\n    with self.assertRaises(TypeError):\n        delivery_fee(\"3000\")",
-                "explanation": "Оба метода находятся в DeliveryTests. Проверяемый вызов расположен внутри контекста assertRaises."
+                "explanation": "Оба метода находятся в DeliveryTests. Проверяемый вызов расположен внутри контекста assertRaises.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -3459,8 +3482,9 @@
             "parts": [
               {
                 "label": "Python",
-                "code": "from inventory import Cart\n\ndef test_reserve_changes_stock(self):\n    cart = Cart(stock=6)\n    accepted = cart.reserve(2)\n    self.assertTrue(accepted)\n    self.assertEqual(cart.stock, 4)",
-                "explanation": "Метод внутри unittest.TestCase; оба assert описывают успешный резерв 2 единиц."
+                "code": "from inventory import Cart\n\ndef test_reserve_changes_stock(self):\n    cart = Cart(stock=6)\n    accepted = cart.reserve(2)\n    self.assertIs(accepted, True)\n    self.assertEqual(cart.stock, 4)",
+                "explanation": "Метод внутри unittest.TestCase; оба assert описывают успешный резерв 2 единиц. assertIs проверяет именно True/False, а не истинность другого значения.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -3476,8 +3500,9 @@
             "parts": [
               {
                 "label": "Python",
-                "code": "def test_insufficient_stock_is_unchanged(self):\n    cart = Cart(stock=4)\n    accepted = cart.reserve(5)\n    self.assertFalse(accepted)\n    self.assertEqual(cart.stock, 4)",
-                "explanation": "Новый объект отделяет случай отказа от предшествующих успешных операций."
+                "code": "def test_insufficient_stock_is_unchanged(self):\n    cart = Cart(stock=4)\n    accepted = cart.reserve(5)\n    self.assertIs(accepted, False)\n    self.assertEqual(cart.stock, 4)",
+                "explanation": "Новый объект отделяет случай отказа от предшествующих успешных операций. assertIs проверяет именно True/False, а не истинность другого значения.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -3684,7 +3709,11 @@
           "id": "s05-02-dependencies-s024",
           "kind": "materials",
           "title": "Материалы к занятиям",
-          "kicker": "Материалы"
+          "kicker": "Материалы",
+          "supplement": {
+            "label": "Учебные примеры Python",
+            "href": "downloads/ptpm-examples.zip"
+          }
         },
         {
           "id": "s05-02-dependencies-s002",
@@ -3763,32 +3792,31 @@
           "kicker": "Логика применения · 1"
         },
         {
-          "kind": "process",
+          "kind": "comparison",
           "title": "Разделение ответственности",
-          "visual": {
-            "type": "process",
-            "items": [
-              {
-                "title": "Источник",
-                "text": "get_rate(\"EUR\") возвращает курс"
-              },
-              {
-                "title": "Модуль",
-                "text": "Стоимость = евро × курс"
-              },
-              {
-                "title": "Модульный тест",
-                "text": "Известный ответ источника и точная сумма"
-              },
-              {
-                "title": "Интеграционный тест",
-                "text": "Реальный формат, соединение и обработка ответа"
-              }
-            ],
-            "caption": "Два вида проверки дополняют друг друга."
-          },
           "id": "s05-02-dependencies-s006",
-          "kicker": "Разбор по шагам · вопрос 1"
+          "kicker": "Разбор по шагам · вопрос 1",
+          "columns": [
+            "Граница проверки",
+            "Источник данных",
+            "Что наблюдаем",
+            "Что остаётся за границей"
+          ],
+          "rows": [
+            [
+              "Расчёт order_total",
+              "Заглушка: EUR → 100 рублей/евро",
+              "20 × 100 = 2000 рублей",
+              "Настоящее соединение и формат ответа"
+            ],
+            [
+              "Адаптер внешнего источника",
+              "Настоящий ответ поставщика",
+              "Запрос EUR, разбор ответа, отказ соединения",
+              "Полнота тарифной логики других модулей"
+            ]
+          ],
+          "body": "Два вида проверки относятся к разным границам; стрелка обязательного порядка между ними не нужна."
         },
         {
           "id": "s05-02-dependencies-q1-changed",
@@ -3818,7 +3846,7 @@
           "kicker": "Разбор задачи · вопрос 1",
           "id": "s05-02-dependencies-s007",
           "activityPassport": {
-            "task": "Функция reminder_due(today, deadline) сравнивает две даты. Другой компонент читает текущую дату из системных часов и вызывает эту функцию. Опишите модульную проверку даты равенства и отдельно назовите то, что она не проверяет. Правило: напоминание нужно при today≥deadline.",
+            "task": "Функция is_expired(now, expires) сравнивает две даты. Срок истёк только при now>expires; в день равенства он ещё не истёк. Другой компонент читает системные часы и вызывает функцию. Опишите модульную проверку равенства дат и отдельно назовите непроверенную внешнюю границу.",
             "check": "Для вычисления передают известные данные; для интеграции используют реальный адаптер и его контракт. В выводе называют контролируемые условия и непроверенные связи. Изолированный успех не доказывает работоспособность всего внешнего маршрута.",
             "href": "?mode=question-lab&lecture=s05-02-dependencies&question=1"
           }
@@ -3960,7 +3988,8 @@
               {
                 "label": "Python",
                 "code": "def order_total(euros, rate_source):\n    rate = rate_source(\"EUR\")\n    return euros * rate",
-                "explanation": "Учебный контракт: euros — целое ≥0; источник возвращает положительный целый курс рублей за евро."
+                "explanation": "Учебный контракт: euros — целое ≥0; источник возвращает положительный целый курс рублей за евро.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -3977,7 +4006,8 @@
               {
                 "label": "Python",
                 "code": "def fixed_rate(currency):\n    if currency != \"EUR\":\n        raise ValueError(\"unsupported currency\")\n    return 100\n\nactual = order_total(20, fixed_rate)\n# actual == 2000",
-                "explanation": "Источник не обращается к сети. Он также отклоняет неожиданный аргумент."
+                "explanation": "Источник не обращается к сети. Он также отклоняет неожиданный аргумент.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -4163,7 +4193,8 @@
               {
                 "label": "Python",
                 "code": "def test_order_total_uses_rate(self):\n    def source(currency):\n        self.assertEqual(currency, \"EUR\")\n        return 100\n    self.assertEqual(order_total(20, source), 2000)",
-                "explanation": "Один сценарий проверяет запрос EUR и итог 2000 при известном ответе."
+                "explanation": "Один сценарий проверяет запрос EUR и итог 2000 при известном ответе.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -4180,7 +4211,8 @@
               {
                 "label": "Python",
                 "code": "def test_source_failure_is_propagated(self):\n    def unavailable(currency):\n        raise ConnectionError(\"offline\")\n    with self.assertRaises(ConnectionError):\n        order_total(20, unavailable)",
-                "explanation": "Учебный контракт сохраняет ConnectionError источника и не возвращает выдуманную сумму."
+                "explanation": "Учебный контракт сохраняет ConnectionError источника и не возвращает выдуманную сумму.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -4245,7 +4277,7 @@
           "kicker": "Разбор задачи · вопрос 3",
           "id": "s05-02-dependencies-s019",
           "activityPassport": {
-            "task": "В тесте source возвращает 100 на любую валюту. Модуль ошибочно запрашивает \"USD\", затем правильно умножает 20×100. Результат теста 2000. Объясните, что пропущено, и предложите изменение заменителя.",
+            "task": "route_total умножает расстояние 12 км на цену от rate_source. По контракту источник должен получить \"km\" и вернуть 20 рублей/км. В тесте он возвращает 20 на любую строку; модуль ошибочно запросил \"mi\", но итог 240 прошёл проверку. Объясните пропуск и измените заменитель.",
             "check": "В тесте с заглушкой проверьте известный ответ, важный аргумент и предусмотренный отказ. Затем отдельно оцените настоящую связь с источником. В заключении разделяйте проверенные свойства расчёта и предположения о внешнем сервисе.",
             "href": "?mode=question-lab&lecture=s05-02-dependencies&question=3"
           }
@@ -4416,7 +4448,11 @@
           "id": "s05-03-suite-quality-s024",
           "kind": "materials",
           "title": "Материалы к занятиям",
-          "kicker": "Материалы"
+          "kicker": "Материалы",
+          "supplement": {
+            "label": "Учебные примеры Python",
+            "href": "downloads/ptpm-examples.zip"
+          }
         },
         {
           "id": "s05-03-suite-quality-s002",
@@ -4467,9 +4503,10 @@
             "type": "codeParts",
             "parts": [
               {
-                "label": "Python",
+                "label": "Команды терминала",
                 "code": "python -m unittest discover -v\n\n# Отдельный модуль:\npython -m unittest test_delivery -v\n\n# Отдельный случай:\npython -m unittest test_delivery.DeliveryTests.test_threshold_is_free -v",
-                "explanation": "Команды выполняются в терминале из папки examples; комментарии # не вводятся как часть имени теста."
+                "explanation": "Команды выполняются в терминале из папки examples; комментарии # не вводятся как часть имени теста.",
+                "language": "shell"
               }
             ],
             "caption": "Учебный пример"
@@ -4708,9 +4745,10 @@
             "type": "codeParts",
             "parts": [
               {
-                "label": "Python",
+                "label": "Пример вывода unittest",
                 "code": "FAIL: test_threshold_is_free\nAssertionError: 300 != 0\n\nRan 12 tests\nFAILED (failures=1)",
-                "explanation": "Учебный фрагмент вывода: это пример чтения отчёта, а не результат текущего запуска."
+                "explanation": "Учебный фрагмент вывода: это пример чтения отчёта, а не результат текущего запуска.",
+                "language": "text"
               }
             ],
             "caption": "Учебный пример"
@@ -4896,7 +4934,8 @@
               {
                 "label": "Python",
                 "code": "def test_delivery_is_nonnegative(self):\n    self.assertGreaterEqual(\n        delivery_fee(3000), 0)\n\n# Дефектная реализация:\ndef delivery_fee(amount):\n    return 300",
-                "explanation": "300 ≥ 0, поэтому слабый тест успешен даже при нарушении бесплатности."
+                "explanation": "300 ≥ 0, поэтому слабый тест успешен даже при нарушении бесплатности.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -4969,7 +5008,7 @@
           "kicker": "Разбор задачи · вопрос 3",
           "id": "s05-03-suite-quality-s019",
           "activityPassport": {
-            "task": "Контракт multiply(a,b): произведение двух целых. Единственный тест assertEqual(multiply(2,2),4). Изменённый код возвращает a+b и тест проходит. Предложите новый вход с точным ожиданием, объясните различие и опишите безопасное завершение опыта.",
+            "task": "Контракт multiply(a,b): произведение двух целых. Единственный тест assertEqual(multiply(0,0),0). Изменённый код возвращает a+b и тест проходит. Предложите новый вход с точным ожиданием, объясните различие и опишите безопасное завершение опыта.",
             "check": "Выберите правдоподобный дефект, найдите различающий вход и независимое ожидание. Подтвердите неуспех на дефектном варианте, восстановите правильный код и повторите набор. Не ослабляйте критерий ради зелёного результата.",
             "href": "?mode=question-lab&lecture=s05-03-suite-quality&question=3"
           }
@@ -5140,7 +5179,11 @@
           "id": "s05-04-maintenance-s024",
           "kind": "materials",
           "title": "Материалы к занятиям",
-          "kicker": "Материалы"
+          "kicker": "Материалы",
+          "supplement": {
+            "label": "Учебные примеры Python",
+            "href": "downloads/ptpm-examples.zip"
+          }
         },
         {
           "id": "s05-04-maintenance-s002",
@@ -5274,7 +5317,7 @@
           "kicker": "Разбор задачи · вопрос 1",
           "id": "s05-04-maintenance-s007",
           "activityPassport": {
-            "task": "Пользователь: «после отказа резервирования товар исчез». Известно: Cart стартует с 4, reserve(5) возвращает False и оставляет −1. По контракту при нехватке stock неизменен. Запишите минимальный сценарий и два наблюдения, которые подтвердят проявление.",
+            "task": "Пользователь: «после отказа резервирования товар исчез». Известно: новый Cart стартует с 9; reserve(12) вернул False и оставил stock=−3. По контракту при нехватке stock сохраняется. Запишите минимальный сценарий и два наблюдения, подтверждающих проявление.",
             "check": "Зафиксируйте входы, состояние, порядок и реализацию. Отделите требуемое поведение от пожелания, наблюдение от предполагаемой причины. Сокращайте сценарий только пока сохраняется исходное проявление; неизвестные условия остаются вопросами.",
             "href": "?mode=question-lab&lecture=s05-04-maintenance&question=1"
           }
@@ -5416,7 +5459,8 @@
               {
                 "label": "Python",
                 "code": "def test_reported_threshold_is_free(self):\n    self.assertEqual(delivery_fee(3000), 0)\n\n# Воспроизводящий дефект: amount > 3000\n# Исправление правила: amount >= 3000",
-                "explanation": "Ожидание получено из требования, а не из результата исправленного кода."
+                "explanation": "Ожидание получено из требования, а не из результата исправленного кода.",
+                "language": "python"
               }
             ],
             "caption": "Учебный пример"
@@ -5489,7 +5533,7 @@
           "kicker": "Разбор задачи · вопрос 2",
           "id": "s05-04-maintenance-s013",
           "activityPassport": {
-            "task": "Исходный дефект: amount>3000. Исправляющий заменил на amount==3000. Для 2999,3000,3001 ожидаются 300,0,0. Вычислите результаты новой реализации, назовите подтверждающую проверку и проверку, блокирующую сдачу.",
+            "task": "Новый учебный тариф service_fee: целая неотрицательная сумма ниже 5000 даёт сбор 200 рублей; от 5000 — 0. Прежний дефект проверял amount>5000; его заменили на amount==5000. Для 4999,5000,5001 вычислите факты новой реализации, выделите перепроверку исходного дефекта и проверку, блокирующую сдачу.",
             "check": "Тест сначала обнаруживает исходное нарушение, затем становится успешным после правки причины. Дополнительно запускают связанные случаи и исходный пользовательский маршрут. История до и после показывает, что исправлен дефект, а не ослаблено ожидание.",
             "href": "?mode=question-lab&lecture=s05-04-maintenance&question=2"
           }
@@ -5720,7 +5764,7 @@
           "kicker": "Разбор задачи · вопрос 3",
           "id": "s05-04-maintenance-s019",
           "activityPassport": {
-            "task": "Переданы модуль, 12 тестов и журнал с закрытым DEF-01. В отчёте 11 успешны, тест DEF-01 skipped; после отчёта модуль изменяли. Сформулируйте решение и точные условия повторной проверки без заявления, что код обязательно неверен.",
+            "task": "Передают реализацию B, 8 тестов и журнал с закрытым DEF-02. Отчёт относится к прежней реализации A: 7 тестов успешны, тест DEF-02 skipped. После отчёта модуль меняли. Сформулируйте решение и условия перепроверки, не утверждая без данных, что реализация B обязательно неверна.",
             "check": "Передаются согласованные код, тесты, отчёт и журнал. В заключении называют исправленное поведение, выполненные проверки, пропуски и известные ограничения. Готовность подтверждают свидетельства на окончательной реализации, а не количество созданных файлов.",
             "href": "?mode=question-lab&lecture=s05-04-maintenance&question=3"
           }

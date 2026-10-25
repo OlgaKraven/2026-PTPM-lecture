@@ -5,11 +5,12 @@ import {semester5} from '../authoring/semester5.mjs'
 import {structure} from '../authoring/okfks-structure.mjs'
 import {introductions} from '../authoring/introductions.mjs'
 import {authoredDiagrams} from '../authoring/diagrams.mjs'
+import {refineSource} from '../authoring/content-refinements.mjs'
 const literature=JSON.parse(fs.readFileSync('authoring/literature.json','utf8'))
 for(const dir of ['public/teaching','private/teacher','docs'])fs.mkdirSync(dir,{recursive:true})
 fs.mkdirSync('src/infographics/data',{recursive:true})
 fs.writeFileSync('src/infographics/data/ptpm.json',JSON.stringify(authoredDiagrams.map(({teaching,...spec})=>spec),null,2)+'\n')
-const course={schemaVersion:1,contentVersion:'2.0.0',id:'ptpm',code:'МДК.01.02',discipline:'Поддержка и тестирование программных модулей',year:'',heroTitle:'Поддержка и тестирование',heroAccent:'программных модулей',slogan:'',mascot:'brand/ptpm-rhino.png',mascotAlt:'Носорог анализирует результаты тестирования программного модуля',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',topicArrow:'brand/topic-arrow.webp',font:'fonts/raleway-cyrillic.woff2',materialsUrl:'https://disk.yandex.ru/d/C5-55HsqSBpVCQ',literature,assessment:{mode:'autonomous',url:'assessment.json'},demo:false,semesters:[4,5],lectures:[]}
+const course={schemaVersion:1,contentVersion:'2.1.0',id:'ptpm',code:'МДК.01.02',discipline:'Поддержка и тестирование программных модулей',year:'',heroTitle:'Поддержка и тестирование',heroAccent:'программных модулей',slogan:'',mascot:'brand/ptpm-rhino.png',mascotAlt:'Носорог анализирует результаты тестирования программного модуля',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',topicArrow:'brand/topic-arrow.webp',font:'fonts/raleway-cyrillic.woff2',materialsUrl:'https://disk.yandex.ru/d/C5-55HsqSBpVCQ',literature,assessment:{mode:'autonomous',url:'assessment.json'},demo:false,semesters:[4,5],lectures:[]}
 const pack={schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,notes:{}}
 const assessment={schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,mode:'autonomous-educational',keys:{}}
 const activities=[],questionMap=[]
@@ -34,6 +35,7 @@ for(const seed of [...semester4,...semester5]){
  const budget=5400
  let allotted=0
  raw.forEach((source,index)=>{
+  refineSource(source)
   const id=source.id||`${lecture.id}-n${String(index+1).padStart(3,'0')}`
   if(source.kind==='section')question++
   const {script,answer,key,preparation,...slide}=source
@@ -44,7 +46,9 @@ for(const seed of [...semester4,...semester5]){
   const weight=source.activityPassport?420:weights[source.kind]||180
   const estimatedSeconds=index===raw.length-1?budget-allotted:Math.round(weight/totalWeight*budget)
   allotted+=estimatedSeconds
-  const note={script:script||`${source.title}. ${source.body||''} Предложите сопоставить это правило с предыдущим примером и объяснить, какое новое условие оно учитывает.`,preparation:preparation||(source.visual?.type==='codeParts'?'Открыть учебные файлы examples. Python 3; стандартная библиотека unittest. Для фрагмента метода использовать класс TestCase, указанный на слайде.':''),notebook:source.notebook||'',questions:source.kind==='test'?source.task.prompt:source.activityPassport?.task||'',answer:answer||'',estimatedSeconds}
+  if(!script)throw Error(`Нет предметного сценария: ${id}`)
+  const finalAnswer=source.kind==='questions'?prepared.slides.filter(s=>s.kind==='summary').map((s,i)=>`${seed.questions[i]}. ${s.body}`).join('\n\n'):answer||''
+  const note={script,preparation:preparation||(source.visual?.type==='codeParts'?'Скачать архив с экрана материалов и распаковать папку examples. Python 3; unittest входит в стандартную библиотеку. Полные классы с импортами находятся в test_delivery.py, test_inventory.py и test_order.py. Короткий метод вставляется внутрь соответствующего класса; команды вводятся в терминале из examples, пример вывода не выполняется.':''),notebook:source.notebook||'',questions:source.kind==='test'?source.task.prompt:source.activityPassport?.task||'',answer:finalAnswer,estimatedSeconds}
   pack.notes[id]=note
   const diagram=authoredDiagrams.find(item=>item.slideId===id)
   if(diagram)note.script+=`\n\n${diagram.teaching}`
@@ -72,15 +76,25 @@ for(const lecture of course.lectures){
   const note=rawNotes.get(slide.id)
   const anchor=slide.id
   teacher+=`<a id="${anchor}"></a>\n\n### ${i+1}. ${slide.title}\n\n`
+  if(slide.kind==='literature')teacher+=course.literature[slide.readingGroup].map(item=>`${item.citation}\n\n${item.url}`).join('\n\n')+'\n\n'
+  if(slide.kind==='materials')teacher+=`Материалы: ${course.materialsUrl}\n\nУчебные примеры Python: downloads/ptpm-examples.zip (кнопка на экране материалов).\n\n`
   if(slide.body)teacher+=`${slide.body}\n\n`
   if(slide.task)teacher+=`${slide.task.prompt}\n\n${(slide.task.items||[]).map((item,i)=>`${i+1}. ${item.text}`).join('\n')}\n\n${(slide.task.options||[]).map((option,i)=>`${i+1}. ${option.text}`).join('\n')}\n\n`
-  if(slide.visual?.type==='codeParts')for(const part of slide.visual.parts)teacher+=`\`\`\`python\n${part.code}\n\`\`\`\n\n${part.explanation}\n\n`
+  const printedDiagram=authoredDiagrams.find(d=>d.slideId===slide.id)
+  if(slide.visual?.type==='codeParts')for(const part of slide.visual.parts)teacher+=`\`\`\`${part.language||'python'}\n${part.code}\n\`\`\`\n\n${part.explanation}\n\n`
   if(slide.rows)teacher+=`| ${slide.columns.join(' | ')} |\n| ${slide.columns.map(()=> '---').join(' | ')} |\n${slide.rows.map(row=>`| ${row.join(' | ')} |`).join('\n')}\n\n`
-  if(slide.visual?.type==='process')teacher+=slide.visual.items.map((item,i)=>`${i+1}. **${item.title}.** ${item.text}`).join('\n')+'\n\n'
+  if(slide.visual?.type==='process'&&!printedDiagram)teacher+=slide.visual.items.map((item,i)=>`${i+1}. **${item.title}.** ${item.text}`).join('\n')+'\n\n'
+  if(printedDiagram){
+   const nodeTitles=new Map(printedDiagram.nodes.map(n=>[n.id,n.title]))
+   teacher+=`**Разбор схемы.** ${printedDiagram.overview}\n\n${printedDiagram.edges.map(e=>`- ${nodeTitles.get(e.from)} → ${nodeTitles.get(e.to)}${e.label?` (ветвь «${e.label}»)` :''}`).join('\n')}\n\n| Сценарий | Условие | Результат |\n| --- | --- | --- |\n${printedDiagram.scenarios.map(s=>`| ${s.label} | ${s.condition} | ${s.frames.at(-1).result} |`).join('\n')}\n\n${printedDiagram.scope}\n\n`
+  }
+  const workedActivity=activities.find(a=>a.id===slide.id)
+  if(workedActivity){const visual=workedActivity.exerciseSpec.visual;teacher+=`**Данные самостоятельного случая.**\n\n| ${visual.columns.join(' | ')} |\n| ${visual.columns.map(()=> '---').join(' | ')} |\n${visual.rows.map(row=>`| ${row.join(' | ')} |`).join('\n')}\n\n`}
   const teacherSpeech=slide.body&&note.script.startsWith(slide.body)?note.script.slice(slide.body.length).trimStart():note.script
   if(teacherSpeech)teacher+=`${teacherSpeech}\n\n`
   if(note.notebook)teacher+=`**Запишите.** ${note.notebook}\n\n`
-  if(note.answer)teacher+=`**Разбор после попытки.** ${note.answer}\n\n`
+  if(note.answer)teacher+=`**Разбор после попытки.** ${note.answer.split('\n\nВоспроизводимый вариант Python:')[0]}\n\n`
+  if(workedActivity?.solutionCode)teacher+=`\`\`\`python\n${workedActivity.solutionCode}\n\`\`\`\n\nСохраните этот самостоятельный пример как test_case.py рядом с учебными модулями в examples; команда: python -m unittest test_case -v.\n\n`
   presenter+=`<a id="${anchor}"></a>\n\n### ${i+1}. ${slide.title}\n\n${note.script}\n\n`
   if(note.preparation)presenter+=`**Подготовка.** ${note.preparation}\n\n`
   if(note.questions)presenter+=`**Вопрос или задание.** ${note.questions}\n\n`
