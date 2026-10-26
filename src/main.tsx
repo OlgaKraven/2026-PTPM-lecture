@@ -13,7 +13,7 @@ import './ptpm.css'
 
 async function start(){
   const base=import.meta.env.BASE_URL
-  const response=await fetch(`${base}course.json`)
+  const response=await fetch(`${base}course.json`,{cache:'no-cache'})
   if(!response.ok)throw new Error('Не удалось открыть лекции')
   const course:unknown=await response.json()
   validateCourse(course)
@@ -25,7 +25,7 @@ async function start(){
   }
   let session:Awaited<ReturnType<typeof prepareTeacherSession>>|undefined
   if(mode!=='audience'&&mode!=='print'){
-    const notes=await fetch(`${base}teaching/notes.json`)
+    const notes=await fetch(`${base}teaching/notes.json`,{cache:'no-cache'})
     if(!notes.ok)throw new Error('Не удалось загрузить сценарий преподавателя')
     session=await prepareTeacherSession(course,base,await notes.json(),{getItem:key=>localStorage.getItem(key)})
   }
