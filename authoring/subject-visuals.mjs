@@ -1,3 +1,4 @@
+import {reminderCase} from './shared-scenarios.mjs'
 const node=(id,title,text,column,row=0,kind='action')=>({id,title,text,column,row,kind})
 const edge=(from,to,label='')=>({id:`${from}-${to}`,from,to,label})
 function graph(slideId,title,overview,nodes,edges,cases,teaching,catalogId='ARCH-04'){
@@ -76,7 +77,7 @@ export function subjectDiagrams(branch){return [
   {label:'Дефектное вычитание',condition:'Сначала вычли 5 из 4',values:{stock:'stock=−1'},result:'False совпал, но assertEqual(stock,4) даёт FAIL: −1 != 4.'}
  ],'Сначала тест получает False, затем отдельно читает состояние того же объекта. Эти наблюдения относятся к одной операции. В дефектном варианте сигнал не меняется, но последний ответ равен −1; второе утверждение обнаруживает нарушение, которое первое пропускает.'),
  graph('s05-02-dependencies-q1-changed','Граница сравнения дат','reminder_due получает две даты и проверяет today≥deadline. Чтение настоящих часов — другая граница.',[
-  node('clock','Системные часы','Реальное время',0),node('adapter','Внешний компонент','Получает дату и передаёт её',1),node('fixed','Модульный тест','today=deadline=03.02.2027',1,1),node('rule','reminder_due','Сравнение today ≥ deadline',2,1)
+  node('clock','Системные часы','Реальное время',0),node('adapter','Внешний компонент','Получает дату и передаёт её',1),node('fixed','Модульный тест',`today=deadline=${reminderCase.deadlineLabel}`,1,1),node('rule','reminder_due','Сравнение today ≥ deadline',2,1)
  ],[edge('clock','adapter','чтение'),edge('adapter','rule','аргументы'),edge('fixed','rule','известные даты')],one(['clock','adapter','fixed','rule'],'Равные фиксированные даты дают True; этот тест не подтвердил чтение часов и часовой пояс.'),'Сравните происхождение входов. Верхний путь нужен настоящему приложению; нижний управляет данными модульного теста. Стрелки означают передачу данных, а не обязательное совместное выполнение обоих путей. Из True для заданных дат не следует правильность внешнего источника.'),
  sequence('s05-02-dependencies-q3-changed','Как покладистая заглушка скрывает USD','Контракт требует запрос EUR, но модуль передаёт USD. Проверка только 2000 не видит неверную валюту.',[
   {id:'test',title:'Тест'},{id:'module',title:'order_total'},{id:'source',title:'Источник курса'}

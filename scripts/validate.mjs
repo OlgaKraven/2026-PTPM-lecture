@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import assert from 'node:assert/strict'
 import {validateCourse} from '@olgakraven/lecture-engine'
 import {authoredDiagrams} from '../authoring/diagrams.mjs'
+import {explanationChapters} from '../authoring/expand-lectures.mjs'
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'))
 const c=read('public/course.json'),p=read('public/teaching/notes.json'),a=read('public/assessment.json'),supplements=read('public/question-supplements.json')
 validateCourse(c)
@@ -11,6 +12,7 @@ assert.equal(c.literature.primary.length,2)
 assert.equal(c.literature.additional.length,2)
 const ids=new Set()
 for(const l of c.lectures){
+ const chapterIndex=c.lectures.indexOf(l)
  assert.equal(l.slides.filter(s=>s.kind==='section').length,3)
  assert.equal(l.slides.filter(s=>s.activityPassport).length,3)
  assert.equal(l.slides.filter(s=>s.id.endsWith('-explanation')).length,3)
@@ -19,6 +21,8 @@ for(const l of c.lectures){
  const starts=l.slides.flatMap((s,i)=>s.kind==='section'?[i]:[])
  for(let q=0;q<starts.length;q++){
   const block=l.slides.slice(starts[q],starts[q+1]||l.slides.length-1)
+  const expectedIds=explanationChapters[chapterIndex][q].map(page=>`${l.id}-q${q+1}-theory-${page.key}`)
+  assert(expectedIds.every(id=>block.some(s=>s.id===id)),`Нет объяснения в блоке ${l.id}, ${q+1}`)
   assert.deepEqual(block.filter(s=>s.task).map(s=>s.task.type),['single','multiple','short','matching'])
   const passport=block.findIndex(s=>s.activityPassport),firstTest=block.findIndex(s=>s.task)
   assert.equal(passport,firstTest-1)

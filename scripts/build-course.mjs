@@ -7,10 +7,11 @@ import {introductions} from '../authoring/introductions.mjs'
 import {authoredDiagrams} from '../authoring/diagrams.mjs'
 import {refineSource} from '../authoring/content-refinements.mjs'
 import {expandStudentExplanations} from '../authoring/student-explanations.mjs'
+import {expandLectures,explanationChapters} from '../authoring/expand-lectures.mjs'
 const literature=JSON.parse(fs.readFileSync('authoring/literature.json','utf8'))
 for(const dir of ['public/teaching','private/teacher','docs'])fs.mkdirSync(dir,{recursive:true})
 fs.mkdirSync('src/infographics/data',{recursive:true})
-const course={schemaVersion:1,contentVersion:'2.2.0',id:'ptpm',code:'МДК.01.02',discipline:'Поддержка и тестирование программных модулей',year:'',heroTitle:'Поддержка и тестирование',heroAccent:'программных модулей',slogan:'',mascot:'brand/ptpm-rhino.png',mascotAlt:'Носорог анализирует результаты тестирования программного модуля',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',topicArrow:'brand/topic-arrow.webp',font:'fonts/raleway-cyrillic.woff2',materialsUrl:'https://disk.yandex.ru/d/C5-55HsqSBpVCQ',literature,assessment:{mode:'autonomous',url:'assessment.json'},demo:false,semesters:[4,5],lectures:[]}
+const course={schemaVersion:1,contentVersion:'2.3.0',id:'ptpm',code:'МДК.01.02',discipline:'Поддержка и тестирование программных модулей',year:'',heroTitle:'Поддержка и тестирование',heroAccent:'программных модулей',slogan:'',mascot:'brand/ptpm-rhino.png',mascotAlt:'Носорог анализирует результаты тестирования программного модуля',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',topicArrow:'brand/topic-arrow.webp',font:'fonts/raleway-cyrillic.woff2',materialsUrl:'https://disk.yandex.ru/d/C5-55HsqSBpVCQ',literature,assessment:{mode:'autonomous',url:'assessment.json'},demo:false,semesters:[4,5],lectures:[]}
 const pack={schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,notes:{}}
 const assessment={schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,mode:'autonomous-educational',keys:{}}
 const activities=[],questionMap=[]
@@ -31,7 +32,7 @@ for(const seed of [...semester4,...semester5]){
   {id:`${seed.id}-s021`,kind:'questions',title:'Вопросы от аудитории',kicker:'Итог темы',bullets:seed.questions.map(q=>`${q}?`),body:seed.result,script:`Вернитесь к трём вопросам занятия. ${seed.result} Попросите назвать исходное условие и наблюдение, на котором основан каждый вывод. Если ответ сводится к названию термина, вернитесь к конкретному примеру: какой вход выбран, почему ожидание именно такое и какое нарушение проверка способна обнаружить.`}
  ]
  baseRaw.forEach(refineSource)
- const raw=expandStudentExplanations(baseRaw,authoredDiagrams)
+ const raw=expandStudentExplanations(expandLectures(baseRaw,lectureIndex,seed.id),authoredDiagrams)
  let question=0
  const totalWeight=raw.reduce((sum,s)=>sum+(s.activityPassport?420:weights[s.kind]||180),0)
  const budget=5400
@@ -80,6 +81,8 @@ fs.writeFileSync('public/question-supplements.json',JSON.stringify({schemaVersio
 fs.writeFileSync('authoring/question-map.json',JSON.stringify(questionMap,null,2)+'\n')
 fs.writeFileSync('docs/coverage.json',JSON.stringify(coverage,null,2)+'\n')
 fs.writeFileSync('docs/visual-plan.json',JSON.stringify(visualPlan,null,2)+'\n')
+fs.writeFileSync('docs/explanation-coverage.json',JSON.stringify(course.lectures.flatMap((lecture,li)=>explanationChapters[li].map((pages,qi)=>({lectureId:lecture.id,questionId:`${lecture.id}-q${qi+1}`,explanationIds:pages.map(page=>`${lecture.id}-q${qi+1}-theory-${page.key}`),topics:pages.map(page=>page.title)}))),null,2)+'\n')
+fs.writeFileSync('docs/lecture-code-examples.json',JSON.stringify(explanationChapters.flat(2).filter(page=>page.visual?.type==='codeParts').map(page=>({key:page.key,code:page.visual.parts[0].code})),null,2)+'\n')
 const alignment={schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,sourceKind:'local',sourceSha256:createHash('sha256').update(courseText).digest('hex'),lectureIds:course.lectures.map(l=>l.id),documents:{teacher:'course.teacher.md',presenter:'course.presenter.md'},slides:[]}
 let teacher=`# ${course.discipline}\n\nТекст для подготовки преподавателя. Учебные примеры условные.\n\n`,presenter=`# ${course.discipline}\n\nСценарий показа. Ответы предназначены преподавателю и раскрываются после самостоятельной попытки.\n\n`
 for(const lecture of course.lectures){
@@ -93,6 +96,7 @@ for(const lecture of course.lectures){
   if(slide.kind==='literature')teacher+=course.literature[slide.readingGroup].map(item=>`${item.citation}\n\n${item.url}`).join('\n\n')+'\n\n'
   if(slide.kind==='materials')teacher+=`Материалы: ${course.materialsUrl}\n\nУчебные примеры Python: downloads/ptpm-examples.zip (кнопка на экране материалов).\n\n`
   if(slide.body)teacher+=`${slide.body}\n\n`
+  if(slide.bullets?.length)teacher+=slide.bullets.map(point=>`- ${point}`).join('\n')+'\n\n'
   if(slide.task)teacher+=`${slide.task.prompt}\n\n${(slide.task.items||[]).map((item,i)=>`${i+1}. ${item.text}`).join('\n')}\n\n${(slide.task.options||[]).map((option,i)=>`${i+1}. ${option.text}`).join('\n')}\n\n`
   const printedDiagram=authoredDiagrams.find(d=>d.slideId===slide.id)
   if(slide.visual?.type==='codeParts')for(const part of slide.visual.parts)teacher+=`\`\`\`${part.language||'python'}\n${part.code}\n\`\`\`\n\n${part.explanation}\n\n`

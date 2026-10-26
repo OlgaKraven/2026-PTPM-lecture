@@ -1,0 +1,392 @@
+[
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "questionId": "s04-01-testing-purpose-q1",
+    "explanationIds": [
+      "s04-01-testing-purpose-q1-theory-testing-objectives",
+      "s04-01-testing-purpose-q1-theory-observable-boundary",
+      "s04-01-testing-purpose-q1-theory-input-state-environment",
+      "s04-01-testing-purpose-q1-theory-static-dynamic",
+      "s04-01-testing-purpose-q1-theory-test-work-products",
+      "s04-01-testing-purpose-q1-theory-testing-debugging"
+    ],
+    "topics": [
+      "Зачем нужны результаты тестов",
+      "Что находится внутри проверки",
+      "Данные, состояние и окружение",
+      "Проверка начинается до запуска",
+      "Что получается на каждом этапе",
+      "Тестирование и исправление"
+    ]
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "questionId": "s04-01-testing-purpose-q2",
+    "explanationIds": [
+      "s04-01-testing-purpose-q2-theory-defects-in-work-products",
+      "s04-01-testing-purpose-q2-theory-activation-condition",
+      "s04-01-testing-purpose-q2-theory-symptom-and-cause",
+      "s04-01-testing-purpose-q2-theory-exception-versus-failure"
+    ],
+    "topics": [
+      "Дефект бывает и вне кода",
+      "Как дефект становится наблюдаемым",
+      "От симптома к проверяемой причине",
+      "Исключение и отказ функции"
+    ]
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "questionId": "s04-01-testing-purpose-q3",
+    "explanationIds": [
+      "s04-01-testing-purpose-q3-theory-combinations",
+      "s04-01-testing-purpose-q3-theory-oracle-origin",
+      "s04-01-testing-purpose-q3-theory-test-selection",
+      "s04-01-testing-purpose-q3-theory-bounded-report"
+    ],
+    "topics": [
+      "Почему нельзя просто проверить всё",
+      "Откуда берётся критерий результата",
+      "Как обосновать следующий тест",
+      "Полное заключение по малому набору"
+    ]
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "questionId": "s04-02-test-cases-q1",
+    "explanationIds": [
+      "s04-02-test-cases-q1-theory-requirement-to-goal",
+      "s04-02-test-cases-q1-theory-expectation-specificity",
+      "s04-02-test-cases-q1-theory-two-sided-expectation",
+      "s04-02-test-cases-q1-theory-ambiguity"
+    ],
+    "topics": [
+      "Из правила в цель тест-кейса",
+      "Что делает ожидание проверяемым",
+      "Получаем постусловия операции",
+      "Когда ожидание ещё нельзя назначить"
+    ]
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "questionId": "s04-02-test-cases-q2",
+    "explanationIds": [
+      "s04-02-test-cases-q2-theory-test-case-fields",
+      "s04-02-test-cases-q2-theory-ambiguous-steps",
+      "s04-02-test-cases-q2-theory-independent-cases",
+      "s04-02-test-cases-q2-theory-sequential-case"
+    ],
+    "topics": [
+      "Как читать целый тест-кейс",
+      "Убираем выбор из инструкции",
+      "Независимый случай получает своё начало",
+      "Когда порядок является частью цели"
+    ]
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "questionId": "s04-02-test-cases-q3",
+    "explanationIds": [
+      "s04-02-test-cases-q3-theory-plan-versus-protocol",
+      "s04-02-test-cases-q3-theory-execution-status",
+      "s04-02-test-cases-q3-theory-compare-composition",
+      "s04-02-test-cases-q3-theory-confirmation-regression"
+    ],
+    "topics": [
+      "Кейс и протокол не взаимозаменяемы",
+      "Назначаем статус по свидетельству",
+      "Сравниваем состав, а не только итог",
+      "Почему одного повтора недостаточно"
+    ]
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "questionId": "s04-03-equivalence-q1",
+    "explanationIds": [
+      "s04-03-equivalence-q1-theory-criterion-first",
+      "s04-03-equivalence-q1-theory-partition-procedure",
+      "s04-03-equivalence-q1-theory-gaps-overlaps",
+      "s04-03-equivalence-q1-theory-invalid-class-meaning"
+    ],
+    "topics": [
+      "По какому признаку делим область",
+      "Строим разбиение последовательно",
+      "Проверяем два свойства разбиения",
+      "Одинаковый отказ и разные риски"
+    ]
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "questionId": "s04-03-equivalence-q2",
+    "explanationIds": [
+      "s04-03-equivalence-q2-theory-representative-selection",
+      "s04-03-equivalence-q2-theory-coverage-definition",
+      "s04-03-equivalence-q2-theory-zero-empty-none",
+      "s04-03-equivalence-q2-theory-test-set-artifact"
+    ],
+    "topics": [
+      "Выбираем данные из каждой части",
+      "Что означает охват классов",
+      "Различаем значение и отсутствие",
+      "Получаем обоснованный набор тестов"
+    ]
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "questionId": "s04-03-equivalence-q3",
+    "explanationIds": [
+      "s04-03-equivalence-q3-theory-parameter-domains",
+      "s04-03-equivalence-q3-theory-masking-trace",
+      "s04-03-equivalence-q3-theory-joint-rule",
+      "s04-03-equivalence-q3-theory-choose-joint-cases"
+    ],
+    "topics": [
+      "Разбираем ограничения двух входов",
+      "Как два нарушения маскируют друг друга",
+      "Когда требуется таблица сочетаний",
+      "Выводим ожидания для сочетаний"
+    ]
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "questionId": "s04-04-boundaries-and-defects-q1",
+    "explanationIds": [
+      "s04-04-boundaries-and-defects-q1-theory-boundary-source",
+      "s04-04-boundaries-and-defects-q1-theory-boundary-derivation",
+      "s04-04-boundaries-and-defects-q1-theory-open-closed-range",
+      "s04-04-boundaries-and-defects-q1-theory-data-step"
+    ],
+    "topics": [
+      "Откуда берётся граница",
+      "Получаем три точки у порога",
+      "Включённый и исключённый конец",
+      "Сосед зависит от единицы данных"
+    ]
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "questionId": "s04-04-boundaries-and-defects-q2",
+    "explanationIds": [
+      "s04-04-boundaries-and-defects-q2-theory-invalid-data-categories",
+      "s04-04-boundaries-and-defects-q2-theory-error-interface",
+      "s04-04-boundaries-and-defects-q2-theory-validation-before-change",
+      "s04-04-boundaries-and-defects-q2-theory-negative-case-construction"
+    ],
+    "topics": [
+      "Сначала назовём нарушенное условие",
+      "Как модуль сообщает отклонение",
+      "Отказ не должен повредить объект",
+      "Как составить негативный тест"
+    ]
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "questionId": "s04-04-boundaries-and-defects-q3",
+    "explanationIds": [
+      "s04-04-boundaries-and-defects-q3-theory-defect-report-purpose",
+      "s04-04-boundaries-and-defects-q3-theory-report-reserve-example",
+      "s04-04-boundaries-and-defects-q3-theory-severity-priority",
+      "s04-04-boundaries-and-defects-q3-theory-defect-status-evidence"
+    ],
+    "topics": [
+      "Карточка передаёт воспроизведение",
+      "Готовый отчёт на другом модуле",
+      "Обосновываем две разные оценки",
+      "Когда дефект можно закрыть"
+    ]
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "questionId": "s05-01-unit-tests-q1",
+    "explanationIds": [
+      "s05-01-unit-tests-q1-theory-unit-test-purpose",
+      "s05-01-unit-tests-q1-theory-complete-first-file",
+      "s05-01-unit-tests-q1-theory-read-test-syntax",
+      "s05-01-unit-tests-q1-theory-two-realizations",
+      "s05-01-unit-tests-q1-theory-runner-and-location"
+    ],
+    "topics": [
+      "Что автоматизирует модульный тест",
+      "Первый тест как целый файл",
+      "Как читать незнакомые обозначения",
+      "Что случится на двух реализациях",
+      "Что нужно для воспроизводимого запуска"
+    ]
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "questionId": "s05-01-unit-tests-q2",
+    "explanationIds": [
+      "s05-01-unit-tests-q2-theory-complete-invalid-file",
+      "s05-01-unit-tests-q2-theory-assert-raises-position",
+      "s05-01-unit-tests-q2-theory-boundary-loop-file",
+      "s05-01-unit-tests-q2-theory-one-situation"
+    ],
+    "topics": [
+      "Целый тест на исключение",
+      "Положение вызова меняет проверку",
+      "Граничные строки в одном методе",
+      "Как разделять тестовые цели"
+    ]
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "questionId": "s05-01-unit-tests-q3",
+    "explanationIds": [
+      "s05-01-unit-tests-q3-theory-fixture-full-file",
+      "s05-01-unit-tests-q3-theory-state-versus-signal",
+      "s05-01-unit-tests-q3-theory-state-after-exception",
+      "s05-01-unit-tests-q3-theory-object-history"
+    ],
+    "topics": [
+      "Известное начало через setUp",
+      "Наблюдения класса дополняют друг друга",
+      "Проверяем состояние после исключения",
+      "Когда нужен тест нескольких действий"
+    ]
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "questionId": "s05-02-dependencies-q1",
+    "explanationIds": [
+      "s05-02-dependencies-q1-theory-dependency-effects",
+      "s05-02-dependencies-q1-theory-testable-boundary",
+      "s05-02-dependencies-q1-theory-calculation-boundary",
+      "s05-02-dependencies-q1-theory-time-isolation"
+    ],
+    "topics": [
+      "Какая зависимость меняет результат",
+      "Что можно проверить в изоляции",
+      "Что остаётся настоящим в тесте",
+      "Проверка времени без ожидания"
+    ]
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "questionId": "s05-02-dependencies-q2",
+    "explanationIds": [
+      "s05-02-dependencies-q2-theory-dependency-interface",
+      "s05-02-dependencies-q2-theory-function-versus-result",
+      "s05-02-dependencies-q2-theory-stub-contract",
+      "s05-02-dependencies-q2-theory-stub-test-file"
+    ],
+    "topics": [
+      "Как устроен переданный источник",
+      "Скобки означают выполнение вызова",
+      "Заглушка должна соответствовать интерфейсу",
+      "Проверяем настоящий расчёт с источником"
+    ]
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "questionId": "s05-02-dependencies-q3",
+    "explanationIds": [
+      "s05-02-dependencies-q3-theory-failure-stub-file",
+      "s05-02-dependencies-q3-theory-source-response-validation",
+      "s05-02-dependencies-q3-theory-constant-result-risk",
+      "s05-02-dependencies-q3-theory-integration-evidence"
+    ],
+    "topics": [
+      "Управляемый отказ источника",
+      "Правильный вызов ещё не делает ответ допустимым",
+      "Второе число обнаруживает подмену расчёта",
+      "Что остаётся проверить с настоящим источником"
+    ]
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "questionId": "s05-03-suite-quality-q1",
+    "explanationIds": [
+      "s05-03-suite-quality-q1-theory-suite-composition",
+      "s05-03-suite-quality-q1-theory-discovery-location",
+      "s05-03-suite-quality-q1-theory-target-versus-suite",
+      "s05-03-suite-quality-q1-theory-suite-independence"
+    ],
+    "topics": [
+      "Из файлов в фактический набор",
+      "Рабочая папка влияет на discover",
+      "Отдельный тест и полный прогон",
+      "Набор должен повторяться без скрытой истории"
+    ]
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "questionId": "s05-03-suite-quality-q2",
+    "explanationIds": [
+      "s05-03-suite-quality-q2-theory-report-model",
+      "s05-03-suite-quality-q2-theory-four-real-outcomes",
+      "s05-03-suite-quality-q2-theory-read-traceback",
+      "s05-03-suite-quality-q2-theory-interpret-summary"
+    ],
+    "topics": [
+      "Отчёт связывает случаи и исходы",
+      "Четыре исхода на одном запуске",
+      "Как разбирать traceback",
+      "Из чисел прогона в заключение"
+    ]
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "questionId": "s05-03-suite-quality-q3",
+    "explanationIds": [
+      "s05-03-suite-quality-q3-theory-weak-oracle",
+      "s05-03-suite-quality-q3-theory-mutation-procedure",
+      "s05-03-suite-quality-q3-theory-discriminating-inputs",
+      "s05-03-suite-quality-q3-theory-equivalent-change"
+    ],
+    "topics": [
+      "Почему слабый тест пропускает дефект",
+      "Проверяем чувствительность к нарушению",
+      "На каких данных мутация видима",
+      "Не всякая правка меняет поведение"
+    ]
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "questionId": "s05-04-maintenance-q1",
+    "explanationIds": [
+      "s05-04-maintenance-q1-theory-support-intake",
+      "s05-04-maintenance-q1-theory-request-classification",
+      "s05-04-maintenance-q1-theory-reproduction-minimization",
+      "s05-04-maintenance-q1-theory-cannot-reproduce"
+    ],
+    "topics": [
+      "Что выясняют из обращения",
+      "Дефект, изменение или уточнение",
+      "Минимизируем, сохраняя проявление",
+      "Если прямой вызов не повторил жалобу"
+    ]
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "questionId": "s05-04-maintenance-q2",
+    "explanationIds": [
+      "s05-04-maintenance-q2-theory-red-test",
+      "s05-04-maintenance-q2-theory-three-code-variants",
+      "s05-04-maintenance-q2-theory-unchanged-oracle",
+      "s05-04-maintenance-q2-theory-regression-and-user-route"
+    ],
+    "topics": [
+      "Сначала убеждаемся, что тест обнаруживает дефект",
+      "Сравниваем старый код и два исправления",
+      "Исправление проверяют прежним критерием",
+      "От целевого теста к приёмке исправления"
+    ]
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "questionId": "s05-04-maintenance-q3",
+    "explanationIds": [
+      "s05-04-maintenance-q3-theory-handoff-links",
+      "s05-04-maintenance-q3-theory-filled-defect-log",
+      "s05-04-maintenance-q3-theory-handoff-decision",
+      "s05-04-maintenance-q3-theory-prevent-recurrence"
+    ],
+    "topics": [
+      "Связываем результаты одной правки",
+      "Заполняем журнал после перепроверки",
+      "Что означает готовность к передаче",
+      "Проверка остаётся после закрытия"
+    ]
+  }
+]

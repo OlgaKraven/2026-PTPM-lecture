@@ -1,6 +1,30 @@
 [
   {
     "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q1-theory-testing-objectives",
+    "title": "Зачем нужны результаты тестов",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q1-theory-input-state-environment",
+    "title": "Данные, состояние и окружение",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q1-theory-test-work-products",
+    "title": "Что получается на каждом этапе",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
     "slideId": "s04-01-testing-purpose-s005",
     "title": "Учебный модуль: стоимость доставки",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -33,6 +57,22 @@
   },
   {
     "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q2-theory-defects-in-work-products",
+    "title": "Дефект бывает и вне кода",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q2-theory-exception-versus-failure",
+    "title": "Исключение и отказ функции",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
     "slideId": "s04-01-testing-purpose-s011-explanation",
     "title": "Когда проявляется дефект знака >",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -49,6 +89,38 @@
   },
   {
     "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q2-error",
+    "title": "Когда Error означает отказ",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q3-theory-combinations",
+    "title": "Почему нельзя просто проверить всё",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q3-theory-oracle-origin",
+    "title": "Откуда берётся критерий результата",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
+    "slideId": "s04-01-testing-purpose-q3-theory-bounded-report",
+    "title": "Полное заключение по малому набору",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-01-testing-purpose",
     "slideId": "s04-01-testing-purpose-s017-explanation",
     "title": "Вывод по двум успешным запускам",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -62,6 +134,22 @@
     "purpose": "Каждый исход даёт своё свидетельство. Невыполненный случай сохраняет неизвестность.",
     "catalog": "ARCH-04",
     "representation": "flow"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-q1-theory-requirement-to-goal",
+    "title": "Из правила в цель тест-кейса",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-q1-theory-two-sided-expectation",
+    "title": "Получаем постусловия операции",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
   },
   {
     "lectureId": "s04-02-test-cases",
@@ -97,6 +185,30 @@
   },
   {
     "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-q2-theory-test-case-fields",
+    "title": "Как читать целый тест-кейс",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-q2-theory-ambiguous-steps",
+    "title": "Убираем выбор из инструкции",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-q2-theory-sequential-case",
+    "title": "Когда порядок является частью цели",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
     "slideId": "s04-02-test-cases-s012",
     "title": "Из расплывчатого шага в точный",
     "purpose": "Проследить связь условия, действия и наблюдаемого результата",
@@ -118,6 +230,30 @@
     "purpose": "Один запрос 5 даёт разные результаты при новом остатке 6 и унаследованном остатке 4.",
     "catalog": "ARCH-04",
     "representation": "flow"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-q3-theory-plan-versus-protocol",
+    "title": "Кейс и протокол не взаимозаменяемы",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-q3-theory-execution-status",
+    "title": "Назначаем статус по свидетельству",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-02-test-cases",
+    "slideId": "s04-02-test-cases-q3-theory-compare-composition",
+    "title": "Сравниваем состав, а не только итог",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
   },
   {
     "lectureId": "s04-02-test-cases",
@@ -145,6 +281,22 @@
   },
   {
     "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-q1-theory-partition-procedure",
+    "title": "Строим разбиение последовательно",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-q1-theory-gaps-overlaps",
+    "title": "Проверяем два свойства разбиения",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
     "slideId": "s04-03-equivalence-s005-explanation",
     "title": "Строим классы из правил доставки",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -163,6 +315,30 @@
     "lectureId": "s04-03-equivalence",
     "slideId": "s04-03-equivalence-s010",
     "title": "Минимальный набор представителей",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-q2-theory-representative-selection",
+    "title": "Выбираем данные из каждой части",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-q2-theory-zero-empty-none",
+    "title": "Различаем значение и отсутствие",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-q2-theory-test-set-artifact",
+    "title": "Получаем обоснованный набор тестов",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
     "catalog": "TAB-01",
     "representation": "table"
@@ -193,6 +369,30 @@
   },
   {
     "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-q3-theory-parameter-domains",
+    "title": "Разбираем ограничения двух входов",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-q3-theory-masking-trace",
+    "title": "Как два нарушения маскируют друг друга",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
+    "slideId": "s04-03-equivalence-q3-theory-choose-joint-cases",
+    "title": "Выводим ожидания для сочетаний",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-03-equivalence",
     "slideId": "s04-03-equivalence-s017",
     "title": "Изолируем неверный параметр",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -217,6 +417,22 @@
   },
   {
     "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-q1-theory-boundary-derivation",
+    "title": "Получаем три точки у порога",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-q1-theory-open-closed-range",
+    "title": "Включённый и исключённый конец",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
     "slideId": "s04-04-boundaries-and-defects-s005",
     "title": "Порог бесплатной доставки",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -238,6 +454,22 @@
     "purpose": "Учебный диапазон 1…10 включительно: 0 и 11 отклоняются; 1, 2, 9 и 10 допускаются. На бумаге обе ветви видны сразу.",
     "catalog": "PROC-01",
     "representation": "flow"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-q2-theory-invalid-data-categories",
+    "title": "Сначала назовём нарушенное условие",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-q2-theory-validation-before-change",
+    "title": "Отказ не должен повредить объект",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
   },
   {
     "lectureId": "s04-04-boundaries-and-defects",
@@ -273,6 +505,30 @@
   },
   {
     "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-q3-theory-report-reserve-example",
+    "title": "Готовый отчёт на другом модуле",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-q3-theory-severity-priority",
+    "title": "Обосновываем две разные оценки",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
+    "slideId": "s04-04-boundaries-and-defects-q3-theory-defect-status-evidence",
+    "title": "Когда дефект можно закрыть",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s04-04-boundaries-and-defects",
     "slideId": "s04-04-boundaries-and-defects-s018-explanation",
     "title": "Из наблюдения в карточку DEF-01",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -286,6 +542,30 @@
     "purpose": "Для суммы 3000 факт 300 расходится с ожиданием 0; исправление требует нового свидетельства.",
     "catalog": "ARCH-04",
     "representation": "flow"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q1-theory-complete-first-file",
+    "title": "Первый тест как целый файл",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q1-theory-read-test-syntax",
+    "title": "Как читать незнакомые обозначения",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q1-theory-two-realizations",
+    "title": "Что случится на двух реализациях",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
   },
   {
     "lectureId": "s05-01-unit-tests",
@@ -329,6 +609,30 @@
   },
   {
     "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q2-theory-complete-invalid-file",
+    "title": "Целый тест на исключение",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q2-theory-assert-raises-position",
+    "title": "Положение вызова меняет проверку",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q2-theory-boundary-loop-file",
+    "title": "Граничные строки в одном методе",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
     "slideId": "s05-01-unit-tests-s011",
     "title": "Исключение — ожидаемый результат",
     "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
@@ -350,6 +654,30 @@
     "purpose": "Ожидаемое исключение, его отсутствие и постороннее исключение дают три разных исхода теста.",
     "catalog": "ARCH-04",
     "representation": "flow"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q3-theory-fixture-full-file",
+    "title": "Известное начало через setUp",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q3-theory-state-versus-signal",
+    "title": "Наблюдения класса дополняют друг друга",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-01-unit-tests",
+    "slideId": "s05-01-unit-tests-q3-theory-state-after-exception",
+    "title": "Проверяем состояние после исключения",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
   },
   {
     "lectureId": "s05-01-unit-tests",
@@ -382,6 +710,22 @@
     "purpose": "Новый Cart(stock=4); запрос 5 должен быть отклонён без изменения остатка.",
     "catalog": "UML-11",
     "representation": "sequence"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-q1-theory-dependency-effects",
+    "title": "Какая зависимость меняет результат",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-q1-theory-calculation-boundary",
+    "title": "Что остаётся настоящим в тесте",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
   },
   {
     "lectureId": "s05-02-dependencies",
@@ -425,6 +769,30 @@
   },
   {
     "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-q2-theory-dependency-interface",
+    "title": "Как устроен переданный источник",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-q2-theory-function-versus-result",
+    "title": "Скобки означают выполнение вызова",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-q2-theory-stub-test-file",
+    "title": "Проверяем настоящий расчёт с источником",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
     "slideId": "s05-02-dependencies-s011",
     "title": "Заглушка возвращает известный ответ",
     "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
@@ -457,6 +825,30 @@
   },
   {
     "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-q3-theory-failure-stub-file",
+    "title": "Управляемый отказ источника",
+    "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
+    "catalog": "ALG-01 (статичный разбор)",
+    "representation": "codeParts"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-q3-theory-source-response-validation",
+    "title": "Правильный вызов ещё не делает ответ допустимым",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
+    "slideId": "s05-02-dependencies-q3-theory-constant-result-risk",
+    "title": "Второе число обнаруживает подмену расчёта",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-02-dependencies",
     "slideId": "s05-02-dependencies-s017",
     "title": "Воспроизводимый отказ зависимости",
     "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
@@ -486,6 +878,30 @@
     "purpose": "Контракт требует запрос EUR, но модуль передаёт USD. Проверка только 2000 не видит неверную валюту.",
     "catalog": "UML-11",
     "representation": "sequence"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-q1-theory-suite-composition",
+    "title": "Из файлов в фактический набор",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-q1-theory-discovery-location",
+    "title": "Рабочая папка влияет на discover",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-q1-theory-target-versus-suite",
+    "title": "Отдельный тест и полный прогон",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
   },
   {
     "lectureId": "s05-03-suite-quality",
@@ -529,6 +945,30 @@
   },
   {
     "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-q2-theory-report-model",
+    "title": "Отчёт связывает случаи и исходы",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-q2-theory-four-real-outcomes",
+    "title": "Четыре исхода на одном запуске",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-q2-theory-interpret-summary",
+    "title": "Из чисел прогона в заключение",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
     "slideId": "s05-03-suite-quality-s011",
     "title": "Пример отчёта о расхождении",
     "purpose": "Проследить конкретный вызов, проверку и ожидаемое поведение",
@@ -561,6 +1001,22 @@
   },
   {
     "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-q3-theory-weak-oracle",
+    "title": "Почему слабый тест пропускает дефект",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
+    "slideId": "s05-03-suite-quality-q3-theory-discriminating-inputs",
+    "title": "На каких данных мутация видима",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-03-suite-quality",
     "slideId": "s05-03-suite-quality-s018",
     "title": "Какой вход различит реализации",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -582,6 +1038,30 @@
     "purpose": "Точное ожидание обнаружит замену операции только на различающем входе.",
     "catalog": "ARCH-04",
     "representation": "flow"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-q1-theory-support-intake",
+    "title": "Что выясняют из обращения",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-q1-theory-request-classification",
+    "title": "Дефект, изменение или уточнение",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-q1-theory-cannot-reproduce",
+    "title": "Если прямой вызов не повторил жалобу",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
   },
   {
     "lectureId": "s05-04-maintenance",
@@ -617,6 +1097,30 @@
   },
   {
     "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-q2-theory-red-test",
+    "title": "Сначала убеждаемся, что тест обнаруживает дефект",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-q2-theory-three-code-variants",
+    "title": "Сравниваем старый код и два исправления",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-q2-theory-regression-and-user-route",
+    "title": "От целевого теста к приёмке исправления",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
     "slideId": "s05-04-maintenance-s011",
     "title": "Две цели после изменения",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
@@ -643,6 +1147,22 @@
     "lectureId": "s05-04-maintenance",
     "slideId": "s05-04-maintenance-s016",
     "title": "Комплект результатов",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-q3-theory-handoff-links",
+    "title": "Связываем результаты одной правки",
+    "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
+    "catalog": "TAB-01",
+    "representation": "table"
+  },
+  {
+    "lectureId": "s05-04-maintenance",
+    "slideId": "s05-04-maintenance-q3-theory-filled-defect-log",
+    "title": "Заполняем журнал после перепроверки",
     "purpose": "Сопоставить данные, правила и результаты по общим столбцам",
     "catalog": "TAB-01",
     "representation": "table"

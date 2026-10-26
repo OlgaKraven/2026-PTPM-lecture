@@ -1,0 +1,34 @@
+[
+  {
+    "key": "complete-first-file",
+    "code": "import unittest\nfrom delivery import delivery_fee\n\nclass ThresholdTests(unittest.TestCase):\n    def test_included_threshold(self):\n        amount = 3000\n        actual = delivery_fee(amount)\n        self.assertEqual(actual, 0)"
+  },
+  {
+    "key": "complete-invalid-file",
+    "code": "import unittest\nfrom delivery import delivery_fee\n\nclass InvalidAmountTests(unittest.TestCase):\n    def test_negative_amount(self):\n        with self.assertRaises(ValueError):\n            delivery_fee(-1)"
+  },
+  {
+    "key": "boundary-loop-file",
+    "code": "import unittest\nfrom delivery import delivery_fee\n\nclass BoundaryTests(unittest.TestCase):\n    def test_threshold_neighbours(self):\n        for amount, expected in [(2999, 300), (3000, 0), (3001, 0)]:\n            with self.subTest(amount=amount):\n                self.assertEqual(delivery_fee(amount), expected)"
+  },
+  {
+    "key": "fixture-full-file",
+    "code": "import unittest\nfrom inventory import Cart\n\nclass StockTests(unittest.TestCase):\n    def setUp(self):\n        self.cart = Cart(stock=6)\n    def test_reserve_two(self):\n        accepted = self.cart.reserve(2)\n        self.assertIs(accepted, True)\n        self.assertEqual(self.cart.stock, 4)"
+  },
+  {
+    "key": "state-after-exception",
+    "code": "import unittest\nfrom inventory import Cart\n\nclass DeclineTests(unittest.TestCase):\n    def test_zero_preserves_stock(self):\n        cart = Cart(stock=4)\n        with self.assertRaises(ValueError):\n            cart.reserve(0)\n        self.assertEqual(cart.stock, 4)"
+  },
+  {
+    "key": "dependency-interface",
+    "code": "def order_total_simple(euros, rate_source):\n    rate = rate_source(\"EUR\")\n    return euros * rate\n\ndef fixed_rate(currency):\n    if currency != \"EUR\":\n        raise ValueError(\"unsupported currency\")\n    return 100\n\nprint(order_total_simple(20, fixed_rate))"
+  },
+  {
+    "key": "stub-test-file",
+    "code": "import unittest\nfrom order import order_total\n\nclass RateTests(unittest.TestCase):\n    def test_eur_total(self):\n        def source(currency):\n            self.assertEqual(currency, \"EUR\")\n            return 100\n        self.assertEqual(order_total(20, source), 2000)"
+  },
+  {
+    "key": "failure-stub-file",
+    "code": "import unittest\nfrom order import order_total\n\nclass SourceFailureTests(unittest.TestCase):\n    def test_connection_error_propagates(self):\n        def offline(currency):\n            raise ConnectionError(\"offline\")\n        with self.assertRaises(ConnectionError):\n            order_total(20, offline)"
+  }
+]
