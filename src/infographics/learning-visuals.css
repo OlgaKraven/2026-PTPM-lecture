@@ -194,3 +194,23 @@
 .lv-passport-print-note{display:none}
 .print-page .lv-passport>a{display:none}
 .print-page .lv-passport-print-note{display:block;grid-column:1/-1;font-size:1.2cqw!important;margin:0!important;color:var(--lv-muted)}
+.slide-frame .lv[data-subject-diagram]>.lv-body .lv-heading,.slide-frame .lv[data-subject-diagram]>div>.lv-body .lv-heading{display:none}
+.lv-context{font-size:16px;line-height:1.5;margin:12px 0}
+.lv-edge-legend{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;padding:0;margin:4px 0;font-size:14px;line-height:1.4}
+.lv-stage-summary{font-size:15px!important;line-height:1.4!important;margin:0 0 8px!important}
+@media screen and (min-width:821px){
+ .slide-frame .lv[data-subject-diagram] .lv-overview{grid-template-rows:auto minmax(0,1fr)!important}
+ .slide-frame .lv-overview>.lv-choice,.slide-frame .lv-overview>.lv-caption,.slide-frame .lv-overview>.lv-result,.slide-frame .lv-overview>.lv-control-row{display:none}
+ .slide-frame .lv-overview>.lv-stage-summary{grid-row:1}
+ .slide-frame .lv-overview>.lv-diagram{grid-row:2}
+ .slide-frame .lv[data-subject-diagram] .lv-diagram svg{height:auto;max-height:none}
+ .slide-frame:has(.lv[data-subject-diagram]) .write-note{padding:10px 12px;margin-top:10px}
+ .slide-frame:has(.lv[data-subject-diagram]) .write-note>span{font-size:11px;margin-bottom:3px}
+ .slide-frame:has(.lv[data-subject-diagram]) .write-note>strong{font-size:16px;line-height:1.4}
+ .slide-frame .lv-table-overview{grid-template-rows:minmax(0,1fr)!important}
+ .slide-frame .lv-table-overview>.lv-heading,.slide-frame .lv-table-overview>.lv-choice,.slide-frame .lv-table-overview>.lv-caption,.slide-frame .lv-table-overview>.lv-result,.slide-frame .lv-table-overview>.lv-control-row{display:none}
+ .slide-frame .lv-table-overview>.lv-diagram{grid-row:1}
+ .slide-frame .lv-table-overview .lv-table{font-size:16px}
+ .slide-frame .lv-table-overview .lv-table th{font-size:14px}
+ .slide-frame .lv-table-overview .lv-table th,.slide-frame .lv-table-overview .lv-table td{padding:6px 12px}
+}

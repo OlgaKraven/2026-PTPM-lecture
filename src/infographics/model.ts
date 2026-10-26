@@ -1,6 +1,6 @@
 import type { Slide } from '@olgakraven/lecture-engine'
 
-export type Frame = {caption:string;focus:string[];edges?:string[];result?:string;time?:number}
+export type Frame = {caption:string;focus:string[];edges?:string[];result?:string;time?:number;values?:Record<string,string>}
 export type Scenario = {id:string;label:string;condition:string;frames:Frame[]}
 export type Node = {id:string;title:string;text?:string;kind?:'action'|'decision'|'start'|'end'|'state';column:number;row:number}
 export type Edge = {id:string;from:string;to:string;label?:string}
@@ -12,6 +12,7 @@ export type Spec = {
   participants?:{id:string;title:string}[];
   messages?:{id:string;from:string;to:string;label:string;kind:'call'|'return';branch?:string}[];
   scenarioLabel?:string;defaultScenario:string;scenarios:Scenario[];visual?:NonNullable<Slide['visual']>;
+  context?:string;
 }
 export type Snapshot = {scenario:string;step:number;target:number|null;progress:number;phase:'move'|'hold';elapsed:number;playing:boolean;resume:boolean;detail:boolean;revision:number}
 

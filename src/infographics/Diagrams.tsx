@@ -11,7 +11,7 @@ const cls=(name:string,active:boolean)=>`${name}${active?' is-active':''}`
 const focused=(frame:Frame,id:string)=>frame.focus.includes(id)
 const edgeFocused=(frame:Frame,id:string)=>Boolean(frame.edges?.includes(id)||frame.focus.includes(id))
 const ink='var(--lv-ink)',muted='var(--lv-muted)',line='var(--lv-line)',red='var(--lv-red)'
-const textStyle:CSSProperties={fontFamily:'inherit',fontSize:12,fill:ink}
+const textStyle:CSSProperties={fontFamily:'inherit',fontSize:16,fill:ink}
 
 function useWidth(){
  const ref=useRef<HTMLDivElement>(null),[width,setWidth]=useState(0)
@@ -28,7 +28,7 @@ function useWidth(){
 }
 
 function textLines(text:string,width:number){
- const columns=Math.max(1,Math.floor(width/6.8))
+ const columns=Math.max(1,Math.floor(width/8.8))
  let lines=1,used=0
  for(const word of text.split(/\s+/)){
   const length=Array.from(word).length
@@ -39,9 +39,9 @@ function textLines(text:string,width:number){
  return lines
 }
 
-function LabelBox({box,title,text,center=true,backdrop=false}:{box:Box;title:string;text?:string;center?:boolean;backdrop?:boolean}){
+function LabelBox({box,title,text,center=true,backdrop=false,small=false}:{box:Box;title:string;text?:string;center?:boolean;backdrop?:boolean;small?:boolean}){
  return <foreignObject x={box.x} y={box.y} width={box.width} height={box.height}>
-  <div className="lv-svg-label" style={{height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:center?'center':'flex-start',textAlign:center?'center':'left',overflowWrap:'anywhere',fontSize:12,lineHeight:'16px',color:ink,background:backdrop?'var(--lv-surface)':undefined}}>
+  <div className="lv-svg-label" style={{height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:center?'center':'flex-start',textAlign:center?'center':'left',overflowWrap:'anywhere',fontSize:small?14:16,lineHeight:small?'19px':'21px',color:ink,background:backdrop?'var(--lv-surface)':undefined}}>
    <span style={{fontWeight:600}}>{title}</span>{text&&<span style={{marginTop:3}}>{text}</span>}
   </div>
  </foreignObject>
@@ -74,7 +74,7 @@ function Connections({nodes,edges,frame}:{nodes:{id:string;title:string}[];edges
 }
 
 function Flow({spec,frame,committedFrame,progress,moving,width,prefix}:DiagramProps&{width:number;prefix:string}){
- const nodes=spec.nodes||[],edges=spec.edges||[]
+ const nodes=(spec.nodes||[]).map(n=>({...n,text:frame.values?.[n.id]??n.text})),edges=spec.edges||[]
  if(!nodes.length)return null
  const byId=new Map(nodes.map(node=>[node.id,node])),minColumn=Math.min(...nodes.map(node=>node.column)),minRow=Math.min(...nodes.map(node=>node.row))
  const columns=Math.max(...nodes.map(node=>node.column))-minColumn+1,rows=Math.max(...nodes.map(node=>node.row))-minRow+1
@@ -82,19 +82,21 @@ function Flow({spec,frame,committedFrame,progress,moving,width,prefix}:DiagramPr
   const a=byId.get(edge.from),b=byId.get(edge.to)
   return a&&b&&(b.row<a.row||b.row-a.row>1)
  })
- const gapX=width>=840?76:44,gapY=80,pad=20,rightPad=external.length?24+112*external.length:pad
+ const gapX=width>=840?56:40,gapY=32,pad=8,rightPad=external.length?24+112*external.length:pad
  const nodeWidth=(width-pad-rightPad-gapX*(columns-1))/columns,topPad=pad+external.length*16
- const nodeHeight=Math.max(62,...nodes.map(node=>{
+ const nodeHeights=new Map(nodes.map(node=>{
   const inside=node.kind==='decision'?nodeWidth*.58:nodeWidth-18
   const lines=textLines(node.title,inside)+(node.text?textLines(node.text,inside):0)
-  return node.kind==='decision'?Math.max(72,lines*23+24):lines*16+22
+  return [node.id,node.kind==='decision'?Math.max(90,lines*27+28):Math.max(62,lines*21+30)]
  }))
+ const rowHeights=Array.from({length:rows},(_,r)=>Math.max(62,...nodes.filter(n=>n.row===r+minRow).map(n=>nodeHeights.get(n.id)!)))
+ const rowY=(row:number)=>topPad+rowHeights.slice(0,row-minRow).reduce((sum,h)=>sum+h+gapY,0)
  const lastRowShelf=edges.some(edge=>{const a=byId.get(edge.from),b=byId.get(edge.to);return a&&b&&a.row===b.row&&Math.abs(a.column-b.column)>1&&a.row===minRow+rows-1})
- const height=topPad+rows*nodeHeight+(rows-1)*gapY+(lastRowShelf?68:36)
+ const height=topPad+rowHeights.reduce((sum,h)=>sum+h,0)+(rows-1)*gapY+(lastRowShelf?68:12)
  const fits=width>0&&nodeWidth>=138&&height<=(width>=600?800:340)&&edges.every(edge=>byId.has(edge.from)&&byId.has(edge.to))
  const structural=()=> <div className="lv-structural lv-flow-structure"><div className="lv-node-list lv-grid" style={{gridTemplateColumns:width>=560?'repeat(2,minmax(0,1fr))':'minmax(0,1fr)'}}>{nodes.map(node=><Card key={node.id} {...node} active={focused(frame,node.id)}/>)}</div><Connections nodes={nodes} edges={edges} frame={frame}/></div>
  if(!fits)return structural()
- const boxes=new Map(nodes.map(node=>[node.id,{x:pad+(node.column-minColumn)*(nodeWidth+gapX),y:topPad+(node.row-minRow)*(nodeHeight+gapY),width:nodeWidth,height:nodeHeight}]))
+ const boxes=new Map(nodes.map(node=>[node.id,{x:pad+(node.column-minColumn)*(nodeWidth+gapX),y:rowY(node.row),width:nodeWidth,height:rowHeights[node.row-minRow]}]))
  const sourceRails=new Map<number,number>(),targetRails=new Map<number,number>(),rowShelves=new Map<number,number>()
  type Route={edge:Edge;points:Point[];labelBox?:Box}
  const routes:Route[]=edges.map(edge=>{
@@ -136,10 +138,9 @@ function Flow({spec,frame,committedFrame,progress,moving,width,prefix}:DiagramPr
   ?Math.min(Math.max(a.y,b.y),Math.max(c.y,d.y))>Math.max(Math.min(a.y,b.y),Math.min(c.y,d.y))
   :a.y===b.y&&c.y===d.y&&a.y===c.y&&Math.min(Math.max(a.x,b.x),Math.max(c.x,d.x))>Math.max(Math.min(a.x,b.x),Math.min(c.x,d.x))
  const labels:Box[]=[]
- let labelsFit=true
  // Place every label against the complete route set, so later edges cannot erase earlier guards.
  for(const route of [...routes].sort((a,b)=>(b.edge.label?.length||0)-(a.edge.label?.length||0))){
-  const label=route.edge.label
+  const label=route.edge.label&&route.edge.label.length>3?String(edges.indexOf(route.edge)+1):route.edge.label
   if(!label)continue
   const candidates:Box[]=[]
   for(let i=1;i<route.points.length;i++){
@@ -148,10 +149,10 @@ function Flow({spec,frame,committedFrame,progress,moving,width,prefix}:DiagramPr
    // A guard belongs to its own branch, beyond shared stems and merges.
    if(routes.some(other=>other!==route&&other.points.slice(1).some((d,j)=>overlapsSegment(a,b,other.points[j],d))))continue
    if(a.y===b.y){
-    const labelWidth=Math.min(112,Math.max(28,length-12)),labelHeight=textLines(label,labelWidth)*16+6
+    const labelWidth=Math.min(60,Math.max(28,Math.min(length-8,label.length*8+12))),labelHeight=26
     for(const t of [.5,.3,.7]){const x=a.x+(b.x-a.x)*t-labelWidth/2;candidates.push({x,y:a.y-labelHeight-7,width:labelWidth,height:labelHeight},{x,y:a.y+7,width:labelWidth,height:labelHeight})}
    }else{
-    const labelWidth=88,labelHeight=textLines(label,labelWidth)*16+6
+    const labelWidth=36,labelHeight=26
     for(const t of [.5,.28,.72]){const y=a.y+(b.y-a.y)*t-labelHeight/2;candidates.push({x:a.x-labelWidth-8,y,width:labelWidth,height:labelHeight},{x:a.x+8,y,width:labelWidth,height:labelHeight})}
    }
   }
@@ -163,29 +164,27 @@ function Flow({spec,frame,committedFrame,progress,moving,width,prefix}:DiagramPr
   const scored=available.map((box,index)=>({box,index,hits:routes.reduce((sum,other)=>sum+other.points.slice(1).filter((point,i)=>segmentHits(other.points[i],point,box)).length,0)})).sort((a,b)=>a.hits-b.hits||a.index-b.index)
   const chosen=scored[0]?.hits===0?scored[0].box:undefined
   if(chosen){route.labelBox=chosen;labels.push(chosen)}
-  else labelsFit=false
  }
- if(!labelsFit)return structural()
  const shape=(node:Node)=>{
   const box=boxes.get(node.id)!,active=focused(frame,node.id),cx=box.x+box.width/2,cy=box.y+box.height/2
   const props={fill:active?'var(--lv-accent)':'var(--lv-surface)',stroke:active?red:line,strokeWidth:active?2:1.5}
   return <g key={node.id} className={cls('lv-node',active)} data-focus={node.id} data-node-id={node.id} aria-current={active?'step':undefined}>
    <title>{`${node.id}: ${node.title}${node.text?`. ${node.text}`:''}`}</title>
-   {node.kind==='decision'?<polygon points={`${cx},${box.y} ${box.x+box.width},${cy} ${cx},${box.y+box.height} ${box.x},${cy}`} {...props}/>:<rect {...box} rx={node.kind==='start'||node.kind==='end'?nodeHeight/2:node.kind==='state'?8:0} {...props}/>}
+   {node.kind==='decision'?<polygon points={`${cx},${box.y} ${box.x+box.width},${cy} ${cx},${box.y+box.height} ${box.x},${cy}`} {...props}/>:<rect {...box} rx={node.kind==='start'||node.kind==='end'?box.height/2:node.kind==='state'?8:0} {...props}/>}
    <LabelBox box={node.kind==='decision'?{x:cx-box.width*.29,y:cy-box.height*.29,width:box.width*.58,height:box.height*.58}:{x:box.x+9,y:box.y+7,width:box.width-18,height:box.height-14}} title={node.title} text={node.text}/>
   </g>
  }
  const newlyActive=edges.filter(candidate=>edgeFocused(frame,candidate.id)&&!edgeFocused(committedFrame,candidate.id))
- return <svg role="img" aria-label={spec.title} viewBox={`0 0 ${width} ${height}`} width="100%" height={height} style={{display:'block'}}>
+ return <div className="lv-flow-stage"><svg role="img" aria-label={spec.title} viewBox={`0 0 ${width} ${height}`} width="100%" height={height} style={{display:'block'}}>
   <title>{spec.title}</title><Markers prefix={prefix}/>
   {routes.map(({edge,points})=>{
    const d=points.map((point,i)=>`${i?'L':'M'} ${point.x} ${point.y}`).join(' '),active=edgeFocused(frame,edge.id)
    return <g key={edge.id}><path d={d} fill="none" stroke="var(--lv-surface)" strokeWidth="7"/><Path id={edge.id} d={d} active={active} prefix={prefix}/></g>
   })}
-  {routes.filter(route=>route.edge.label&&route.labelBox).map(({edge,labelBox})=><g key={edge.id} data-label-edge={edge.id}><LabelBox box={labelBox!} title={edge.label!} backdrop/></g>)}
+  {routes.filter(route=>route.edge.label&&route.labelBox).map(({edge,labelBox})=><g key={edge.id} data-label-edge={edge.id}><LabelBox box={labelBox!} title={edge.label!.length>3?String(edges.indexOf(edge)+1):edge.label!} backdrop small/></g>)}
   {nodes.map(shape)}
   {routes.filter(({edge})=>edgeFocused(frame,edge.id)&&moving&&(!newlyActive.length||newlyActive.some(candidate=>candidate.id===edge.id))).map(({edge,points})=>{const marker=along(points,progress);return <circle key={edge.id} className="lv-flow-marker" cx={marker.x} cy={marker.y} r="4" fill={red}/>})}
- </svg>
+ </svg>{edges.some(e=>e.label&&(e.label.length>3||!routes.find(r=>r.edge===e)?.labelBox))&&<ol className="lv-edge-legend">{edges.map((edge,i)=>edge.label&&(edge.label.length>3||!routes.find(r=>r.edge===edge)?.labelBox)?<li key={edge.id}><strong>{i+1}.</strong> {!routes.find(r=>r.edge===edge)?.labelBox&&`${byId.get(edge.from)?.title} → ${byId.get(edge.to)?.title}: `}{edge.label}</li>:null)}</ol>}</div>
 }
 
 function NumericTimeline({spec,frame,committedFrame,progress,moving,scenario,width}:DiagramProps&{width:number}){
@@ -231,7 +230,7 @@ function along(points:Point[],progress:number):Point{
 }
 
 function Sequence({spec,frame,width,prefix,progress,moving,scenario}:DiagramProps&{width:number;prefix:string}){
- const participants=spec.participants||[],messages=spec.messages||[],titles=new Map(participants.map(item=>[item.id,item.title]))
+ const participants=spec.participants||[],messages=(spec.messages||[]).map(m=>({...m,label:frame.values?.[m.id]??m.label})),titles=new Map(participants.map(item=>[item.id,item.title]))
  const groups:{id:string;messages:typeof messages}[]=[]
  for(const message of messages){
   const id=message.branch||'',last=groups[groups.length-1]
@@ -247,7 +246,7 @@ function Sequence({spec,frame,width,prefix,progress,moving,scenario}:DiagramProp
   nextY+=guardHeight
   const rows=group.messages.map(message=>{
    const dx=Math.abs((positions.get(message.to)??0)-(positions.get(message.from)??0)),labelWidth=Math.max(50,dx-18)
-   const rowHeight=Math.max(32,textLines(message.label,labelWidth)*16+15),y=nextY+rowHeight-3
+   const rowHeight=Math.max(38,textLines(message.label,labelWidth)*21+16),y=nextY+rowHeight-3
    nextY+=rowHeight
    return {message,y,rowHeight,labelWidth}
   })

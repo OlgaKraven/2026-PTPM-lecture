@@ -8,6 +8,7 @@
       "s04-01-testing-purpose-s003",
       "s04-01-testing-purpose-s004",
       "s04-01-testing-purpose-s005",
+      "s04-01-testing-purpose-s006-explanation",
       "s04-01-testing-purpose-s006",
       "s04-01-testing-purpose-q1-changed",
       "s04-01-testing-purpose-q1-error",
@@ -29,6 +30,7 @@
     "explanationIds": [
       "s04-01-testing-purpose-s009",
       "s04-01-testing-purpose-s010",
+      "s04-01-testing-purpose-s011-explanation",
       "s04-01-testing-purpose-s011",
       "s04-01-testing-purpose-s012",
       "s04-01-testing-purpose-q2-changed",
@@ -51,6 +53,7 @@
     "explanationIds": [
       "s04-01-testing-purpose-s015",
       "s04-01-testing-purpose-s016",
+      "s04-01-testing-purpose-s017-explanation",
       "s04-01-testing-purpose-s017",
       "s04-01-testing-purpose-s018",
       "s04-01-testing-purpose-q3-changed",
@@ -75,6 +78,7 @@
       "s04-02-test-cases-s004",
       "s04-02-test-cases-s005",
       "s04-02-test-cases-s006",
+      "s04-02-test-cases-q1-changed-explanation",
       "s04-02-test-cases-q1-changed",
       "s04-02-test-cases-q1-error",
       "s04-02-test-cases-q1-conclusion"
@@ -98,6 +102,7 @@
       "s04-02-test-cases-s011",
       "s04-02-test-cases-s012",
       "s04-02-test-cases-q2-changed",
+      "s04-02-test-cases-q2-error-explanation",
       "s04-02-test-cases-q2-error",
       "s04-02-test-cases-q2-conclusion"
     ],
@@ -118,7 +123,9 @@
       "s04-02-test-cases-s015",
       "s04-02-test-cases-s016",
       "s04-02-test-cases-s017",
+      "s04-02-test-cases-s018-explanation",
       "s04-02-test-cases-s018",
+      "s04-02-test-cases-s018-record",
       "s04-02-test-cases-q3-changed",
       "s04-02-test-cases-q3-error",
       "s04-02-test-cases-q3-conclusion"
@@ -139,6 +146,7 @@
     "explanationIds": [
       "s04-03-equivalence-s003",
       "s04-03-equivalence-s004",
+      "s04-03-equivalence-s005-explanation",
       "s04-03-equivalence-s005",
       "s04-03-equivalence-s006",
       "s04-03-equivalence-q1-changed",
@@ -161,7 +169,9 @@
     "explanationIds": [
       "s04-03-equivalence-s009",
       "s04-03-equivalence-s010",
+      "s04-03-equivalence-s011-explanation",
       "s04-03-equivalence-s011",
+      "s04-03-equivalence-s011-record",
       "s04-03-equivalence-s012",
       "s04-03-equivalence-q2-changed",
       "s04-03-equivalence-q2-error",
@@ -184,7 +194,9 @@
       "s04-03-equivalence-s015",
       "s04-03-equivalence-s016",
       "s04-03-equivalence-s017",
+      "s04-03-equivalence-s018-explanation",
       "s04-03-equivalence-s018",
+      "s04-03-equivalence-s018-record",
       "s04-03-equivalence-q3-changed",
       "s04-03-equivalence-q3-error",
       "s04-03-equivalence-q3-conclusion"
@@ -206,6 +218,7 @@
       "s04-04-boundaries-and-defects-s003",
       "s04-04-boundaries-and-defects-s004",
       "s04-04-boundaries-and-defects-s005",
+      "s04-04-boundaries-and-defects-s006-explanation",
       "s04-04-boundaries-and-defects-s006",
       "s04-04-boundaries-and-defects-q1-changed",
       "s04-04-boundaries-and-defects-q1-error",
@@ -228,7 +241,9 @@
       "s04-04-boundaries-and-defects-s009",
       "s04-04-boundaries-and-defects-s010",
       "s04-04-boundaries-and-defects-s011",
+      "s04-04-boundaries-and-defects-s012-explanation",
       "s04-04-boundaries-and-defects-s012",
+      "s04-04-boundaries-and-defects-s012-record",
       "s04-04-boundaries-and-defects-q2-changed",
       "s04-04-boundaries-and-defects-q2-error",
       "s04-04-boundaries-and-defects-q2-conclusion"
@@ -250,6 +265,7 @@
       "s04-04-boundaries-and-defects-s015",
       "s04-04-boundaries-and-defects-s016",
       "s04-04-boundaries-and-defects-s017",
+      "s04-04-boundaries-and-defects-s018-explanation",
       "s04-04-boundaries-and-defects-s018",
       "s04-04-boundaries-and-defects-q3-changed",
       "s04-04-boundaries-and-defects-q3-error",
@@ -273,6 +289,7 @@
       "s05-01-unit-tests-s004",
       "s05-01-unit-tests-s005",
       "s05-01-unit-tests-s006",
+      "s05-01-unit-tests-q1-changed-explanation",
       "s05-01-unit-tests-q1-changed",
       "s05-01-unit-tests-q1-error",
       "s05-01-unit-tests-q1-conclusion"
@@ -295,6 +312,7 @@
       "s05-01-unit-tests-s010",
       "s05-01-unit-tests-s011",
       "s05-01-unit-tests-s012",
+      "s05-01-unit-tests-q2-changed-explanation",
       "s05-01-unit-tests-q2-changed",
       "s05-01-unit-tests-q2-error",
       "s05-01-unit-tests-q2-conclusion"
@@ -317,6 +335,7 @@
       "s05-01-unit-tests-s016",
       "s05-01-unit-tests-s017",
       "s05-01-unit-tests-s018",
+      "s05-01-unit-tests-q3-changed-explanation",
       "s05-01-unit-tests-q3-changed",
       "s05-01-unit-tests-q3-error",
       "s05-01-unit-tests-q3-conclusion"
@@ -339,6 +358,7 @@
       "s05-02-dependencies-s004",
       "s05-02-dependencies-s005",
       "s05-02-dependencies-s006",
+      "s05-02-dependencies-q1-changed-explanation",
       "s05-02-dependencies-q1-changed",
       "s05-02-dependencies-q1-error",
       "s05-02-dependencies-q1-conclusion"
@@ -361,6 +381,7 @@
       "s05-02-dependencies-s010",
       "s05-02-dependencies-s011",
       "s05-02-dependencies-s012",
+      "s05-02-dependencies-q2-changed-explanation",
       "s05-02-dependencies-q2-changed",
       "s05-02-dependencies-q2-error",
       "s05-02-dependencies-q2-conclusion"
@@ -383,6 +404,7 @@
       "s05-02-dependencies-s016",
       "s05-02-dependencies-s017",
       "s05-02-dependencies-s018",
+      "s05-02-dependencies-q3-changed-explanation",
       "s05-02-dependencies-q3-changed",
       "s05-02-dependencies-q3-error",
       "s05-02-dependencies-q3-conclusion"
@@ -406,6 +428,7 @@
       "s05-03-suite-quality-s005",
       "s05-03-suite-quality-s006",
       "s05-03-suite-quality-q1-changed",
+      "s05-03-suite-quality-q1-error-explanation",
       "s05-03-suite-quality-q1-error",
       "s05-03-suite-quality-q1-conclusion"
     ],
@@ -428,6 +451,7 @@
       "s05-03-suite-quality-s011",
       "s05-03-suite-quality-s012",
       "s05-03-suite-quality-q2-changed",
+      "s05-03-suite-quality-q2-error-explanation",
       "s05-03-suite-quality-q2-error",
       "s05-03-suite-quality-q2-conclusion"
     ],
@@ -449,6 +473,7 @@
       "s05-03-suite-quality-s016",
       "s05-03-suite-quality-s017",
       "s05-03-suite-quality-s018",
+      "s05-03-suite-quality-q3-changed-explanation",
       "s05-03-suite-quality-q3-changed",
       "s05-03-suite-quality-q3-error",
       "s05-03-suite-quality-q3-conclusion"
@@ -470,6 +495,7 @@
       "s05-04-maintenance-s003",
       "s05-04-maintenance-s004",
       "s05-04-maintenance-s005",
+      "s05-04-maintenance-s006-explanation",
       "s05-04-maintenance-s006",
       "s05-04-maintenance-q1-changed",
       "s05-04-maintenance-q1-error",
@@ -493,6 +519,7 @@
       "s05-04-maintenance-s010",
       "s05-04-maintenance-s011",
       "s05-04-maintenance-s012",
+      "s05-04-maintenance-q2-changed-explanation",
       "s05-04-maintenance-q2-changed",
       "s05-04-maintenance-q2-error",
       "s05-04-maintenance-q2-conclusion"
@@ -515,6 +542,7 @@
       "s05-04-maintenance-s016",
       "s05-04-maintenance-s017",
       "s05-04-maintenance-s018",
+      "s05-04-maintenance-q3-changed-explanation",
       "s05-04-maintenance-q3-changed",
       "s05-04-maintenance-q3-error",
       "s05-04-maintenance-q3-conclusion"

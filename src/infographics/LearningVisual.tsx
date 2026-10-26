@@ -31,6 +31,7 @@ function Dialog({children,onClose,controlled,syncId}:{children:ReactNode;onClose
 }
 function LearningVisual({spec,interactive,compact,replacesRows=false}:{spec:Spec;interactive:boolean;compact:boolean;replacesRows?:boolean}){
   const currentRole=role(),audience=currentRole.mode==='audience',print=currentRole.mode==='print'||/\/print\/?$/.test(location.pathname)
+  const authored=authoredSpecs().some(s=>s.slideId===spec.slideId)
   const readonly=!interactive||audience||print
   const [snapshot,setSnapshot]=useState(()=>initialSnapshot(spec))
   const [expandHost,setExpandHost]=useState<HTMLElement|null>(null)
@@ -46,6 +47,7 @@ function LearningVisual({spec,interactive,compact,replacesRows=false}:{spec:Spec
   },[print,audience,spec.slideId])
   const scenario=scenarioFor(spec,snapshot.scenario),frames=scenario.frames,max=frames.length-1
   const committed=frames[snapshot.step],frame=frames[snapshot.target??snapshot.step]
+  const printFrame={caption:spec.overview,focus:[],values:scenario.frames[0].values}
   const canPlay=spec.kind!=='source'&&!reduced
   const channelName=`okfks-learning-visual:${location.pathname}:${currentRole.session}`
   const storageKey=`${channelName}:${spec.slideId}`
@@ -106,22 +108,25 @@ function LearningVisual({spec,interactive,compact,replacesRows=false}:{spec:Spec
   }
   const moving=snapshot.target!==null&&snapshot.phase==='move'
   const status=moving?`Переход к шагу ${snapshot.target}.`:`Шаг ${snapshot.step} / ${max}`
-  const body=(large:boolean)=><div className={`lv-body ${large?'lv-expanded':''}`}>
-    <div className="lv-heading"><span>{spec.title}</span><small>{labels[spec.kind==='source'?spec.visual?.type||'':spec.kind]||'Учебная схема'}</small></div>
+  const body=(large:boolean)=><div className={`lv-body ${large?'lv-expanded':''} ${!large&&!print&&authored?'lv-overview':''} ${!large&&!print&&replacesRows?'lv-table-overview':''}`}>
+    <div className="lv-heading"><span>{spec.title}</span><small>{spec.kind==='flow'&&spec.catalogId==='ARCH-04'?'Схема связей':labels[spec.kind==='source'?spec.visual?.type||'':spec.kind]||'Учебная схема'}</small></div>
+    {!large&&!print&&authored&&<p className="lv-stage-summary">{spec.scenarios.length>1?scenario.condition:spec.overview}</p>}
     {spec.scenarios.length>1&&!print&&<label className="lv-choice"><span>{spec.scenarioLabel||'Сценарий'}</span><select aria-label={spec.scenarioLabel||'Сценарий'} value={scenario.id} disabled={readonly} onChange={e=>setSnapshot(s=>chooseScenario(spec,s,e.target.value))}>{spec.scenarios.map(s=><option key={s.id} value={s.id}>{s.label}</option>)}</select></label>}
-    {print&&spec.kind==='timeline'&&spec.scenarios.length>1?<div className="lv-print-variants">{spec.scenarios.map(item=><section key={item.id}><h3>{item.label}</h3><Diagram spec={spec} frame={{caption:spec.overview,focus:[]}} committedFrame={{caption:spec.overview,focus:[]}} moving={false} progress={0} scenario={item.id} readonly/></section>)}</div>:(!compact||large||print)&&<Diagram spec={spec} frame={print?{caption:spec.overview,focus:[]}:reduced&&moving?committed:frame} committedFrame={print?{caption:spec.overview,focus:[]}:committed} moving={!reduced&&moving} progress={snapshot.progress} scenario={scenario.id} readonly={readonly}/>}
-    {(large||!compact||print)&&<p className="lv-caption" aria-live={readonly?'off':'polite'} aria-atomic="true">{print?spec.overview.replace(' На следующих шагах выделяется одна строка; значения сохраняются.',''):committed.caption}</p>}
+    {print&&spec.kind==='timeline'&&spec.scenarios.length>1?<div className="lv-print-variants">{spec.scenarios.map(item=><section key={item.id}><h3>{item.label}</h3><Diagram spec={spec} frame={printFrame} committedFrame={printFrame} moving={false} progress={0} scenario={item.id} readonly/></section>)}</div>:(!compact||large||print)&&<Diagram spec={spec} frame={print?printFrame:reduced&&moving?committed:frame} committedFrame={print?printFrame:committed} moving={!reduced&&moving} progress={snapshot.progress} scenario={scenario.id} readonly={readonly}/>}
+    {(large||!compact||print)&&!(print&&spec.overview.startsWith('Таблица показана целиком.'))&&<p className="lv-caption" aria-live={readonly?'off':'polite'} aria-atomic="true">{print?spec.overview.replace(' На следующих шагах выделяется одна строка; значения сохраняются.',''):committed.caption}</p>}
     {committed.result&&!print&&(!compact||large)&&<p className="lv-result"><strong>Результат:</strong> {committed.result}</p>}
+    {print&&scenario.frames.at(-1)?.result&&<p className="lv-result"><strong>{scenario.condition}.</strong> {scenario.frames.at(-1)?.result}</p>}
+    {(large||print)&&spec.context&&<p className="lv-context">{spec.context}</p>}
     {!print&&<div className="lv-control-row">
       {!readonly&&(!compact||large)&&<><button type="button" disabled={snapshot.step===0&&snapshot.target===null} onClick={()=>setSnapshot(s=>navigate(spec,s,-1))}>Назад</button>{spec.kind!=='source'&&<button type="button" className="lv-primary" disabled={!canPlay} onClick={play}>{snapshot.playing?'Пауза':snapshot.step>=max?'Повторить':'Показать'}</button>}<button type="button" disabled={snapshot.step===max&&snapshot.target===null} onClick={()=>setSnapshot(s=>navigate(spec,s,1))}>Далее</button></>}
       <span className="lv-step" role="status">{audience?'Показ преподавателя · ':''}{status}</span>
       {!large&&!expandHost&&<button type="button" className="lv-expand" onClick={()=>audience?setLocalExpanded(true):setSnapshot(s=>({...s,detail:true}))}>{compact?'Разобрать схему':'Развернуть'}</button>}
     </div>}
-    {(large||print)&&<p className="lv-scope">{!print&&`${scenario.condition.replace(/[.!?]$/,'')}. `}{spec.scope}{spec.kind==='timeline'&&spec.axis&&!print?' Полная шкала проходит за 12 с показа; остановки на событиях учитываются отдельно.':''}</p>}
+    {(large||print&&(spec.kind!=='source'||authored))&&<p className="lv-scope">{!print&&`${scenario.condition.replace(/[.!?]$/,'')}. `}{spec.scope}{spec.kind==='timeline'&&spec.axis&&!print?' Полная шкала проходит за 12 с показа; остановки на событиях учитываются отдельно.':''}</p>}
     {print&&spec.scenarios.length>1&&<ul className="lv-print-scenarios">{spec.scenarios.map(s=><li key={s.id}><strong>{s.label}:</strong> {s.condition}; {s.frames.at(-1)?.result||s.frames.at(-1)?.caption}</li>)}</ul>}
     {!readonly&&reduced&&<span className="lv-accessibility-note">Уменьшенное движение: используйте ручные шаги.</span>}
   </div>
-  return <div className={`lv ${compact?'lv-compact':''}`} data-learning-visual={spec.slideId} data-replaces-rows={replacesRows||undefined} ref={root}>
+  return <div className={`lv ${compact?'lv-compact':''}`} data-learning-visual={spec.slideId} data-subject-diagram={authoredSpecs().some(s=>s.slideId===spec.slideId)||undefined} data-replaces-rows={replacesRows||undefined} ref={root}>
     {expandHost&&createPortal(<button type="button" className="button primary pd-expand" onClick={()=>setSnapshot(s=>({...s,detail:true}))} aria-label="Развернуть схему">Развернуть схему ↗</button>,expandHost)}
     <div inert={expanded||undefined}>{body(false)}</div>
     {expanded&&<Dialog syncId={spec.slideId} controlled={audience&&snapshot.detail} onClose={()=>{setLocalExpanded(false);if(!audience)setSnapshot(s=>({...pauseSnapshot(s),detail:false}))}}><div className="lv" data-learning-visual={spec.slideId}>{body(true)}</div></Dialog>}
@@ -144,7 +149,7 @@ export function renderLearningVisual({slide,interactive,base,course}:{slide:Slid
   // Authored print diagrams are placed beside their own explanatory material by the print callback.
   const print=role().mode==='print'||/\/print\/?$/.test(location.pathname)
   const spec=specification(slide)
-  if(print&&spec?.kind!=='source')return undefined
+  if(print&&spec?.kind!=='source')return null
   const replacesRows=Boolean(slide.rows)
   const inQuestion=/вопрос\s+\d+|^(?:Опорное понятие|Логика применения|Антиошибка|Контроль понимания)\s*·\s*\d+$/i.test(slide.kicker)
   if(!print&&!inQuestion)return undefined
@@ -156,9 +161,9 @@ export function renderLearningVisualPrintSlide({course,slide,lecture,number,defa
   const hasExplanation=Boolean(slide.body||slide.bullets?.length||slide.notebook||slide.rows)
   return <Fragment key={slide.id}>
     {hasExplanation&&defaultSlide}
-    <section className="lv-print-sheet" data-print-diagram={slide.id} data-slide-id={hasExplanation?`${slide.id}--diagram`:slide.id}>
-      <header><p>{course.code} · {lecture.semester} семестр · {String(number).padStart(2,'0')}</p><h2>{slide.title}</h2></header>
-      <LearningVisual spec={spec} interactive={false} compact={false}/>
-    </section>
+    {spec.scenarios.map((scenario,index)=><section key={scenario.id} className="lv-print-sheet" data-print-diagram={slide.id} data-slide-id={hasExplanation||index?`${slide.id}--diagram-${index}`:slide.id}>
+      <header><p>{course.code} · {lecture.semester} семестр · {String(number).padStart(2,'0')} · {scenario.label}</p><h2>{slide.title}</h2></header>
+      <LearningVisual spec={{...spec,defaultScenario:scenario.id,scenarios:[scenario]}} interactive={false} compact={false}/>
+    </section>)}
   </Fragment>
 }

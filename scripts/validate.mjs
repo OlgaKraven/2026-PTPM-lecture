@@ -7,10 +7,13 @@ const c=read('public/course.json'),p=read('public/teaching/notes.json'),a=read('
 validateCourse(c)
 assert.equal(c.lectures.length,8)
 assert.deepEqual(c.semesters,[4,5])
+assert.equal(c.literature.primary.length,2)
+assert.equal(c.literature.additional.length,2)
 const ids=new Set()
 for(const l of c.lectures){
  assert.equal(l.slides.filter(s=>s.kind==='section').length,3)
  assert.equal(l.slides.filter(s=>s.activityPassport).length,3)
+ assert.equal(l.slides.filter(s=>s.id.endsWith('-explanation')).length,3)
  assert.deepEqual(l.slides.slice(0,5).map(s=>s.kind),['title','literature','literature','materials','agenda'])
  assert.equal(l.slides.at(-1).kind,'questions')
  const starts=l.slides.flatMap((s,i)=>s.kind==='section'?[i]:[])
@@ -22,6 +25,7 @@ for(const l of c.lectures){
   assert(block.some(s=>s.kicker.startsWith('Разбор изменённого')))
   assert(block.some(s=>s.kind==='warning'))
   assert(block.some(s=>s.notebook))
+  assert(block.some(s=>authoredDiagrams.some(d=>d.slideId===s.id)),`Нет предметной схемы: ${l.id}, вопрос ${q+1}`)
  }
  for(const s of l.slides){
   assert(!ids.has(s.id));ids.add(s.id)
@@ -36,7 +40,7 @@ for(const l of c.lectures){
    assert.equal(key.type,s.task.type)
    if(s.task.type==='single'||s.task.type==='multiple'){
     assert(key.correct.every(id=>options.some(o=>o.id===id)))
-    assert.equal(options.length,s.task.type==='single'?4:5)
+    assert.equal(options.length,4)
     if(s.task.type==='multiple')assert.equal(s.task.choose,key.correct.length)
    }
    if(s.task.type==='short')assert(key.numeric||key.accepted?.length)
@@ -55,6 +59,7 @@ assert.equal(ids.size,Object.keys(p.notes).length)
 assert.equal(c.id,p.courseId);assert.equal(c.contentVersion,p.contentVersion)
 assert.equal(supplements.activities.length,24)
 for(const activity of supplements.activities){
+ assert.equal(activity.options.length,4)
  assert(activity.options[activity.correct]);assert(activity.solution.trim())
  const model=activity.exerciseSpec
  assert.equal(model.scenarios[0].frames.length,model.visual.rows.length+1)
@@ -62,6 +67,15 @@ for(const activity of supplements.activities){
  assert(model.visual.rows.every(row=>row.length===model.visual.columns.length))
 }
 const range=authoredDiagrams.find(s=>s.slideId==='s04-04-boundaries-and-defects-s006')
+assert.equal(authoredDiagrams.length,24)
+for(const diagram of authoredDiagrams){
+ assert(ids.has(diagram.slideId))
+ const lecture=c.lectures.find(l=>l.slides.some(s=>s.id===diagram.slideId))
+ const index=lecture.slides.findIndex(s=>s.id===diagram.slideId)
+ assert.equal(lecture.slides[index-1].id,`${diagram.slideId}-explanation`)
+ assert(lecture.slides[index-1].body&&lecture.slides[index-1].rows.length>=3)
+ assert(diagram.scenarios.every(s=>s.frames.length>1&&s.frames.at(-1).result))
+}
 for(const n of [0,1,2,9,10,11])assert(range.scenarios.some(s=>s.condition.endsWith(`n=${n}`)),`Нет точки трёхточечного набора: ${n}`)
 assert(fs.readFileSync('public/downloads/ptpm-examples.zip').subarray(0,2).toString()==='PK')
 for(const path of [c.logo,c.mascot,c.font,c.topicArrow])assert(fs.existsSync(`public/${path}`),path)

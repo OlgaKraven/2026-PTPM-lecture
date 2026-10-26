@@ -4,17 +4,8 @@ import {activityCases} from './activity-cases.mjs'
 import {teacherReasoning} from './teacher-reasoning.mjs'
 import {solutionCode} from './solution-code.mjs'
 import {independentCases} from './independent-cases.mjs'
+import {applyChoiceItems,multipleOptions,caseOptions} from './assessment-options.mjs'
 const all=[...details,...details5]
-const fourth=[
- ['Проверено отсутствие всех отказов ниже порога','Случайное значение входа','Каждый повтор автоматически охватывает новый класс'],
- ['Записана версия модуля','Результат последнего запуска','Фактический результат нужно придумать из требования'],
- ['По алфавиту названий параметров','Четыре','Нужно повторить тот же двойной неверный вход'],
- ['Исключение требуется на любой границе','Успех, если модуль напечатал предупреждение','Проблема возникает у всех пользователей'],
- ['Заменяет ошибочное значение ожидаемым','Слишком мало тестовых файлов','Чтобы тестам всегда требовалась сеть'],
- ['Сеть не влияет ни на один тест','Настройки интерфейса приложения','Достаточно сравнить названия тестов'],
- ['Проверку всех найденных файлов, включая пропущенные','Принять NameError за ValueError','Отсутствие ошибок на одном входе доказывает эквивалентность'],
- ['Изменить ожидание под любой полученный результат','Чтобы затем заменить требование результатом программы','Любой старый прогон на другом коде']
-]
 const textSlide=(id,kind,title,body,script,kicker,extra={})=>({id,kind,title,body,script,kicker,...extra})
 export function structure(seed,li){
  const id=seed.id,slides=[],activities=[],questionMap=[]
@@ -36,24 +27,26 @@ export function structure(seed,li){
   const caseData=independent?.data||activityCases[li][qi]
   const facts=caseData.rows.map(row=>row.join(' · '))
   const visual={type:'comparison',columns:caseData.columns,rows:caseData.rows,caption:'Исходные данные самостоятельного случая. Выведите решение по заданному контракту.'}
-  const choiceOrder=[1,2,0].map(x=>(x+qi+li)%3)
-  const sourceOptions=d.choice.slice(1)
+  const choiceOrder=[1,3,0,2].map(x=>(x+qi+li)%4)
+  const sourceOptions=caseOptions[li][qi]
   activities.push({id:passport.id,revision:'okfks-structure-v2',lectureId:id,number:q,title:seed.questions[qi],task,check:d.conclusion[1],referenceSlideIds:[logic.id,example.id],exerciseSpec:{slideId:`${passport.id}-case`,catalogId:'TAB-01',kind:'source',title:'Данные самостоятельной задачи',overview:visual.caption,scope:'Сопоставление данных по заданному контракту.',visual,defaultScenario:'case',scenarios:[{id:'case',label:'Самостоятельный случай',condition:task,frames:[{caption:visual.caption,focus:[]},...facts.map((text,i)=>({caption:text,focus:[`row${i}`]}))]}]},decision:d.choice[0],options:choiceOrder.map(i=>sourceOptions[i]),correct:choiceOrder.indexOf(0),solution:activity.answer,hint:`Вернитесь к условию: ${facts[0]} Сопоставьте требуемый результат с фактическими данными. Не подменяйте наблюдение предположением.`})
+  applyChoiceItems(single,li,qi)
   const correctId=single.key.correct[0]
   const builtActivity=activities.at(-1)
-  builtActivity.revision=passport.id==='s04-02-test-cases-s007'?'subject-cases-v5':independent?'subject-cases-v4':'subject-cases-v3'
+  builtActivity.revision='subject-cases-v6'
   builtActivity.solutionCode=solutionCode[passport.id]
   builtActivity.exerciseSpec.scenarios[0].frames=[{caption:visual.caption,focus:[]},...caseData.steps.map((caption,i)=>({caption,focus:[`row${i}`]}))]
   builtActivity.hint=caseData.steps.at(-1)+' Сверьте конкретные вход, правило и наблюдение в таблице; одного внешнего сходства результата недостаточно.'
   passport.script+=`\n\nПоказ: ${caseData.steps.map((step,i)=>`${i+1}. ${step}`).join(' ')} Таблица содержит исходные данные, а не автоматически выполненную программу. Самостоятельно полученное решение сравнивается с явным разбором.`
   if(builtActivity.solutionCode)passport.answer+=`\n\nВоспроизводимый вариант Python:\n${builtActivity.solutionCode}\n\nСохранить как test_case.py в распакованной папке examples и запустить python -m unittest test_case -v.${passport.id==='s05-01-unit-tests-s007'?' Функция fee в этом примере минимальна: проверяется заданный допустимый вход; обработка недопустимых данных здесь не реализована.':''}`
-  const newOptions=[...single.task.options,{id:'o4',text:fourth[li][qi]}]
+  const newOptions=single.task.options
   const offset=(li+qi)%4
   single.task={...single.task,id:`${single.id}-task`,options:[...newOptions.slice(offset),...newOptions.slice(0,offset)]}
   single.key={...single.key,optionExplanations:Object.fromEntries(newOptions.map(option=>[option.id,option.id===correctId?single.answer:`${single.answer} Вариант «${option.text}» не следует из указанных условий.`]))}
   single.title='Примените правило к ситуации';single.kicker=`Самопроверка · вопрос ${q} · 1 из 4`
+  d.multi[1]=multipleOptions[li][qi];d.multi[2]=[0,1]
   const multipleId=`${id}-q${q}-multiple`,multiOptions=d.multi[1].map((text,i)=>({id:`o${i+1}`,text})),multiCorrect=d.multi[2].map(i=>`o${i+1}`)
-  const multiOrder=[2,0,4,1,3].map(x=>(x+li+qi)%5)
+  const multiOrder=[2,0,3,1].map(x=>(x+li+qi)%4)
   const multiple={id:multipleId,kind:'test',title:'Выберите два ответа',kicker:`Самопроверка · вопрос ${q} · 2 из 4`,task:{id:`${multipleId}-task`,type:'multiple',prompt:d.multi[0],choose:2,options:multiOrder.map(i=>multiOptions[i])},key:{type:'multiple',correct:multiCorrect,explanation:`Условию соответствуют: ${d.multi[2].map(i=>d.multi[1][i]).join('; ')}. Нужен полный набор без лишних вариантов.`,optionExplanations:Object.fromEntries(multiOptions.map((option,i)=>[option.id,d.multi[2].includes(i)?`Верно: ${option.text}. Это следует из условия и разобранного контракта.`:`Неверно: ${option.text}. Сопоставьте с требуемыми признаками: ${d.multi[2].map(i=>d.multi[1][i]).join('; ')}.`]))},script:`${d.multi[0]} Выберите ровно два утверждения. Вопрос проверяет совместное выполнение требований; один верный пункт без второго или с лишним не является полным ответом.`}
   multiple.answer=multiple.key.explanation
   multiple.key.explanation=teacherReasoning[li][qi].multiple

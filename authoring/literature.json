@@ -1,10 +1,10 @@
 {
   "primary": [
-    {"citation":"Ермакова, А. Н. Управление ИТ-проектами. Ч. I : учебник. — Ставрополь : АГРУС, 2024. — 196 с.","url":"https://www.iprbookshop.ru/books/156620/details"},
+    {"citation":"Богданова, С. В. Технологии программирования. Ч. 2 : учебник. — Ставрополь : АГРУС, 2024. — 152 с.","url":"https://www.iprbookshop.ru/books/156618/details"},
     {"citation":"Гринченко, Н. Н., Громов, А. Ю., Хизриева, Н. И. Проектирование информационных систем. — Москва : КУРС, 2024. — 176 с. — ISBN 978-5-907352-30-8.","url":"https://www.iprbookshop.ru/144813.html"}
   ],
   "additional": [
-    {"citation":"ISTQB. Certified Tester Foundation Level: материалы по основам тестирования, тест-дизайну и управлению дефектами.","url":"https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/"},
-    {"citation":"Python Software Foundation. unittest — Unit testing framework. Официальная документация: утверждения, фикстуры, обнаружение и запуск тестов.","url":"https://docs.python.org/3/library/unittest.html"}
+    {"citation":"Ермакова, А. Н. Управление ИТ-проектами. Ч. I : учебник. — Ставрополь : АГРУС, 2024. — 196 с.","url":"https://www.iprbookshop.ru/books/156620/details"},
+    {"citation":"Юсупова, С. М. Управление качеством : учебник. — Москва : Ай Пи Ар Медиа, 2026. — 301 с. — ISBN 978-5-4497-5034-1.","url":"https://www.iprbookshop.ru/books/156513/details"}
   ]
 }

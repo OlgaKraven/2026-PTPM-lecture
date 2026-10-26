@@ -6,11 +6,11 @@ import {structure} from '../authoring/okfks-structure.mjs'
 import {introductions} from '../authoring/introductions.mjs'
 import {authoredDiagrams} from '../authoring/diagrams.mjs'
 import {refineSource} from '../authoring/content-refinements.mjs'
+import {expandStudentExplanations} from '../authoring/student-explanations.mjs'
 const literature=JSON.parse(fs.readFileSync('authoring/literature.json','utf8'))
 for(const dir of ['public/teaching','private/teacher','docs'])fs.mkdirSync(dir,{recursive:true})
 fs.mkdirSync('src/infographics/data',{recursive:true})
-fs.writeFileSync('src/infographics/data/ptpm.json',JSON.stringify(authoredDiagrams.map(({teaching,...spec})=>spec),null,2)+'\n')
-const course={schemaVersion:1,contentVersion:'2.1.1',id:'ptpm',code:'МДК.01.02',discipline:'Поддержка и тестирование программных модулей',year:'',heroTitle:'Поддержка и тестирование',heroAccent:'программных модулей',slogan:'',mascot:'brand/ptpm-rhino.png',mascotAlt:'Носорог анализирует результаты тестирования программного модуля',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',topicArrow:'brand/topic-arrow.webp',font:'fonts/raleway-cyrillic.woff2',materialsUrl:'https://disk.yandex.ru/d/C5-55HsqSBpVCQ',literature,assessment:{mode:'autonomous',url:'assessment.json'},demo:false,semesters:[4,5],lectures:[]}
+const course={schemaVersion:1,contentVersion:'2.2.0',id:'ptpm',code:'МДК.01.02',discipline:'Поддержка и тестирование программных модулей',year:'',heroTitle:'Поддержка и тестирование',heroAccent:'программных модулей',slogan:'',mascot:'brand/ptpm-rhino.png',mascotAlt:'Носорог анализирует результаты тестирования программного модуля',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',topicArrow:'brand/topic-arrow.webp',font:'fonts/raleway-cyrillic.woff2',materialsUrl:'https://disk.yandex.ru/d/C5-55HsqSBpVCQ',literature,assessment:{mode:'autonomous',url:'assessment.json'},demo:false,semesters:[4,5],lectures:[]}
 const pack={schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,notes:{}}
 const assessment={schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,mode:'autonomous-educational',keys:{}}
 const activities=[],questionMap=[]
@@ -20,7 +20,7 @@ for(const seed of [...semester4,...semester5]){
  const lectureIndex=course.lectures.length,prepared=structure(seed,lectureIndex)
  activities.push(...prepared.activities);questionMap.push(...prepared.questionMap)
  const lecture={id:seed.id,title:seed.title,sourceTitle:`Тема ${seed.topic}`,semester:seed.semester,question:seed.result,slides:[]}
- const raw=[
+ const baseRaw=[
   {id:`${seed.id}-s001`,kind:'title',title:seed.title,kicker:`МДК.01.02 · ${seed.semester} семестр`,script:`Тема занятия — ${seed.title.toLocaleLowerCase('ru')}. ${seed.result} Примеры условные; правила модулей заданы в самом материале. В самостоятельных случаях сначала работаем с условием, затем сопоставляем ход решения с разбором.`},
   {id:`${seed.id}-s022`,kind:'literature',readingGroup:'primary',title:'Основная литература',kicker:'Литература',script:'Учебники из ранее подготовленных курсов используются для связи требований, контроля качества, жизненного цикла и сопровождения ИТ-продукта. Они не подменяют руководство по unittest. Для точного синтаксиса и терминологии используйте первичные материалы на следующем экране.'},
   {id:`${seed.id}-s023`,kind:'literature',readingGroup:'additional',title:'Дополнительная литература',kicker:'Литература',script:'ISTQB используется для проверки основных понятий и техник тест-дизайна. Документация Python — источник поведения assertEqual, assertRaises, subTest и команд запуска. Ссылки ведут к первоисточникам; изучение всей программы сертификации не является заданием этой лекции.'},
@@ -30,12 +30,20 @@ for(const seed of [...semester4,...semester5]){
   ...prepared.slides,
   {id:`${seed.id}-s021`,kind:'questions',title:'Вопросы от аудитории',kicker:'Итог темы',bullets:seed.questions.map(q=>`${q}?`),body:seed.result,script:`Вернитесь к трём вопросам занятия. ${seed.result} Попросите назвать исходное условие и наблюдение, на котором основан каждый вывод. Если ответ сводится к названию термина, вернитесь к конкретному примеру: какой вход выбран, почему ожидание именно такое и какое нарушение проверка способна обнаружить.`}
  ]
+ baseRaw.forEach(refineSource)
+ const raw=expandStudentExplanations(baseRaw,authoredDiagrams)
  let question=0
  const totalWeight=raw.reduce((sum,s)=>sum+(s.activityPassport?420:weights[s.kind]||180),0)
  const budget=5400
  let allotted=0
  raw.forEach((source,index)=>{
-  refineSource(source)
+  const authored=authoredDiagrams.find(spec=>spec.slideId===source.id)
+  if(authored){
+   authored.context=source.body||''
+   source.title=authored.title
+   source.body=undefined
+   source.visual=authored.visual||{type:'network',nodes:(authored.nodes||authored.participants||[]).map(node=>({id:node.id,title:node.title,text:node.text||''})),edges:(authored.edges||authored.messages||[]).map(e=>({from:e.from,to:e.to,label:e.label||''})),caption:authored.overview}
+  }
   const id=source.id||`${lecture.id}-n${String(index+1).padStart(3,'0')}`
   if(source.kind==='section')question++
   const {script,answer,key,preparation,...slide}=source
@@ -53,12 +61,18 @@ for(const seed of [...semester4,...semester5]){
   const diagram=authoredDiagrams.find(item=>item.slideId===id)
   if(diagram)note.script+=`\n\n${diagram.teaching}`
   rawNotes.set(id,note)
-  if(slide.visual||slide.rows)visualPlan.push({lectureId:lecture.id,slideId:id,title:slide.title,purpose:slide.visual?.type==='codeParts'?'Проследить конкретный вызов, проверку и ожидаемое поведение':slide.rows?'Сопоставить данные, правила и результаты по общим столбцам':'Проследить связь условия, действия и наблюдаемого результата',catalog:slide.rows?'TAB-01':slide.visual?.type==='codeParts'?'ALG-01 (статичный разбор)':'свободная схема',representation:slide.visual?.type||'table'})
+  if(slide.visual||slide.rows)visualPlan.push({lectureId:lecture.id,slideId:id,title:slide.title,purpose:authored?.overview||(slide.visual?.type==='codeParts'?'Проследить конкретный вызов, проверку и ожидаемое поведение':slide.rows?'Сопоставить данные, правила и результаты по общим столбцам':'Проследить связь условия, действия и наблюдаемого результата'),catalog:authored?.catalogId||(slide.rows?'TAB-01':slide.visual?.type==='codeParts'?'ALG-01 (статичный разбор)':'свободная схема'),representation:authored?.kind||slide.visual?.type||'table'})
+ })
+ const sectionStarts=lecture.slides.flatMap((slide,index)=>slide.kind==='section'?[index]:[])
+ questionMap.filter(item=>item.lectureId===lecture.id).forEach((item,index)=>{
+  const block=lecture.slides.slice(sectionStarts[index],sectionStarts[index+1]||lecture.slides.length-1)
+  item.explanationIds=block.slice(0,block.findIndex(slide=>slide.activityPassport)).map(slide=>slide.id)
  })
  course.lectures.push(lecture)
  coverage.push({lectureId:lecture.id,semester:seed.semester,topic:seed.topic,hours:2,title:seed.title,questions:seed.questions,slides:lecture.slides.length,plannedSeconds:allotted})
 }
 const courseText=JSON.stringify(course,null,2)+'\n'
+fs.writeFileSync('src/infographics/data/ptpm.json',JSON.stringify(authoredDiagrams.map(({teaching,...spec})=>spec),null,2)+'\n')
 fs.writeFileSync('public/course.json',courseText)
 fs.writeFileSync('public/teaching/notes.json',JSON.stringify(pack,null,2)+'\n')
 fs.writeFileSync('public/assessment.json',JSON.stringify(assessment,null,2)+'\n')
@@ -85,8 +99,9 @@ for(const lecture of course.lectures){
   if(slide.rows)teacher+=`| ${slide.columns.join(' | ')} |\n| ${slide.columns.map(()=> '---').join(' | ')} |\n${slide.rows.map(row=>`| ${row.join(' | ')} |`).join('\n')}\n\n`
   if(slide.visual?.type==='process'&&!printedDiagram)teacher+=slide.visual.items.map((item,i)=>`${i+1}. **${item.title}.** ${item.text}`).join('\n')+'\n\n'
   if(printedDiagram){
-   const nodeTitles=new Map(printedDiagram.nodes.map(n=>[n.id,n.title]))
-   teacher+=`**Разбор схемы.** ${printedDiagram.overview}\n\n${printedDiagram.edges.map(e=>`- ${nodeTitles.get(e.from)} → ${nodeTitles.get(e.to)}${e.label?` (ветвь «${e.label}»)` :''}`).join('\n')}\n\n| Сценарий | Условие | Результат |\n| --- | --- | --- |\n${printedDiagram.scenarios.map(s=>`| ${s.label} | ${s.condition} | ${s.frames.at(-1).result} |`).join('\n')}\n\n${printedDiagram.scope}\n\n`
+   const nodeTitles=new Map((printedDiagram.nodes||printedDiagram.participants||[]).map(n=>[n.id,n.title]))
+   const links=printedDiagram.edges||printedDiagram.messages||[]
+   teacher+=`**Разбор схемы.** ${printedDiagram.overview}\n\n${(printedDiagram.nodes||[]).map(n=>`- ${n.title}${n.text?`: ${n.text}`:''}`).join('\n')}\n\n${links.map(e=>`- ${nodeTitles.get(e.from)} → ${nodeTitles.get(e.to)}${e.label?` (${e.label})` :''}`).join('\n')}\n\n| Сценарий | Условие | Результат |\n| --- | --- | --- |\n${printedDiagram.scenarios.map(s=>`| ${s.label} | ${s.condition} | ${s.frames.at(-1).result} |`).join('\n')}\n\n${printedDiagram.scope}\n\n`
   }
   const workedActivity=activities.find(a=>a.id===slide.id)
   if(workedActivity){const visual=workedActivity.exerciseSpec.visual;teacher+=`**Данные самостоятельного случая.**\n\n| ${visual.columns.join(' | ')} |\n| ${visual.columns.map(()=> '---').join(' | ')} |\n${visual.rows.map(row=>`| ${row.join(' | ')} |`).join('\n')}\n\n`}
